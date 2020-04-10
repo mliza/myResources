@@ -1,0 +1,59 @@
+# .bashrc
+
+# Source global definitions
+#if [ -f /etc/bashrc ]; then
+#	. /etc/bashrc
+#fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+# my Aliases 
+#alias modLoad='module load python/3.8/3.8.0; module load matlab/r2019a'
+alias modLoad='module load intel/2019/2019.3 openmpi/gcc/1.10.2'
+alias python='python3.8'
+alias clc='clear'
+alias bashrc='vim ~/.bashrc'
+alias vimrc='vim ~/.vimrc'
+alias rerun='source ~/.bashrc'
+alias ls='ls $LS_OPTIONS'
+alias cmake='cmake3'
+alias EMPTY='rm -r *'
+
+# Running Codes alias 
+alias runitSU2='/home/u22/mliza/gitSouce/su2/bin/SU2_CFD'
+
+# Export 
+export STORE="/extra/mliza"
+export TRANSFER="/home/u22/mliza/Transfer"
+export SU2_RUN="/home/u22/mliza/gitSouce/su2/bin" 
+export SU2_HOME="/home/u22/mliza/gitSouce/su2" 
+export PATH=$PATH:$SU2_RUN 
+export PYTHONPATH=$PYTHONPATH:$SU2_RUN 
+export PATH="/usr/bin/cmake3:$PATH"
+
+# Functions 
+gridName(){ 
+            if [ $HOSTNAME == login ]
+            then
+                echo elgato
+            elif [ $HOSTNAME == login3 ] || [ $HOSTNAME == login2 ]
+            then 
+                echo ocelote
+            else 
+                echo noGrid
+            fi 
+          }
+            
+# Change PS1 
+PS1="\e[96m{$(gridName)}\e[m\] \e[1;32m\d @ \A\e[m\] \e[0;35m[ \W ]\e[m\] \n >> " 
+export LS_OPTIONS='--color=auto' 
+eval "$(dircolors -b)" 
+
+# Back Directories 
+alias .='cd ../; ls' 
+alias ..='cd ../../; ls' 
+alias ...='cd ../../../; ls' 
+alias ....='cd ../../../../; ls' 
+alias .....='cd ../../../../../; ls' 
