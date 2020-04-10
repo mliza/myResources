@@ -1,0 +1,107 @@
+set nocompatible	"Need it for Vundle
+filetype off        "Need it for Vundle  
+
+"set the runtime path to include Vundle and initialize 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()			
+Plugin 'VundleVim/Vundle.vim' 	"https://github.com/VundleVim/Vundle.vim
+Plugin 'Valloric/YouCompleteMe' "https://github.com/Valloric/YouCompleteMe
+"Plugin 'lervag/vimtex'  		"https://github.com/lervag/vimtex 
+Plugin 'micha/vim-colors-solarized' "https://github.com/altercation/vim-colors-solarized
+Plugin 'frazrepo/vim-rainbow'   "https://github.com/frazrepo/vim-rainbow  
+Plugin 'itchyny/lightline.vim'  "https://github.com/itchyny/lightline.vim 
+call vundle#end()
+
+execute pathogen#infect() 
+filetype plugin indent on 		"Enable filetype-specific 
+syntax on	 					"Enable syntax color
+set encoding=utf-8              "Enable encoding  
+set background=dark				"Enable contrast
+colorscheme solarized			"Enable colorscheme
+set number 						"Show line numbers 
+set expandtab					"Use space instead of tab 
+set tabstop=4					"Tab spacing
+set softtabstop=4				"Use same value as 'tabstop'
+set nolinebreak					"Avoid wrapping a line in the middle of a word
+set shiftwidth=4				"Use same Value as 'tabstop'
+set nobackup 					"Doesn't create backup files
+set noswapfile 					"Doesn't create noswapfile files
+set autoindent 					"Indent text
+set title 						"Reflects file currently being working
+set backspace=indent,eol,start 	"Allow backspacing over indentation
+set hlsearch				 	"Enable search highlight
+set history=1000				"Increase the undo limit
+set ignorecase					"Ignore case sensitive on search 
+set showmatch					"Show matching parenthesis
+set smartcase					"Allows uppercase in search
+set incsearch					"Allows to start search before finishing word
+set colorcolumn=90				"Add a colored column at 90
+set ruler				       	"Insert numbers 	
+set showcmd						"Show (partial) command in bottom-right
+set cursorline 					"Highlight current line
+set cursorcolumn                "Highlight current column
+set wildmenu 					"Visual autocomplete for command menu
+set spell						"Enable spell  
+set foldenable                  "Enable folding
+set laststatus=2                "Status Bar modified
+"set mouse=a					 "Enable mouse	
+
+"Disable Up, Down, Right and Left keys 
+nnoremap <Up> <Nop>					
+nnoremap <Down> <Nop>				
+nnoremap <Left> <Nop>			
+nnoremap <Right> <Nop>	
+
+"Disable ignore search when is uppercase 
+nnoremap <CR> :nohlsearch<cr> 
+
+"Move to the beginning and the end of the line  
+nnoremap B ^
+nnoremap E $
+nnoremap gB g^
+nnoremap gE g$
+
+"Highlight the last inserted text 
+nnoremap gV '[V'] 
+
+"Load and save view automatically 
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+"Change colors on vimdiff  
+"cterm-sets the style, ctermfg-sets the txt color, ctermbg-set the highlight 
+"DiffAdd-added line, DiffDelete-removed line, DiffChange-part of changed line 
+"DiffText-exact part of the text that was deleted 
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+
+"Configure YouCompleteMe for Python 
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = [] 
+let g:ycm_extra_conf_vim_data = [ 
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.global_extra_conf.py'
+"End of YouCompleteMe for Python
+let g:ycm_clang_binary_path = '/usr/bin/clang' "C++ YouCompleteMe Configuration
+
+"Configure lightline 
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
+
+
+"Configure rainbow 
+let g:rainbow_active = 1
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+"End configure rainbow 

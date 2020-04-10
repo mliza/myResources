@@ -1,0 +1,71 @@
+\mode<presentation> 
+ 
+%Def: specifies all the colors use 
+% in the presentation 
+
+%School Colors 
+\definecolor{blueUA}{HTML}{003366} %scarlet rutgers is the same 
+\definecolor{redUA}{HTML}{CC0033} 
+\definecolor{greyRU}{HTML}{5F6A72}
+\definecolor{blueODU}{HTML}{003057}
+\definecolor{silverODU}{HTML}{828A8F}
+
+%Other Colors 
+%https://www.rapidtables.com/web/color/html-color-codes.html 
+\definecolor{black}{HTML}{000000}
+\definecolor{white}{HTML}{FFFFFF}
+\definecolor{red}{HTML}{C00A35}
+\definecolor{mediumslateblue}{HTML}{7B68EE}
+\definecolor{green}{HTML}{61AEAE}
+\definecolor{gray}{HTML}{808080}
+\definecolor{blue}{HTML}{0000FF}
+\definecolor{seagreen}{HTML}{2E8B57}
+\definecolor{purple}{HTML}{800080} 
+
+%----------------%
+%---Set Colors---%
+%----------------%
+
+%Title Page
+\setbeamercolor{title}{fg=blueUA} 
+\setbeamercolor{author}{fg=blueUA}
+\setbeamercolor{date}{fg=blueUA}
+\setbeamercolor{dashedLine}{fg=redUA} 
+
+%Structures
+\setbeamercolor*{frametitle}{fg=blueUA}
+\setbeamercolor*{framesubtitle}{fg=white}
+
+%Text
+\setbeamercolor*{normal text}{fg=black, bg=white}
+\setbeamercolor*{structure}{fg=white, bg=white}
+\setbeamercolor*{alerted text}{fg=redUA}
+
+%Items, footnotes and links
+\setbeamercolor*{item}{fg=purple}
+\setbeamercolor*{footnote mark}{fg=purple}
+\setbeamercolor*{footline}{fg=redUA} 
+\hypersetup{urlcolor=blue}
+
+%Blocks
+\setbeamercolor*{block title}{fg=white, bg=blueUA}
+\setbeamercolor*{block title example}{fg=white, bg=seagreen}
+\setbeamercolor*{block title alerted}{fg=white, bg=redUA}
+\setbeamercolor*{block body}{fg=blueUA, bg=gray!15!white}
+\usebeamercolor*{normal text}
+
+%Code listings
+\lstset{
+  basicstyle=\footnotesize\ttfamily,
+  breakatwhitespace=false,
+  breaklines=true,
+  commentstyle=\color{green!60!black},
+  extendedchars=true,
+  keywordstyle=\color{mediumslateblue},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stringstyle=\color{violet}
+}
+
+\mode<all> 

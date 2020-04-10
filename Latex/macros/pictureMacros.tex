@@ -1,0 +1,25 @@
+%Figures Macro  
+%\pic{scale}{figureName}{caption}{label}  
+\newcommand{\pic}[4]{
+\begin{figure}[H]
+\centering
+\includegraphics[scale=#1]{#2}
+\caption{#3} \label{#4}
+\end{figure}		}
+
+%\Dpic{figure1}{caption1}{label1}{figure2}{caption2}{label2}
+\newcommand{\Dpic}[6]{
+\begin{figure}{h}
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+  \label{isometric}
+    \includegraphics[width=\textwidth]{#1}
+    \caption{#2} \label{#3}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+  \label{side}
+    \includegraphics[width=\textwidth]{#4}
+    \caption{#5} \label{#6}
+  \end{minipage}
+\end{figure}         }

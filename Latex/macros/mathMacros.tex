@@ -1,0 +1,19 @@
+%Rename math commands
+\everymath{\displaystyle} %display style for everymath 
+\newcommand{\B}{\left}	  
+\newcommand{\E}{\right}
+\newcommand{\Acronym}[2]{\B( #1_{_{#2}}\E)}
+\newcommand{\Avg}[1]{\langle#1\rangle}
+\newcommand{\Parenthesis}[1]{\B(#1\E)}
+\newcommand{\SqBracket}[1]{\B[#1\E]}
+\newcommand{\Partial}[1]{\Sub{\partial}{#1}} 
+\newcommand{\PartialFrac}[2]{\frac{\partial #1}{\partial #2}} 
+\newcommand{\PartialFracN}[3]{\frac {\Up{\partial}{#3} #1}{\partial \Up{#2}{#3}}} 
+\newcommand{\Dsub}[3]{#1_{_{#2}\Parenthesis{#3}}}	
+\newcommand{\Dup}[3]{#1^{^{#2}}_{\Parenthesis{#3}}}
+\newcommand{\Sub}[2]{#1_{_{#2}}} 
+\newcommand{\Up}[2]{#1^{^{#2}}} 
+\newcommand{\UpSub}[3]{#1_{_{#2}}^{^{#3}}}
+\newcommand{\Result}[1]{\bm{\boxed{#1}}}
+\newcommand{\Limit}[2]{\underset{#1\rightarrow#2}{\lim}} 
+\newcommand{\Function}[2]{#1_{\Parenthesis{#2}}} 

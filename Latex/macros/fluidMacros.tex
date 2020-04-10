@@ -1,0 +1,63 @@
+% Continuity Eq. 
+\newcommand{\continuityVec}
+{   \dot{\rho} + \nabla\cdot\Parenthesis{ \rho\vec{V} }   }
+
+% Continuity Eq. - Cartesian coordinates  
+\newcommand{\continuityCartesian} %continuityEqExpanded (former name)
+{ \dot{\rho} + \PartialFrac{\Parenthesis{\rho u}}{x} + \PartialFrac{\Parenthesis{ \rho v}}{y} + \PartialFrac{\Parenthesis{\rho w}}{z} }
+
+% Continuity Eq. - Cylindrical coordinates 
+\newcommand{\continuityCylindrical} 
+{ \dot{\rho} + \frac{1}{r}\PartialFrac{ }{r}\Parenthesis{ \rho r\Sub{v}{r} } + \frac{1}{r}\PartialFrac{ }{\theta}\Parenthesis{\rho\Sub{v}{\theta}} + \PartialFrac{ }{z}\Parenthesis{\rho\Sub{v}{z}} }
+
+% Continuity Eq. - Spherical coordinates 
+\newcommand{\continuitySpherical} 
+{ \dot{\rho} + \frac{1}{r^2}\PartialFrac{}{r}\Parenthesis{ \rho r^2\Sub{v}{r} } + \frac{1}{ r\sin(\theta) }\PartialFrac{}{\theta}\Parenthesis{ \rho\sin(\theta)\Sub{v}{\theta} } + \frac{1}{ r\sin(\theta) }\PartialFrac{}{\phi}\Parenthesis{ \rho\Sub{v}{\phi} } }
+
+% Incompressible Navier Stokes Eq - Material derivative 
+\newcommand{\incompressibleNavierStokesMaterial} 
+{ \rho\frac{D\vec{V}}{Dt} = -\nabla P + \mu \Up{\nabla}{2}V + \Sub{B}{f} }
+
+% Incompressible Navier Stokes Eq. - Vector notation  
+\newcommand{\incompressibleNavierStokesVec} 
+{   \rho\Parenthesis{ \dot{V} + \Parenthesis{\vec{V}\cdot\nabla}V } = -\nabla P + \mu \Up{\nabla}{2}V + \Sub{B}{f}  }
+
+% Incompressible Navier Stokes Eq - Vector Expanded
+\newcommand{\incompressibleNavierStokesCartesian}[2] %\incompressibleNavierStokesExpanded %\incompressibleNavierStokesCartesian{u}{x}
+{ \rho\Parenthesis{ \dot{#1} + u\PartialFrac{#1}{x} + v\PartialFrac{#1}{y} + w\PartialFrac{#1}{z} } = -\PartialFrac{P}{#2} + \mu\Parenthesis{ \PartialFracN{#1}{x}{2} + \PartialFracN{#1}{y}{2} + \PartialFracN{#1}{z}{2} } + \Sub{f}{#2} }
+
+% Incompressible Navier Stokes Eq. - Cylindrical on r direction 
+\newcommand{\incompressibleNavierStokesCylindricalR} 
+{ \rho\Parenthesis{ \Sub{\dot{v}}{r} + \Sub{v}{r}\PartialFrac{\Sub{v}{r}}{r} + \frac{\Sub{v}{\theta}}{r}\PartialFrac{\Sub{v}{r}}{\theta} +                                                -\frac{\Sub{v}{\theta}^2 }{r} + \Sub{v}{z}\PartialFrac{\Sub{v}{r}}{z}}  =   - \PartialFrac{P}{r}  + \mu\Parenthesis{ \frac{1}{r}\PartialFrac{}{r}\Parenthesis{r\PartialFrac{\Sub{v}{r}}{r} } - \frac{\Sub{v}{r}}{r^2}  + \frac{1}{r^2}\PartialFracN{\Sub{v}{r}}{\theta}{2} - \frac{2}{r^2}\PartialFrac{\Sub{v}{r}}{\theta} +  \PartialFracN{\Sub{v}{r}}{z}{2}  } + \Sub{f}{r} }
+
+% Incompressible Navier Stokes Eq. - Cylindrical on theta direction 
+\newcommand{\incompressibleNavierStokesCylindricalTheta} 
+{ \rho\Parenthesis{ \Sub{\dot{v}}{\theta} + \Sub{v}{r}\PartialFrac{\Sub{v}{\theta}}{r} + \frac{\Sub{v}{\theta}}{r}\PartialFrac{\Sub{v}{\theta}}{\theta} +                                \frac{\Sub{v}{r}\Sub{v}{\theta}}{r} + \Sub{v}{z}\PartialFrac{\Sub{v}{\theta}}{z}}  = -           \frac{1}{r}\PartialFrac{P}{\theta} + \mu\Parenthesis{  \frac{1}{r}\PartialFrac{}{r}\Parenthesis{r\PartialFrac{\Sub{v}{\theta}}{r} } - \frac{\Sub{v}{\theta}}{r^2}  +  \frac{1}{r^2}\PartialFracN{\Sub{v}{\theta}}{\theta}{2} +                                             \frac{2}{r^2}\PartialFrac{\Sub{v}{r}}{\theta} +  \PartialFracN{\Sub{v}{\theta}}{z}{2}  } + \Sub{f}{\theta} } 
+
+% Incompressible Navier Stokes Eq. - Cylindrical on z direction 
+\newcommand{\incompressibleNavierStokesCylindricalZ} 
+{  \rho\Parenthesis{ \Sub{\dot{v}}{z} + \Sub{v}{r}\PartialFrac{\Sub{v}{z}}{r} + \frac{\Sub{v}{\theta}}{r}\PartialFrac{\Sub{v}{z}}{\theta} + \Sub{v}{z}\PartialFrac{\Sub{v}{z}}{z} } = -\PartialFrac{P}{z} + \mu\Parenthesis{ \frac{1}{r}\PartialFrac{ }{r}\Parenthesis{r\PartialFrac{\Sub{v}{z}}{r}} + \frac{1}{r^2}\PartialFracN{\Sub{v}{z}}{\theta}{2} + \PartialFracN{\Sub{v}{z}}{z}{2} }+\Sub{f}{z}  } 
+
+% Non-dimensional Navier Stokes Eq. 
+\newcommand{\nonDimensionalNavierStokes} 
+{\SqBracket{St}\frac{D\vec{V}^*}{Dt^*} = -\SqBracket{Eu}\nabla^*P^*  +\SqBracket{\frac{1}{Re}}\nabla^{*^{2}}V^* + \SqBracket{\frac{1}{Fr^2}}g^* }
+
+% Material Derivative Eq. - Vector notation 
+\newcommand{\materialDerivativeVec}[1] %\materialDerivativeVec{\rho V}
+{   \frac{D}{Dt}\B(#1\E) = \frac{\partial}{\partial t}\B(#1\E) + \B(\vec{V}\cdot\nabla\E) #1   }
+
+% Shear Strain Tensor 
+\newcommand{\shearStrainTensor}
+{ \Sub{\varepsilon}{ij} = \frac{1}{2}\Parenthesis{ \PartialFrac{\Sub{v}{i}}{\Sub{x}{j}} + \PartialFrac{\Sub{v}{j}}{\Sub{x}{i}} } }
+
+% Shear Stress Tensor, Stokes Hypothesis is assumed  
+\newcommand{\shearStressTensor} 
+{ \Sub{\tau}{ij} = 2\mu\SqBracket{ \Sub{\varepsilon}{ij} + \lambda \Parenthesis{ \PartialFrac{\Sub{v}{k}}{\Sub{x}{k}}  }\Sub{\delta}{ij} }} 
+
+% Total Stress Tensor (Cauchy Momentum Tensor) 
+\newcommand{\cauchyMomentumTensor} %totalStressTensor 
+{ \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\tau}{ij} }
+
+% Incompressible Navier Stokes Eq. - Einstein's notation  
+\newcommand{\incompressibleNavierStokesEins}
+{   \rho\Parenthesis{ \Sub{\dot{V}}{k} + \Sub{V}{i}\Partial{j}\Sub{V}{k}\Sub{\delta}{ij} } = -\Partial{k}P + \mu\UpSub{\partial}{j}{2}\Sub{V}{k} + \Sub{f}{k}   }

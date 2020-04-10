@@ -1,0 +1,209 @@
+# ---------
+# Shortcuts
+# ---------
+alias vimrc='vimR ~/.vimrc;'   	                  	   	 #Access to bashrc
+alias bashrc='vimR ~/.bashrc;'                     	     #Access to vimrc
+alias audiokill='sudo nvram SystemAudioVolume=%00'       #Kill Volume, 80, 00, ' '
+alias privateIP='ipconfig getifaddr en0'                 #Local IP
+alias publicIP='curl ipecho.net/plain;echo'              #Public IP
+alias EMPTY='sudo rm -rf *'                              #Empty the Folder
+alias rerun='source ~/.zshrc && clc'                     #Resource bash
+alias superuser='sudo EDITOR=vim visudo' 		    	 #Access sudo commands
+alias stress='yes >/dev/null &'					    	 #Stress test killall yes
+alias MAC='system_profiler SPHardwareDataType'           #Display System's information
+alias pyInstall='python3.7 -m pip install'               #Install python 3.7 packages
+alias rsize='resize -s 5 70 >/dev/null && clc'           #Resize og window's size
+alias wsize='resize -s 22 90 >/dev/null && clc'          #Resize windows size    
+alias fsize='resize -s 0 0 >/dev/null && clc'            #Resize full screen    
+alias windows='op /Applications/Parallels\ Desktop.app/' #Launch windows
+alias zoom='opa zoom.us.app'                             #Launch Zoom App
+alias vpn='opa /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Client.app/' #Launch Cisco
+alias tecPlot='op /Applications/Tecplot\ 360\ EX\ 2019\ R1/Tecplot\ 360\ EX\ 2019\ R1.app/'         #Launch tecplot
+alias pipUpdate='pip-review --local --interactive'       #Update python packages 
+alias macUpdate='sudo softwareupdate -ir --restart'		 #Update MACsoftware 
+alias brewUpdate='brew update; brew upgrade;
+				  brew cleanup; brew doctor'			 #Update,cleanup homebrew
+
+
+# --------
+# Commands
+# --------
+alias grep='ggrep --color=always'  #better than grep
+alias sed='gsed'				   #GNU sed 
+alias tar='gtar'				   #GNU tar 
+alias which='gwhich'			   #GNU which
+alias top='htop'				   #better than top
+alias loc='curl ipinfo.io'		   #Ip,gps,etc
+alias speed='speedtest-cli'        #Check internet speed
+alias manex='tldr'				   #tldr
+alias cat='ccat --color=auto' 	   #ccat
+alias ls='ls --color=auto -NF'     #ls
+alias op='open'                    #open
+alias opa='open -a'                #open -a
+alias clc='clear'                  #clear
+alias python='python3.7'		   #Python 3.7
+alias sp2com="sed -i 's/[[:space:]]\+/,/g'" #space file to comma file 
+
+#Backup directories 
+alias .='cd ../; ls' 
+alias ..='cd ../../; ls'
+alias ...='cd ../../../; ls' 
+alias ....='cd ../../../../; ls'
+alias .....='cd ../../../../../; ls' 
+
+
+# -------
+# Folders
+# -------
+alias sshGrid='ssh mliza@hpc.arizona.edu'                #Login into UoA HPC
+alias sshTorrentBox='ssh -CXY pi@10.3.74.214'            #Login into Torrent Box
+alias books='cd ~/Documents/Books'                       #Path to Books
+alias app='cd ~/Documents/Documents/"Application Files"' #Path to Application Docs
+alias research='cd ~/Documents/Documents/Research'       #Path to Research
+alias schools='cd ~/Documents/Documents/Schools'		 #Path to Schools
+alias drive='cd /Users/Martin/Google\ Drive'             #Path to Google Drive
+alias UoA='schools; cd UoA/Courses'                      #Path to UoA coursers 
+
+
+# --------
+# Websites
+# --------
+alias RAPTOR='open https://spcsvn.epfl.ch/repos/RAPTOR/'  #Open RAPTOR
+alias ComLog='open https://logbook.tok.ipp.cas.cz'        #Open COMPASS log
+alias ComDat='open https://webcdb.tok.ipp.cas.cz'         #Open COMPASS data
+alias facebook='open https://www.facebook.com'            #Open Facebook
+alias UAccess='open https://uaccess.arizona.edu'          #Open UAcces
+alias d2l='open https://d2l.arizona.edu/d2l/loginh/'      #Open D2L
+alias quora='open https://www.quora.com'                  #Open quora 
+alias netflix='open https://netflix.com'                  #Open Netflix 
+alias hulu='open https://hulu.com'                        #Open Hulu
+alias pythonDoc='open https://docs.python.org'			  #Python documentation 
+alias pipDoc='open https://pypi.org'			  		  #Python packages
+alias numpyDoc='open https://docs.scipy.org/doc/'         #numpy documentation
+alias cppDoc='open http://www.cplusplus.com/\
+reference/ >/dev/null'	  								  #C++ reference 
+alias matlabDoc='open https://www.mathworks.com/help/\
+matlab/referencelist.html?listtype=alpha >/dev/null'  	  #Matlab documentation
+alias djangoDoc='open https://docs.djangoproject.com/\
+en/2.2/ >/dev/null'                                       #django documentation 
+
+
+# ---------
+# Functions
+# ---------
+vimR() { #Opens vim in 1/4 of screen and resizes terminal back after exiting vim
+local prevSize=($LINES $COLUMNS)
+resize -s 0 0 >/dev/null;
+a=$(expr $LINES / 2); b=$(expr $COLUMNS / 2) #split screen on 4
+resize -s $a $b >/dev/null;
+vim "$@";
+resize -s ${prevSize[0]} ${prevSize[1]} >/dev/null;
+}
+
+#Open 4 files in vim
+v4W() { #$4 Top Left, $2 Top Right, $1 Bottom Left, $3 Bottom Right
+local prevSize=($LINES $COLUMNS)
+resize -s 0 0 >/dev/null;
+vim "$4" -c "split $2" -c "vsplit $1" -c 'wincmd j' -c "vsplit $3";
+resize -s ${prevSize[0]} ${prevSize[1]} >/dev/null;
+}
+
+#Open man pages in preview
+preman() { man -t $@ | open -f -a "Preview"; } 
+
+#Convert .wmv to .mp4 
+wmv2mp4() { ffmpeg -i $1 -c:v libx264 -crf 23 $2; } 
+
+#Google search
+goog() { opa Safari "http://www.google.com/search?q= $1"; }
+
+#Youtube search
+youtube() { opa Safari "https://www.youtube.com/results?search_query= $1"; }
+
+#Transfer files to Linux
+transferLinux() { scp -r $1 martin@192.168.0.16:/home/martin/Desktop/Transfer; }
+
+#Transfer files to Linux
+transferToiMAC() { scp -r $1 $IMAC:/Users/Martin/Desktop/Transfer; }
+
+#Transfer files from IMAC
+transferFromiMAC() { scp -r $IMAC:/Users/Martin/Desktop/Transfer/* /Users/Martin/Desktop/Transfer; }
+
+#Transfer files to Grid
+transferToGrid() { scp -r $1 mliza@filexfer.hpc.arizona.edu:/home/u22/mliza/Transfer; }
+transferFromGrid() { scp -r mliza@filexfer.hpc.arizona.edu:/home/u22/mliza/Transfer/* /Users/Martin/Desktop/Transfer; }
+
+#Weather
+weather() { curl http://wttr.in/~$1; }
+weather2() { diff -Naur <(curl -s http://wttr.in/~$1) <(curl -s http://wttr.in/~$2); }
+
+#Battery level 
+Battery=$(pmset -g batt | sed -e 's/;//g' -e '1d' | awk '{print $3}')   
+
+#GPS Location 
+Location=$(corelocationcli -format %address | sed -e '1d' -e '3d' | awk '{print $1}') 
+
+#Current Temperature in Celsius using GPS location 
+Temp=$(ansiweather -l "$Location" -a false | awk '{print $4 $5}')		
+
+#Current Git branch 
+gitBranch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ {\1}/' 
+}
+
+#Creates a latex project folder - latexProject "folderName" "fileName" 
+alias latexProject='$SCRIPTS/Python/latexProject.py' 
+
+#Launch matlab with my configuration 
+alias mymatlab='cd $SCRIPTS/Matlab; matlab -nodesktop -nosplash'
+
+#Launch compiler function 
+alias build='$SCRIPTS/Python/build.py'
+
+# ----------------
+# Customize Prompt
+# ----------------
+#https://misc.flogisoft.com/bash/tip_colors_and_formatting
+PS1="\[\e[0;49;91m[ \d @ \A @ $Temp ]\e[m\] \[\e[0;32m|$Battery|\e[m\]\
+ \[\e[0;35m/\\W \e[m\] \n\[\e[1;33m >>\e[0;39m\] "				
+#PS1="\[\e[0;49;91m[ \d @ \A @ $Temp ]\e[m\] \[\e[0;32m|$Battery|$(gitBranch)\e[m\]\
+# \[\e[0;35m/\\W \e[m\] \n\[\e[1;33m >>\e[0;39m\] "				
+
+export CLICOLOR=1   					    #Ref https://geoff.greer.fm/lscolors/
+export LSCOLORS=ExFxCxDxBxgxexgxbxhxgx	    #Set Color Scheme
+export BASH_SILENCE_DEPRECATION_WARNING=1   #Silence warnings
+
+# ----------------------
+# Program Configurations 
+# ----------------------
+eval $(thefuck --alias)					#Configure the fuck command
+set -o vi 								#Set Vim mode in terminal
+export HISTSIZE=10000 					#Number of commands to remember 
+export HISTFILESIZE=10000			    #Number of lines contained in the history
+export HISTCONTROL=ignoredups			#Ignore duplicates in history 
+export EDITOR="/usr/local/bin/vim"		#Vim as default editor
+export PAGER="col -b | vim -R -c 'set ft=man nomod nolist' -" #Vim for man page 
+
+#Get color in Manual Pages
+man() {
+env \
+LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+LESS_TERMCAP_md=$(printf "\e[1;31m") \
+LESS_TERMCAP_me=$(printf "\e[0m") \
+LESS_TERMCAP_se=$(printf "\e[0m") \
+LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+LESS_TERMCAP_ue=$(printf "\e[0m") \
+LESS_TERMCAP_us=$(printf "\e[1;32m") \
+man "$@"
+}
+
+# -----------------------
+# Environmental Variables 
+# -----------------------
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" #GNU core utilities  
+export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH" #GNU find utilities  
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"  		#MacPorts packages 
+export PATH="/Applications/Matlab.app/bin/:$PATH"   		#Export matlab
+export PATH="/usr/local/opt/:$PATH"							#Homebrew packages 
+export PATH="/usr/local/sbin:$PATH"							#Unbound packages 
+export SCRIPTS="/Users/Martin/Documents/Documents/gitRepo/Scripts" #Scripts 

@@ -1,0 +1,79 @@
+\mode<presentation> 
+
+%Def: specifies the "border, outside" of the frames
+% such as titles, logos 
+
+%Title page 
+\defbeamertemplate*{title page}{UoA}[1][] 
+{ 
+	\setcounter{framenumber}{0} 
+	
+	%Insert top logo 
+	\begin{center} 
+		\vspace*{0.3cm} %\hspace*{7.7cm} 
+		\includegraphics[scale=0.5]{topLogo.png}
+	\end{center} 
+	
+	%Insert title  
+	\vspace{0.2cm}
+	\usebeamercolor[fg]{title}
+	\usebeamerfont{title} 
+	\inserttitle
+	\vspace*{-0.3cm} 
+
+	%Insert dashed line 
+	\begin{pgfpicture}
+		\usebeamercolor[fg]{dashedLine}  
+		\pgfsetlinewidth{2pt} 
+		\pgfsetroundcap 
+		\pgfsetdash{{1pt}{4pt}}{0cm} 
+      	\pgfpathmoveto{\pgfpoint{0mm}{0mm}}
+     	\pgfpathlineto{\pgfpoint{\textwidth}{0mm}}
+      	\pgfusepath{stroke}
+	\end{pgfpicture} 
+
+	%Insert author + date 	
+    \usebeamerfont{author}
+	\vspace*{0.5cm} 
+    \usebeamercolor[fg]{author}
+    \begin{minipage}{\textwidth}
+    	\raggedright
+    	\insertauthor\\
+    	\insertdate
+    \end{minipage}
+	
+	%Insert bottom logo 
+	\begin{center} 
+		\includegraphics[scale=0.3]{titleLogo.png}
+	\end{center} 
+}
+
+\defbeamertemplate*{frametitle}{UoA}[1]
+{	
+	%Insert frame title 
+	\begin{flushleft} 
+		\vspace{0.5cm} 
+		\usebeamercolor[fg]{frametitle}
+		\usebeamerfont{frametitle}
+		\insertframetitle\par
+	\end{flushleft}
+
+	%Insert corner picture 
+	\begin{flushright} 
+		\vspace*{-2.2cm} \hspace*{7.7cm} 
+		\includegraphics[scale=0.05]{sideLogo.png}
+	\end{flushright}
+
+	%Insert frame number 
+	\begin{tikzpicture}[overlay] 
+		\node[anchor=south west] at (10.7,-7) 
+		{
+			\usebeamerfont{footline} 
+			\usebeamercolor[fg]{footline} 
+			\insertframenumber/\inserttotalframenumber 
+		};
+	\end{tikzpicture}
+}
+
+\mode<all> 
+

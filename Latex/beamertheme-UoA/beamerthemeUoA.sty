@@ -1,0 +1,20 @@
+\mode<presentation>
+
+%Def: main presentation file, it creates the main
+% theme and calls color, font, inner and outer .sty
+
+%Require Packages  
+\RequirePackage{tikz} 
+\RequirePackage{listings}
+\RequirePackage{fontenc} 
+
+%Look for the rest of hte .sty files 
+\useinnertheme{UoA} %This path calls the other .sty 
+\useoutertheme{UoA} %This path calls the other .sty 
+\usecolortheme{UoA} %This path calls the other .sty 
+\usefonttheme{UoA} %This path calls the other .sty 
+
+%Beamer template 
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+\mode<all> 

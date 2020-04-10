@@ -1,0 +1,45 @@
+\documentclass[12pt]{report}
+\usepackage[top=1in, bottom=1in, right=1in, left=1in]{geometry} %paper size 
+\usepackage{indentfirst} %indent first line in every paragraph  
+\usepackage{amssymb}%load numerate letters
+\usepackage{enumitem}%load math notations 
+\usepackage{amsfonts} %load more math fonts
+\usepackage{graphicx} %load graph
+\usepackage[usenames,dvipsnames]{color} %load color 
+\usepackage{cancel}% cancel a term 
+\usepackage{amsmath}%box an equation 
+\usepackage{bm} %bold everything also Greek letter
+\usepackage{lipsum,lmodern} %generates text filler 
+\usepackage{float} %force a figure to stay in a location 
+\usepackage{caption}  %figure captions
+\usepackage{subcaption} %figure sub captions 
+\usepackage{sidecap} %SC figure 
+\usepackage{tikz} %lets you draw 
+\usepackage[most]{tcolorbox} %color box
+\usepackage{color,soul}%highlight 
+\usepackage{scrlayer-scrpage} %allows to control page footages and headers  
+\usepackage{lastpage} %footage
+\usepackage{blindtext} %headers
+\usepackage[toc,page]{appendix} %appendix
+\usepackage[hidelinks]{hyperref} %hyper link references
+\usepackage{esint,relsize} %mathlarge
+\usepackage{comment} %comment out
+\usepackage{pdfpages} %insert PDF files 
+\restylefloat{table} %float table 
+\graphicspath{{figures/}} %Setting the graphicspath 
+%\usepackage[backend=biber]{bibliatex} %only use if you are not building a bibiliography
+
+%Headers/footers   
+\clearscrheadfoot
+\ofoot{Page \textbf{\thepage} of \textbf{\pageref{LastPage}}} %page numbers 
+
+%New Commands Text
+\newcommand{\MyName}{My Name}   %my name
+\newcommand{\DocumentName}{Document Name} %document name
+\renewcommand{\chaptername}{Lecture}  %rename chapter name to lecture 
+
+%Rename Commands Text
+\renewcommand\thesubsection{\alph{subsection})} 	%subsection 
+\renewcommand\thesection{\arabic{section}.} 		%section
+\renewcommand{\theenumi}{(\roman{enumi})} 			%enumerate sections
+\renewcommand{\labelenumi}{\theenumi} 				%enumerate subsections

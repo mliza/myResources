@@ -1,0 +1,20 @@
+%Beamer Macro 
+%\textPicture{frameTitle}{text}{pictureHeigh}{pictureName} 
+\newcommand{\textPicture}[4]
+{ 
+	\begin{frame}{#1} 
+		\vspace{-1.5cm}
+		\begin{columns}[T] 
+			%Insert Text 
+			\begin{column}[T]{5cm}
+				{#2} 
+			\end{column}
+		
+			%Insert Picture 
+			\begin{column}[T]{4cm} 
+				\includegraphics[height=#3cm]{#4} 
+			\end{column} 
+		\end{columns} 
+	\end{frame} 
+}
+

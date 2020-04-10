@@ -1,0 +1,62 @@
+\documentclass[12pt]{letter} % 10pt font size default, 11pt and 12pt are also possible
+\usepackage{geometry} % Required for adjusting page dimensions
+\setlength\parindent{24pt} %for indentation , comment out if no needed
+\usepackage{graphicx} %images 
+\usepackage{comment} %block-comments
+\longindentation=0pt % Un-commenting this line will push the closing "Sincerely," to the left of the page
+\usepackage{pdfpages} %Lets you insert a pdf file
+\usepackage[backend=biber]{biblatex} 
+
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	top=2.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin
+	left=2.5cm, % Left margin
+	right=2.5cm, % Right margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage{stix} % Use the Stix font by default
+\usepackage{microtype} % Improve justification
+
+
+\signature{\vspace{-50pt} Martin E. Liza} % Your name for the signature at the bottom
+% \address{255 North Granada Ave., apt. 1033 \\ Tucson, AZ 23507, 85701 USA \\ (973) 306-7526} % Your address and phone number
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{letter}{The University of Arizona,\\ Aerospace and Mechanical Engineering Department  } % Name/title of the addressee
+
+\opening{\noindent\textbf{Dear Sir or Madam, }}
+
+
+
+\indent Thank you very much for considering my application and I am looking forward to hearing back from you \\ 
+%\begin{comment}
+
+\begin{comment}
+\begin{minipage}{1.1\linewidth}
+\begin{flushright}
+\vspace{3\parskip } % Extra whitespace for aesthetics
+\closing{Sincerely,\\ 
+\vspace{3pt}\includegraphics[width=0.5\linewidth]{../PDF/Signature} }\vspace{2\parskip}
+\end{flushright}
+\end{minipage}
+\end{comment}
+
+
+
+\end{letter}
+\end{document}
+
+
+
