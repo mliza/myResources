@@ -28,11 +28,11 @@
 
 % Incompressible Navier Stokes Eq. - Cylindrical on r direction 
 \newcommand{\incompressibleNavierStokesCylindricalR} 
-{ \rho\Parenthesis{ \Sub{\dot{v}}{r} + \Sub{v}{r}\PartialFrac{\Sub{v}{r}}{r} + \frac{\Sub{v}{\theta}}{r}\PartialFrac{\Sub{v}{r}}{\theta} +                                                -\frac{\Sub{v}{\theta}^2 }{r} + \Sub{v}{z}\PartialFrac{\Sub{v}{r}}{z}}  =   - \PartialFrac{P}{r}  + \mu\Parenthesis{ \frac{1}{r}\PartialFrac{}{r}\Parenthesis{r\PartialFrac{\Sub{v}{r}}{r} } - \frac{\Sub{v}{r}}{r^2}  + \frac{1}{r^2}\PartialFracN{\Sub{v}{r}}{\theta}{2} - \frac{2}{r^2}\PartialFrac{\Sub{v}{r}}{\theta} +  \PartialFracN{\Sub{v}{r}}{z}{2}  } + \Sub{f}{r} }
+{ \rho\Parenthesis{ \Sub{\dot{v}}{r} + \Sub{v}{r}\PartialFrac{\Sub{v}{r}}{r} + \frac{\Sub{v}{\theta}}{r}\PartialFrac{\Sub{v}{r}}{\theta} -\frac{\Sub{v}{\theta}^2 }{r} + \Sub{v}{z}\PartialFrac{\Sub{v}{r}}{z}}  =   - \PartialFrac{P}{r}  + \mu\Parenthesis{ \frac{1}{r}\PartialFrac{}{r}\Parenthesis{r\PartialFrac{\Sub{v}{r}}{r} } -\frac{\Sub{v}{r}}{r^2}  + \frac{1}{r^2}\PartialFracN{\Sub{v}{r}}{\theta}{2} - \frac{2}{r^2}\PartialFrac{\Sub{v}{r}}{\theta} +  \PartialFracN{\Sub{v}{r}}{z}{2}  } + \Sub{f}{r} }
 
 % Incompressible Navier Stokes Eq. - Cylindrical on theta direction 
 \newcommand{\incompressibleNavierStokesCylindricalTheta} 
-{ \rho\Parenthesis{ \Sub{\dot{v}}{\theta} + \Sub{v}{r}\PartialFrac{\Sub{v}{\theta}}{r} + \frac{\Sub{v}{\theta}}{r}\PartialFrac{\Sub{v}{\theta}}{\theta} +                                \frac{\Sub{v}{r}\Sub{v}{\theta}}{r} + \Sub{v}{z}\PartialFrac{\Sub{v}{\theta}}{z}}  = -           \frac{1}{r}\PartialFrac{P}{\theta} + \mu\Parenthesis{  \frac{1}{r}\PartialFrac{}{r}\Parenthesis{r\PartialFrac{\Sub{v}{\theta}}{r} } - \frac{\Sub{v}{\theta}}{r^2}  +  \frac{1}{r^2}\PartialFracN{\Sub{v}{\theta}}{\theta}{2} +                                             \frac{2}{r^2}\PartialFrac{\Sub{v}{r}}{\theta} +  \PartialFracN{\Sub{v}{\theta}}{z}{2}  } + \Sub{f}{\theta} } 
+{ \rho\Parenthesis{ \Sub{\dot{v}}{\theta} + \Sub{v}{r}\PartialFrac{\Sub{v}{\theta}}{r} + \frac{\Sub{v}{\theta}}{r}\PartialFrac{\Sub{v}{\theta}}{\theta} + \frac{\Sub{v}{r}\Sub{v}{\theta}}{r} + \Sub{v}{z}\PartialFrac{\Sub{v}{\theta}}{z}}  = - \frac{1}{r}\PartialFrac{P}{\theta} + \mu\Parenthesis{  \frac{1}{r}\PartialFrac{}{r}\Parenthesis{r\PartialFrac{\Sub{v}{\theta}}{r} } - \frac{\Sub{v}{\theta}}{r^2}  +  \frac{1}{r^2}\PartialFracN{\Sub{v}{\theta}}{\theta}{2} + \frac{2}{r^2}\PartialFrac{\Sub{v}{r}}{\theta} + \PartialFracN{\Sub{v}{\theta}}{z}{2}  } + \Sub{f}{\theta} } 
 
 % Incompressible Navier Stokes Eq. - Cylindrical on z direction 
 \newcommand{\incompressibleNavierStokesCylindricalZ} 
