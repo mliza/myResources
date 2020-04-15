@@ -36,7 +36,7 @@
 
 % Laplace operator - Spherical coordinates 
 \newcommand{\laplaceSpherical}[1] %laplaceSpherical{f} 
-{ \frac{1}{r^2}\PartialFrac{}{r}\Parenthesis{r^2\PartialFrac{#1}{r}} + \frac{1}{r^2\sin\Parenthesis{\theta}}\PartialFrac{}{\theta}\Parenthesis{\sin\Parenthesis{\theta}\PartialFrac{#1}{\theta}} + \frac{1}{r^2\sin\Parenthesis{\theta}}\PartialFracN{f}{\phi}{2} }
+{ \frac{1}{r^2}\PartialFrac{}{r}\Parenthesis{r^2\PartialFrac{#1}{r}} + \frac{1}{r^2\sin\Parenthesis{\theta}}\PartialFrac{}{\theta}\Parenthesis{\sin\Parenthesis{\theta}\PartialFrac{#1}{\theta}} + \frac{1}{r^2\sin\Parenthesis{\theta}}\PartialFracN{#1}{\phi}{2} }
 
 % Dot Product - Einstein's notation 
 \newcommand{\dotEins}[4] %\dotEins{A}{i}{B}{j} 
