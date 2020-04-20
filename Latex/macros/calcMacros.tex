@@ -56,7 +56,7 @@
 
 %  Leibniz Integral Rule
 \newcommand{\leibnizIntegral} 
-{ \frac{d}{dx}\Parenthesis{\int^{b}_{a}\Function{f}{x,t}dt} = \Function{f}{x,b} + \int^{b}_{a}\PartialFrac{ }{x} \Function{f}{x,t}dt }  
+{ \frac{d}{dx}\int^{b}_{a}\Function{f}{x,t}dt = \SqBracket{ \Function{f}{x,b}\PartialFrac{b}{x} - \Function{f}{x,a}\PartialFrac{a}{x} } + \int^{b}_{a}\PartialFrac{ }{x} \Function{f}{x,t}dt }  
 
 % Taylor Series 
 \newcommand{\taylorSeries} 
