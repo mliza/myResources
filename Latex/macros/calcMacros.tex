@@ -54,6 +54,10 @@
 \newcommand{\divergenceTheorem}[1] %\divergenceTheorem{F}
 { \Sub{\iiint}{V}\Parenthesis{\nabla\cdot\vec{#1}}dV = \Sub{\oiint}{S}\Parenthesis{\vec{#1}\cdot\hat{n}}dS } 
 
+%  Leibniz Integral Rule
+\newcommand{\leibnizIntegral} 
+{ \frac{d}{dx}\Parenthesis{\int^{b}_{a}\Function{f}{x,t}dt} = \Function{f}{x,b} + \int^{b}_{a}\PartialFrac{ }{x} \Function{f}{x,t}dt }  
+
 % Taylor Series 
 \newcommand{\taylorSeries} 
 { \sum_{n=1}^{\infty}\frac{f^{(n)}(a)}{n!}\B(x-a\E)^n }
