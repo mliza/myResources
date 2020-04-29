@@ -1,3 +1,11 @@
+% Material Derivative Eq. - Vector notation 
+\newcommand{\materialDerivativeVec}[1] %\materialDerivativeVec{\rho V}
+{   \frac{D}{Dt}\B(#1\E) = \frac{\partial}{\partial t}\B(#1\E) + \B(\vec{V}\cdot\nabla\E) #1   }
+
+% Reynolds Transport Theorem 
+\newcommand{\reynoldsTransportTheorem}[1] %\reynoldsTransportTheorem{\vec{F}} 
+{ \frac{D}{Dt}\int_{C\forall}#1d\forall = \int_{C\forall}\PartialFrac{#1}{t}d\forall + \oint_{CS} \Parenthesis{ \Sub{\vec{V}}{C\forall} \cdot \hat{n} }#1dS }
+
 % Continuity Eq. 
 \newcommand{\continuityVec}
 {   \dot{\rho} + \nabla\cdot\Parenthesis{ \rho\vec{V} }   }
@@ -38,13 +46,13 @@
 \newcommand{\incompressibleNavierStokesCylindricalZ} 
 {  \rho\Parenthesis{ \Sub{\dot{v}}{z} + \Sub{v}{r}\PartialFrac{\Sub{v}{z}}{r} + \frac{\Sub{v}{\theta}}{r}\PartialFrac{\Sub{v}{z}}{\theta} + \Sub{v}{z}\PartialFrac{\Sub{v}{z}}{z} } = -\PartialFrac{P}{z} + \mu\Parenthesis{ \frac{1}{r}\PartialFrac{ }{r}\Parenthesis{r\PartialFrac{\Sub{v}{z}}{r}} + \frac{1}{r^2}\PartialFracN{\Sub{v}{z}}{\theta}{2} + \PartialFracN{\Sub{v}{z}}{z}{2} }+\Sub{f}{z}  } 
 
+% Incompressible Navier Stokes Eq. - Einstein's notation  
+\newcommand{\incompressibleNavierStokesEins}
+{   \rho\Parenthesis{ \Sub{\dot{V}}{k} + \Sub{V}{i}\Partial{j}\Sub{V}{k}\Sub{\delta}{ij} } = -\Partial{k}P + \mu\UpSub{\partial}{j}{2}\Sub{V}{k} + \Sub{f}{k}   }
+
 % Non-dimensional Navier Stokes Eq. 
 \newcommand{\nonDimensionalNavierStokes} 
 {\SqBracket{St}\frac{D\vec{V}^*}{Dt^*} = -\SqBracket{Eu}\nabla^*P^*  +\SqBracket{\frac{1}{Re}}\nabla^{*^{2}}V^* + \SqBracket{\frac{1}{Fr^2}}g^* }
-
-% Material Derivative Eq. - Vector notation 
-\newcommand{\materialDerivativeVec}[1] %\materialDerivativeVec{\rho V}
-{   \frac{D}{Dt}\B(#1\E) = \frac{\partial}{\partial t}\B(#1\E) + \B(\vec{V}\cdot\nabla\E) #1   }
 
 % Shear Strain Tensor 
 \newcommand{\shearStrainTensor}
@@ -58,6 +66,3 @@
 \newcommand{\cauchyMomentumTensor} %totalStressTensor 
 { \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\tau}{ij} }
 
-% Incompressible Navier Stokes Eq. - Einstein's notation  
-\newcommand{\incompressibleNavierStokesEins}
-{   \rho\Parenthesis{ \Sub{\dot{V}}{k} + \Sub{V}{i}\Partial{j}\Sub{V}{k}\Sub{\delta}{ij} } = -\Partial{k}P + \mu\UpSub{\partial}{j}{2}\Sub{V}{k} + \Sub{f}{k}   }
