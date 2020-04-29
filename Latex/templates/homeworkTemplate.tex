@@ -27,6 +27,7 @@
 \usepackage{esint,relsize} %mathlarge
 \usepackage{comment} %comment out
 \usepackage{pdfpages} %insert PDF files 
+\usepackage{footmisc} %allows footnote references 
 \restylefloat{table} %float table 
 \graphicspath{{figures/}} %Setting the graphicspath 
 %\usepackage[backend=biber]{bibliatex} %only use if you are not building a bibiliography
@@ -42,9 +43,10 @@
 \ofoot{Page \textbf{\thepage} of \textbf{\pageref{LastPage}}} %page numbers 
 
 %Modify clickable links color 
-\hypersetup{ colorlinks=true,           %active color links 
-             urlcolor=blue,             %url link color 
-             linkcolor=black            %change link color
+\hypersetup{ colorlinks={true},           %active color links 
+             urlcolor={blue},             %url link color 
+             linkcolor={black},            %change link color
+             citecolor={blue}   
            }
             
 
