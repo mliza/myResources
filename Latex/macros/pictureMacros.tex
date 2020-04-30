@@ -9,15 +9,15 @@
 
 %\Dpic{figure1}{caption1}{label1}{figure2}{caption2}{label2}
 \newcommand{\Dpic}[6]{
-\begin{figure}{h}
+    \begin{figure}[H]
   \centering
-  \begin{minipage}[b]{0.4\textwidth}
+  \begin{minipage}[b]{0.45\textwidth}
   \label{isometric}
     \includegraphics[width=\textwidth]{#1}
     \caption{#2} \label{#3}
   \end{minipage}
   \hfill
-  \begin{minipage}[b]{0.4\textwidth}
+  \begin{minipage}[b]{0.45\textwidth}
   \label{side}
     \includegraphics[width=\textwidth]{#4}
     \caption{#5} \label{#6}
