@@ -48,11 +48,11 @@
 
 % Stokes Theorem 
 \newcommand{\stokesTheorem}[1] %\stokesTheorem{F} 
-{ \Sub{\oint}{C}\vec{#1}\cdot d\vec{r} = \iint\Parenthesis{\nabla\times\vec{#1}}\cdot\hat{n}\,dS }
+{ \Sub{\oint}{C}{#1}\cdot d\vec{r} = \iint\Parenthesis{\nabla\times {#1} }\cdot\,d\vec{S} }
 
 % Divergence Theorem 
 \newcommand{\divergenceTheorem}[1] %\divergenceTheorem{F}
-{ \Sub{\iiint}{V}\Parenthesis{\nabla\cdot\vec{#1}}dV = \Sub{\oiint}{S}\Parenthesis{\vec{#1}\cdot\hat{n}}dS } 
+{ \Sub{\iiint}{\forall}\Parenthesis{\nabla\cdot #1}d\forall = \Sub{\oiint}{S}\Parenthesis{#1\cdot\hat{n}}dS } 
 
 %  Leibniz Integral Rule
 \newcommand{\leibnizIntegral} 
