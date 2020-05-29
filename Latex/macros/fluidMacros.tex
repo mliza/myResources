@@ -30,7 +30,7 @@
 \newcommand{\incompressibleNavierStokesVec} 
 {   \rho\Parenthesis{ \dot{V} + \Parenthesis{\vec{V}\cdot\nabla}V } = -\nabla P + \mu \Up{\nabla}{2}V + \Sub{B}{f}  }
 
-% Incompressible Navier Stokes Eq - Vector Expanded
+% Incompressible Navier Stokes Eq. - Vector expanded
 \newcommand{\incompressibleNavierStokesCartesian}[2] %\incompressibleNavierStokesExpanded %\incompressibleNavierStokesCartesian{u}{x}
 { \rho\Parenthesis{ \dot{#1} + u\PartialFrac{#1}{x} + v\PartialFrac{#1}{y} + w\PartialFrac{#1}{z} } = -\PartialFrac{P}{#2} + \mu\Parenthesis{ \PartialFracN{#1}{x}{2} + \PartialFracN{#1}{y}{2} + \PartialFracN{#1}{z}{2} } + \Sub{f}{#2} }
 
@@ -65,4 +65,3 @@
 % Total Stress Tensor (Cauchy Momentum Tensor) 
 \newcommand{\cauchyMomentumTensor} %totalStressTensor 
 { \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\tau}{ij} }
-
