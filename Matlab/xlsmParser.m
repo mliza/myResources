@@ -1,4 +1,4 @@
-function dataParser(myDat) 
+function xlsmParser(myDat) 
     % Def: This function parses a .xlsm file into cells  
     %       look for the row number in which index -1 
     %       is repeated on column 1 and parses the rest 

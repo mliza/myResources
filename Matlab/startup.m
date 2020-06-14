@@ -10,7 +10,8 @@ set(groot, 'DefaultAxesGridColor', 'r');
 set(groot, 'DefaultAxesFontSize', 10);
 set(groot, 'DefaultAxesFontWeight', 'bold')
 set(gcf, 'InvertHardcopy', 'off'); 
+UnitSystem='UnitSystemCode';  %units plugin
 close all 
 
 %ax = gca;  %axes 
-%get(groot,'factory'); %get all thinks that can change 
+%get(groot,'factory'); %get all things that can change 
