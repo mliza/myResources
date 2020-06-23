@@ -7,8 +7,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass{beamer}
-\usetheme[faculty=science, university=uu, logo=uu-logo]{fibeamer}
-%\usetheme{UoA}
+%\usetheme[faculty=science, university=uu, logo=uu-logo]{fibeamer}
+\usetheme{UoA}
 \usepackage[utf8]{inputenc}
 \usepackage[
   main=english
@@ -29,12 +29,16 @@
 
 
 \begin{document}
-  \frame{\maketitle}
-  \AtBeginSection[]{% Print an outline at the beginning of sections
-    \begin{frame}<beamer>
-      \frametitle{Outline for Section \thesection}
-      \tableofcontents[currentsection]
-    \end{frame}}
+
+\begin{frame}
+\titlepage
+\end{frame}
+ % \frame{\maketitle}
+  %\AtBeginSection[]{% Print an outline at the beginning of sections
+   % \begin{frame}<beamer>
+    %  \frametitle{Outline for Section \thesection}
+     % \tableofcontents[currentsection]
+    %\end{frame}}
 
     \section{Light Frames}
     \subsection{Blind Text}
@@ -95,13 +99,13 @@
     \begin{frame}[label=proof]{Definitions, theorems, and proofs}
       \framesubtitle{All integers divide zero}
       \begin{definition}
-        $\forall a,b\in\mathds{Z}: a\mid b\iff\exists c\in\mathds{Z}:a\cdot c=b$
+   %     $\forall a,b\in\mathds{Z}: a\mid b\iff\exists c\in\mathds{Z}:a\cdot c=b$
       \end{definition}
       \begin{theorem}
-        $\forall a\in\mathds{Z}: a\mid 0$
+   %     $\forall a\in\mathds{Z}: a\mid 0$
       \end{theorem}
       \begin{proof}[Proof\nopunct]
-        $\forall a\in\mathds{Z}: a\cdot 0=0$
+   %    $\forall a\in\mathds{Z}: a\cdot 0=0$
       \end{proof}
     \end{frame}
 

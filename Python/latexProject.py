@@ -1,6 +1,6 @@
 #!/usr/local/bin/python3.7
 """
-    Date:    10/22/2019 
+    Date:    06/23/2020 
     Author:  Martin E. Liza 
     File:    latexProject.py 
     Def:     creates a latex project using 
@@ -20,6 +20,7 @@
     Martin E. Liza     10/20/2019     Initial Version  
     Martin E. Liza     10/22/2019     Implemented Dictionaries in the code 
     Martin E. Liza     02/27/2020     Added cheat sheet option
+    Martin E. Liza     06/23/2020     Modified beamer write up, added \TitlePage 
 """ 
 import os
 import subprocess 
@@ -78,7 +79,8 @@ def preambleStr(args, paths):
         body = '\n\n\\begin{document}\n\n\end{document}' 
 
     if args.beamer: 
-        preamble = f'\input{{{templates["beamerTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["beamerMacros"]}}}'
+        header = '\\usetheme{UoA}\n\TitlePage{title}{author}{\\today}'   
+        preamble = f'\input{{{templates["beamerTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["beamerMacros"]}}}\n{header}'
         body = '\n\n\\begin{document}\n\n\end{document}' 
 
     if args.cheat: 
