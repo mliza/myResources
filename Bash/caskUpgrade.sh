@@ -3,7 +3,7 @@
 (set -x; brew update;)
 
 (set -x; brew cleanup;)
-(set -x; brew cask cleanup;)
+(set -x; brew cask doctor;)
 
 red=`tput setaf 1`
 green=`tput setaf 2`
