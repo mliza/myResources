@@ -18,3 +18,48 @@
 	\end{frame} 
 }
 
+\newcommand{\QuadChart}[8]
+{
+    \frametitle{Quad-Chart}
+        \begin{minipage}{\textwidth}
+        % Begin first box
+        \fbox{
+            \begin{minipage}[c][3cm]{0.45\textwidth}
+                \textbf{#1:} 
+                \begin{itemize}
+                    {#2}
+                \end{itemize}
+            \end{minipage}
+             }
+        \hspace{5pt}
+        % Begin second box
+        \fbox{
+            \begin{minipage}[c][3cm]{0.45\textwidth}
+                \textbf{#3:} 
+                \begin{itemize}
+                    {#4}
+                \end{itemize}
+            \end{minipage}
+             }
+             \\[6pt]
+        % Begin third box
+        \fbox{
+            \begin{minipage}[c][3cm]{0.45\textwidth}
+                \textbf{#5:} 
+                \begin{itemize}
+                    {#6}
+                \end{itemize}
+            \end{minipage}
+             }
+        \hspace{5pt}
+        % End third box
+        \fbox{
+            \begin{minipage}[c][3cm]{0.45\textwidth}
+                \textbf{#7:} 
+                \begin{itemize}
+                    {#8}
+                \end{itemize}
+            \end{minipage}
+             }
+        \end{minipage}
+}
