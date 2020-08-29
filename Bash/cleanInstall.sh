@@ -12,7 +12,7 @@ fi
 #Testing for homebrew installation 
 if test ! $(which brew); then 
     echo "Installing Homebrew" 
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi 
 
 #GNU core packages  
@@ -47,21 +47,19 @@ BREWPACKAGES=(
 	wifi-password   #display wifi password 
 	speedtest-cli   #internet connection test 
 	whereami 	    #location 
-    gitlab-runner   #install gitlab runner 
     ipython         #ipython
-    resize          #brew install resize 
     thefuck         #installing thefuck 
+    jp2a            #convert jpg to ascii
 )
 
 
 #Homebrew cask packages 
 BREWCASK=(
-	google-drive	#google drive
-	skype		  	#skype 
 	mactex-no-gui 	#mactex
 	texmaker		#texmaker
 	corelocationcli #better than whereami 
 	iterm2			#better than terminal
+    xquartz         #needed for X11 
 )
 
 
@@ -72,18 +70,10 @@ PYTHONPACKAGES=(
 	matplotlib  #2D plotting package 
 	sympy 		#symbolic mathematics package 
 	pandas      #data structure & analysis package 
-	seaborn		#quickly visualizes dataframes 
-	tensorflow	#machine learning package 
-	parse		#parse package 
-	astropy		#astronomy package 
-	plasmapy	#plasma physics package 
-	pytest 		#testing framework package 
+	pytecplot 	#python tecplot  
     schedule    #allows you to schedule jobs at specific time  
-    django      #website package 
     virtualenv  #create isolated python environments
     ipython     #ipython 
-    librosa     #music manipulation 
-    IPython     #play audio 
 )
 
 
@@ -98,9 +88,6 @@ brew cask install ${BREWCASK[@]}
 
 echo "Installing python packages" 
 python3.7 -m pip install ${PYTHONPACKAGES[@]}
-
-#echo "Starting gitlab runner" 
-#brew services start gitlab-runner 
 
 echo "Modifying OSX properties" 
 #Prevent apps from staying in dock after quitting 
