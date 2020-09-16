@@ -34,3 +34,19 @@
 \newcommand{\TanFrac}[3]{\tan\Parenthesis{ \frac{#1}{#3} #2}}
 \newcommand{\Ln}[1]{\ln\B|\E|}
 \newcommand{\LnFrac}[2]{\ln\B|\frac{#1}{#2}\E|}
+
+% Symblos 
+\usetikzlibrary{calc,bending}
+% Countercloskwise            
+\def\Counterclockwise#1{\tikz[baseline=(A.base)]
+                        \draw[-stealth,line width=.035em]  
+                        (0,0) node[circle, inner sep=0cm](A){$#1$}
+                        let \p1=(A.center),\p2=(A.east), \n1={\x1-\x2} in
+                        (-90:\n1) arc(-90:190:\n1);}
+% Clockwise 
+\def\Clockwise#1{\tikz[baseline=(A.base)]
+                 \draw[-stealth,line width=.035em]  
+                 (0,0) node[circle, inner sep=0cm](A){$#1$}
+                 let \p1=(A.center),\p2=(A.east), \n1={\x1-\x2} in
+                 (-90:\n1) arc(-90:190:\n1);}
+
