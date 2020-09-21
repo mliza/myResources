@@ -44,15 +44,15 @@
 
 % Stokes Theorem 
 \newcommand{\stokesTheorem}[1] %\stokesTheorem{F} 
-{ \Sub{\oint}{C}{#1}\cdot d\vec{l} = \iint\Parenthesis{\nabla\times {#1} }\cdot\,d\vec{s} }
+{ \Sub{\oint}{C}{#1}\cdot d\vec{l} = \Sub{\iint}{\mathcal{S}}\Parenthesis{\nabla\times {#1} }\cdot\,d\vec{s} }
 
 % Divergence Theorem 
 \newcommand{\divergenceTheorem}[1] %\divergenceTheorem{F}
-{ \Sub{\iiint}{\forall}\Parenthesis{\nabla\cdot {#1}}d\forall = \Sub{\oiint}{s}\Parenthesis{{#1}\cdot\hat{n}}d\vec{s} } 
+{ \Sub{\iiint}{\forall}\Parenthesis{\nabla\cdot {#1}}d\forall = \Sub{\oiint}{\mathcal{S}}\Parenthesis{{#1}\cdot\hat{n}}d\vec{s} } 
 
 % Greens Theorem 
-%\newcommand{greensTheorem}[2] %\greensTheorem{M}{N}
-%{ \oint \Parenthesis{ {#1}dx + {#2}dy } = \int\int\Parenthesis{ \PartialFrac{M}{x} + \PartialFrac{L}{y}}dxdy } 
+\newcommand{\greensTheorem}[2] %\greensTheorem{M}{N}
+{ \Sub{\oint}{\mathcal{C}}\Parenthesis{ {#1}dx + {#2}dy } = \Sub{\iint}{\mathcal{D}}\Parenthesis{ \PartialFrac{#2}{x} - \PartialFrac{#1}{y} }dxdy } 
 
 % Leibniz Integral Rule
 \newcommand{\leibnizIntegral} 
