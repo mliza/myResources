@@ -44,13 +44,17 @@
 
 % Stokes Theorem 
 \newcommand{\stokesTheorem}[1] %\stokesTheorem{F} 
-{ \Sub{\oint}{C}{#1}\cdot d\vec{r} = \iint\Parenthesis{\nabla\times {#1} }\cdot\,d\vec{S} }
+{ \Sub{\oint}{C}{#1}\cdot d\vec{l} = \iint\Parenthesis{\nabla\times {#1} }\cdot\,d\vec{s} }
 
 % Divergence Theorem 
 \newcommand{\divergenceTheorem}[1] %\divergenceTheorem{F}
-{ \Sub{\iiint}{\forall}\Parenthesis{\nabla\cdot #1}d\forall = \Sub{\oiint}{S}\Parenthesis{#1\cdot\hat{n}}dS } 
+{ \Sub{\iiint}{\forall}\Parenthesis{\nabla\cdot {#1}}d\forall = \Sub{\oiint}{s}\Parenthesis{{#1}\cdot\hat{n}}d\vec{s} } 
 
-%  Leibniz Integral Rule
+% Greens Theorem 
+\newcommand{greensTheorem}[2] %\greensTheorem{M}{N}
+{ \oint \Parenthesis{ {#1}dx + {#2}dy } = \int\int\Parenthesis{\PartialFrac{M}{x} + \PartialFrac{L}{y}}dxdy } 
+
+% Leibniz Integral Rule
 \newcommand{\leibnizIntegral} 
 { \frac{d}{dx}\int^{b}_{a}\Function{f}{x,t}dt = \SqBracket{ \Function{f}{x,b}\PartialFrac{b}{x} - \Function{f}{x,a}\PartialFrac{a}{x} } + \int^{b}_{a}\PartialFrac{ }{x} \Function{f}{x,t}dt }  
 
