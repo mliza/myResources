@@ -10,6 +10,9 @@
 \newcommand{\momentumIntegral}[2] %\momentumIntegral{u}{x} 
 { \Partial{t}\int_{\forall}\rho#1d\,\forall - \int_{s}\SqBracket{\Parenthesis{\rho#1\vec{V}}\cdot\hat{n}}ds = -\int_s\Sub{P}{#2}ds + \int_{\forall}\Sub{f}{#2}d\forall } 
 
+% Mass Conservation Interal Form 
+\newcommand{\massConservationIntegral} 
+{ \Partial{t}\int_{\forall}\rho\,d\forall = - \int_{s} \rho\Parenthesis{\vec{V}\cdot\hat{n}}ds } 
 
 % Continuity Eq. 
 \newcommand{\continuityVec}
