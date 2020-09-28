@@ -8,7 +8,7 @@
 
 % Momentum Equation Integral Form 
 \newcommand{\momentumIntegral}[2] %\momentumIntegral{u}{x} 
-{ \Partial{t}\int_{\forall}\rho#1d\,\forall - \int_{s}\SqBracket{\Parenthesis{\rho#1\vec{V}}\cdot\hat{n}}ds = -\int_s\Sub{P}{#2}ds + \int_{\forall}\Sub{f}{#2}d\forall } 
+{ \Partial{t}\int_{\forall}\rho#1d\,\forall + \int_{s}\rho#1\Parenthesis{\vec{V}\cdot\hat{n}}ds = -\int_s\Sub{P}{#2}ds + \int_{\forall}\Sub{f}{#2}d\forall } 
 
 % Mass Conservation 
 \newcommand{\massConservationSum} 
