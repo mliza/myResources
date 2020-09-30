@@ -4,7 +4,7 @@
 
 % Reynolds Transport Theorem 
 \newcommand{\reynoldsTransportTheorem}[1] %\reynoldsTransportTheorem{\vec{F}} 
-{ \frac{d}{dt}\int_{\forall}#1d\forall = \int_{\forall}\PartialFrac{#1}{t}d\forall + \int_{s} \Parenthesis{ \Sub{\vec{V}}{relative} \cdot \hat{n} }#1ds }
+{ \frac{d}{dt}\int_{\forall}#1d\forall = \int_{\forall}\PartialFrac{#1}{t}d\forall + \int_{s} #1\Parenthesis{ \Sub{\vec{V}}{relative} \cdot \hat{n} }ds }
 
 % Momentum Equation Integral Form 
 \newcommand{\momentumIntegral}[2] %\momentumIntegral{u}{x} 
