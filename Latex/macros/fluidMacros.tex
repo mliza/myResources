@@ -4,7 +4,7 @@
 
 % Reynolds Transport Theorem 
 \newcommand{\reynoldsTransportTheorem}[1] %\reynoldsTransportTheorem{\vec{F}} 
-{ \frac{D}{Dt}\int_{C\forall}#1d\forall = \int_{c\forall}\PartialFrac{#1}{t}d\forall + \oint_{cs} \Parenthesis{ \Sub{\vec{V}}{relative} \cdot \hat{n} }#1ds }
+{ \frac{d}{dt}\int_{\forall}#1d\forall = \int_{\forall}\PartialFrac{#1}{t}d\forall + \int_{s} \Parenthesis{ \Sub{\vec{V}}{relative} \cdot \hat{n} }#1ds }
 
 % Momentum Equation Integral Form 
 \newcommand{\momentumIntegral}[2] %\momentumIntegral{u}{x} 
@@ -16,7 +16,7 @@
 
 % Mass Conservation Integral Form 
 \newcommand{\massConservationIntegral} 
-{ \Partial{t}\int_{\forall}\rho\,d\forall = - \int_{s} \rho\Parenthesis{\vec{V}\cdot\hat{n}}ds } 
+{ \TotalDer{}{t}\int_{\forall}\rho\,d\forall + \int_{s} \rho\Parenthesis{\vec{V}\cdot\hat{n}}ds = 0 } 
 
 % Continuity Eq. 
 \newcommand{\continuityVec}
