@@ -6,21 +6,23 @@
 \newcommand{\materialDerivativeVec}[1] %\materialDerivativeVec{\rho V}
 {   \frac{D}{Dt}\B(#1\E) = \frac{\partial}{\partial t}\B(#1\E) + \B(\vec{V}\cdot\nabla\E) #1   }
 
-% Reynolds Transport Theorem 
-\newcommand{\reynoldsTransportTheorem}[1] %\reynoldsTransportTheorem{\vec{F}} 
-{ \frac{d}{dt}\int_{\forall}#1d\forall = \int_{\forall}\PartialFrac{#1}{t}d\forall + \int_{s} #1\Parenthesis{ \Sub{\vec{V}}{relative} \cdot \hat{n} }ds }
+% Reynolds Transport Theorem  
+% Note: B is extenisve propertiy and \beta is intensive property 
+\newcommand{\reynoldsTransportTheorem} %\reynoldsTransportTheorem{e} 
+{\frac{D\Sub{B}{sys}}{Dt} = \TotalDer{}{t}\iiint\limits_{\forall}\rho\beta d\forall + \oiint\limits_{S} \rho\beta\Parenthesis{ \Sub{\vec{V}}{rel} \cdot \hat{n} }dS }
 
-% Momentum Equation Integral Form 
-\newcommand{\momentumIntegral}[2] %\momentumIntegral{u}{x} 
-{ \TotalDer{}{t}\int_{\forall}\rho#1d\,\forall + \int_{s}\rho#1\Parenthesis{\vec{V}\cdot\hat{n}}ds = -\int_s\Sub{P}{#2}ds + \int_{\forall}\Sub{f}{#2}d\forall } 
+% Mass Conservation Integral Form 
+\newcommand{\massConservationIntegral} 
+{ \TotalDer{}{t}\iiint\limits_{\forall}\rho\,d\forall + \oiint\limits_{S} \rho\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS  } 
+
+% Momentum Equation Integral Form  
+% Note \Sub{V}{abs} = \Sub{V}{cv} + \Sub{V}{rel} 
+\newcommand{\momentumConservationIntegral} %\momentumIntegral{u}{x} 
+{ \TotalDer{}{t}\iiint\limits_{\forall}\rho\Sub{V}{abs}d\forall + \oiint\limits_{S}\rho\Sub{V}{abs}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS = -\oiint\limits_S \Sub{P}{n} dS + \iiint\limits_{\forall}\rho \Sub{f}{n} d\forall  } 
 
 % Mass Conservation 
 \newcommand{\massConservationSum} 
 { \sum\dot{m} = \sum\Parenthesis{ \Sub{\dot{m}}{in} - \Sub{\dot{m}}{out} } } 
-
-% Mass Conservation Integral Form 
-\newcommand{\massConservationIntegral} 
-{ \TotalDer{}{t}\int_{\forall}\rho\,d\forall + \int_{s} \rho\Parenthesis{\vec{V}\cdot\hat{n}}ds  } 
 
 % Continuity Eq. 
 \newcommand{\continuityVec}
