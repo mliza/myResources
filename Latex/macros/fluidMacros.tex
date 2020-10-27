@@ -20,6 +20,10 @@
 \newcommand{\momentumConservationIntegral} %\momentumIntegral{u}{x} 
 { \TotalDer{}{t}\iiint\limits_{\forall}\rho\Sub{V}{abs}d\forall + \oiint\limits_{S}\rho\Sub{V}{abs}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS = -\oiint\limits_S \Sub{P}{n} dS + \iiint\limits_{\forall}\rho \Sub{f}{n} d\forall  } 
 
+% Energy Momentum Equation Integral Form 
+\newcommand{\energyMomentumConservationIntegral} 
+{  \TotalDer{}{t}\iiint\limits_{\forall}\rho Ed\forall + \oiint\limits_S \rho\Parenthesis{\vec{V}\cdot\hat{n}}HdS = \iiint\limits_{\forall}\dot{Q}d\forall }
+
 % Mass Conservation 
 \newcommand{\massConservationSum} 
 { \sum\dot{m} = \sum\Parenthesis{ \Sub{\dot{m}}{in} - \Sub{\dot{m}}{out} } } 
