@@ -42,6 +42,10 @@
 \newcommand{\crossEins}[5] %\crossEins{ijk}{A}{i}{B}{k}  
 { \Sub{\varepsilon}{#1}\Sub{#2}{#3}\Sub{#4}{#5} }
 
+% Levi-Civita Identity - Einsteins notation 
+\newcommand{\leviCivitaIdent}[6] %\leviCivitaIdent{i}{j}{k}{m}{n}{r} 
+{   \Sub{\varepsilon}{#1#2#3}\Sub{\varepsilon}{#4#5#6} = \Sub{\delta}{#1#4}\Parenthesis{ \Sub{\delta}{#2#5}\Sub{\delta}{#3#6} - \Sub{\delta}{#2#6}\Sub{\delta}{#3#5} } - \Sub{\delta}{#1#5}\Parenthesis{ \Sub{\delta}{#2#4}\Sub{\delta}{#3#6} - \Sub{\delta}{#2#6}\Sub{\delta}{#3#4} } + \Sub{\delta}{#1#6}\Parenthesis{ \Sub{\delta}{#2#4}\Sub{\delta}{#3#5} - \Sub{\delta}{#2#5}\Sub{\delta}{#3#4} }     }
+
 % Stokes Theorem 
 \newcommand{\stokesTheorem}[1] %\stokesTheorem{F} 
 { \Sub{\oint}{C}{#1}\cdot d\vec{l} = \Sub{\iint}{\mathcal{S}}\Parenthesis{\nabla\times {#1} }\cdot\,d\vec{s} }
