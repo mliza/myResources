@@ -73,9 +73,9 @@
 {\SqBracket{St}\frac{D\vec{V}^*}{Dt^*} = -\SqBracket{Eu}\nabla^*P^*  +\SqBracket{\frac{1}{Re}}\nabla^{*^{2}}V^* + \SqBracket{\frac{1}{Fr^2}}g^* }
 
 % Tensors %
-% Material Derivative, Einstein notation 
-\newcommand{\fluidsMaterialDerivativeEins}[1] 
-{ \rho\frac{D #1}{Dt} = \rho\PartialFrac{ #1 }{t} + \rho\Sub{v}{i}\PartialFrac{#1}{\Sub{x}{j}}\Sub{\delta}{ij} } 
+% Material Derivative 
+\newcommand{\materialDerivative}[1] 
+{ \frac{D \Parenthesis{#1}}{Dt} = \PartialFrac{ }{t} \Parenthesis{#1} + \vec{V}\cdot\nabla\Parenthesis{#1} }
 
 % Shear Strain Tensor 
 \newcommand{\shearStrainTensor}
