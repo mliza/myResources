@@ -16,9 +16,9 @@
 { \TotalDer{}{t}\iiint\limits_{\forall}\rho\,d\forall + \oiint\limits_{S} \rho\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS  } 
 
 % Momentum Equation Integral Form  
-% Note \Sub{V}{abs} = \Sub{V}{cv} + \Sub{V}{rel} 
+% Note \Sub{V}{rel} = \Sub{V}{fluid} - \Sub{V}{cv} 
 \newcommand{\momentumConservationIntegral} %\momentumIntegral{u}{x} 
-{ \TotalDer{}{t}\iiint\limits_{\forall}\rho\Sub{V}{abs}d\forall + \oiint\limits_{S}\rho\Sub{V}{abs}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS = -\oiint\limits_S \Sub{P}{n} dS + \iiint\limits_{\forall}\rho \Sub{f}{n} d\forall  } 
+{ \TotalDer{}{t}\iiint\limits_{\forall}\rho\Sub{V}{fluid}d\forall + \oiint\limits_{S}\rho\Sub{V}{fluid}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS = -\oiint\limits_S \Sub{P}{n} dS + \iiint\limits_{\forall}\rho \Sub{f}{n} d\forall  } 
 
 % Energy Momentum Equation Integral Form 
 \newcommand{\energyMomentumConservationIntegral} 
