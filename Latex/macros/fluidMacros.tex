@@ -20,13 +20,14 @@
 { \TotalDer{}{t}\iiint\limits_{\forall}\rho\,d\forall + \oiint\limits_{S} \rho\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS  } 
 
 % Momentum Equation Integral Form  
-% Note \Sub{V}{rel} = \Sub{V}{fluid} - \Sub{V}{cv} 
+% Note \Sub{V}{abs} =  \Sub{V}{rel} +  \Sub{V}{cv}  
+% \Sub{V}{fluid/\mathcal{O}} = \Sub{V}{fluid/C\forall} + \Sub{V}{c\forall/\mathcal{O}}
 \newcommand{\momentumConservationIntegral} %\momentumIntegral{u}{x} 
-{ \TotalDer{}{t}\iiint\limits_{\forall}\rho\Sub{V}{rel}d\forall + \oiint\limits_{S}\rho\Sub{V}{rel}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS = -\oiint\limits_S \Sub{P}{n} dS + \iiint\limits_{\forall} \Sub{f}{n} d\forall  } 
+{ \TotalDer{}{t}\iiint\limits_{\forall}\rho\Sub{\vec{V}}{abs}d\forall + \oiint\limits_{S}\rho\Sub{\vec{V}}{abs}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS = -\oiint\limits_S P\hat{n} \,dS + \iiint\limits_{\forall} \rho\vec{f} d\forall  } 
 
 % Conservation of Angular momentum 
 \newcommand{\angularMomentumConservationIntegral} 
-{ \TotalDer{}{t}\iiint\limits_{\forall}\rho\Parenthesis{\vec{r}\times\vec{V}}d\forall + \oiint\limits_{S}\rho\Parenthesis{\vec{r}\times\vec{V}}\Parenthesis{\vec{V}\cdot\hat{n}} dS  }
+{  \sum\vec{L} = \TotalDer{}{t}\iiint\limits_{\forall}\rho\Parenthesis{\vec{r}\times\Sub{\vec{V}}{abs}}d\forall + \oiint\limits_{S}\rho\Parenthesis{\vec{r}\times\Sub{\vec{V}}{abs}}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}} dS }
 
 % Energy Momentum Equation Integral Form 
 \newcommand{\energyMomentumConservationIntegral} 
