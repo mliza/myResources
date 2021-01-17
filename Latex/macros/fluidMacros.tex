@@ -24,6 +24,10 @@
 \newcommand{\momentumConservationIntegral} %\momentumIntegral{u}{x} 
 { \TotalDer{}{t}\iiint\limits_{\forall}\rho\Sub{V}{rel}d\forall + \oiint\limits_{S}\rho\Sub{V}{rel}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}}dS = -\oiint\limits_S \Sub{P}{n} dS + \iiint\limits_{\forall} \Sub{f}{n} d\forall  } 
 
+% Conservation of Angular momentum 
+\newcommand{\angularMomentumConservationIntegral} 
+{ \TotalDer{}{t}\iiint\limits_{\forall}\rho\Parenthesis{\vec{r}\times\vec{V}}d\forall + \oiint\limits_{S}\rho\Parenthesis{\vec{r}\times\vec{V}}\Parenthesis{\vec{V}\cdot\hat{n}} dS  }
+
 % Energy Momentum Equation Integral Form 
 \newcommand{\energyMomentumConservationIntegral} 
 {  \TotalDer{}{t}\iiint\limits_{\forall}\rho Ed\forall + \oiint\limits_S \rho\Parenthesis{\vec{V}\cdot\hat{n}}HdS = \dot{Q} }
