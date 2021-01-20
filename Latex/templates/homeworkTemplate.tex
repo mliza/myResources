@@ -41,7 +41,7 @@
 \allsectionsfont{\large\mdseries} %modify sections/subsections in the document 
 \usetikzlibrary{calc,bending}     %Use drawing libraries 
 
-%Headers/footers   
+% Headers/footers   
 \clearscrheadfoot
 \newcommand{\Header}[3]
 {  
@@ -51,18 +51,18 @@
  }
 \ofoot{Page \textbf{\thepage} of \textbf{\pageref{LastPage}}} %page numbers 
 
-%Modify clickable links color 
-\hypersetup{ colorlinks={true},           %active color links 
-             urlcolor={blue},             %url link color 
+% Modify clickable links color 
+\hypersetup{ colorlinks={true},            %active color links 
+             urlcolor={blue},              %url link color 
              linkcolor={black},            %change link color
              citecolor={blue}   
            }
             
-%New Commands Text
+% New Commands Text
 \newcommand{\MyName}{My Name}             %my name
 \newcommand{\DocumentName}{Document Name} %document name
 
-%Rename Commands Text
+% Rename Commands Text
 \renewcommand\thesection{\textbf{\arabic{section})}}  %section
 \renewcommand\thesubsection{(\alph{subsection})} 	  %subsection 
 \renewcommand\thesubsubsection{\roman{subsubsection}} %subsubsection

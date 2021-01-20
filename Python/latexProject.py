@@ -21,6 +21,8 @@
     Martin E. Liza     10/22/2019     Implemented Dictionaries in the code 
     Martin E. Liza     02/27/2020     Added cheat sheet option
     Martin E. Liza     06/23/2020     Modified beamer write up, added \TitlePage 
+    Martin E. Liza     01/20/2020     Make a folder 'codes' in the project directory  
+                                      added codeMacros to the preamble  
 """ 
 import os
 import subprocess 
@@ -61,7 +63,7 @@ def getPaths():
 def preambleStr(args, paths): 
     # Define dictionaries 
     macros = {} 
-    for macroName in ['equationMacros', 'mathMacros', 'pictureMacros', 'beamerMacros']:  
+    for macroName in ['equationMacros', 'mathMacros', 'pictureMacros', 'beamerMacros', 'codeMacros']:  
        macros[macroName] = os.path.join(paths['macros'], macroName) 
 
     templates = {}
@@ -70,17 +72,17 @@ def preambleStr(args, paths):
 
     if args.notes: 
         title = '\\title{Class Name Title, [AME 634A]}\n\\author{Martin E. Liza}\n\date{Spring Semester,2020}' 
-        preamble = f'\input{{{templates["notesTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["pictureMacros"]}}}\n{title}'
+        preamble = f'\input{{{templates["notesTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["pictureMacros"]}}}\n\input{{{macros["codeMacros"]}}}\n{title}'
         body = '\n\n\\begin{document}\n\t\\maketitle\n\t\\tableofcontents\n\n\t% Classes\n\t\\input{lectures/class1}\n\end{document}'  
 
     if args.homework: 
         header = '\Header{\\today}{Document Name}{My Name}'   
-        preamble = f'\input{{{templates["homeworkTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["pictureMacros"]}}}\n{header}'
+        preamble = f'\input{{{templates["homeworkTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["pictureMacros"]}}}\n\input{{{macros["codeMacros"]}}}\n{header}'
         body = '\n\n\\begin{document}\n\n\end{document}' 
 
     if args.beamer: 
         header = '\\usetheme{UoA}\n\TitlePage{title}{author}{\\today}'   
-        preamble = f'\input{{{templates["beamerTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["beamerMacros"]}}}\n{header}'
+        preamble = f'\input{{{templates["beamerTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["beamerMacros"]}}}\n\input{{{macros["codeMacros"]}}}\n{header}'
         body = '\n\n\\begin{document}\n\n\end{document}' 
 
     if args.cheat: 
@@ -100,6 +102,7 @@ def writeUp(args, preamble, body, paths):
     fileName = args.flags[1]
     os.mkdir(folderName) 
     os.mkdir(os.path.join(folderName, 'figures'))
+    os.mkdir(os.path.join(folderName, 'codes'))
     filePath = os.path.join(folderName, f'{fileName}.tex') 
     f = open(filePath, 'w') 
     f.write(preamble) 
