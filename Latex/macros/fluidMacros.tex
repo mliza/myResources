@@ -30,8 +30,8 @@
 {  \sum\vec{L} = \TotalDer{}{t}\iiint\limits_{\forall}\rho\Parenthesis{\vec{r}\times\Sub{\vec{V}}{abs}}d\forall + \oiint\limits_{S}\rho\Parenthesis{\vec{r}\times\Sub{\vec{V}}{abs}}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n}} dS }
 
 % Energy Momentum Equation Integral Form 
-\newcommand{\energyMomentumConservationIntegral} 
-{  \TotalDer{}{t}\iiint\limits_{\forall}\rho Ed\forall + \oiint\limits_S \rho\Parenthesis{\vec{V}\cdot\hat{n}}HdS = \dot{Q} }
+\newcommand{\energyMomentumConservationIntegral} %h =e + \frac{P}{\rho}
+{ \TotalDer{}{t}\iint\limits_{\forall}\rho\Parenthesis{e + \frac{1}{2}\Sub{\vec{V}}{abs}\cdot\Sub{\vec{V}}{abs} + \Sub{U}{e} }d\forall + \oiint\limits_{S}\rho\Parenthesis{e+\frac{1}{2}\Sub{\vec{V}}{abs}\cdot\Sub{\vec{V}}{abs} +\Sub{U}{e}}\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n} } dS  = \dot{Q} -\oiint\limits_S P\Parenthesis{\Sub{\vec{V}}{rel}\cdot\hat{n} } dS + \oiint\limits_S\Sub{\vec{f}}{\mu}\cdot \Sub{\vec{V}}{rel}dS  } 
 
 % Mass Conservation 
 \newcommand{\massConservationSum} 
