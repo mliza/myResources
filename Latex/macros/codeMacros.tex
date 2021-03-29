@@ -1,24 +1,22 @@
-\renewcommand{\lstlistingname}{Code}
-\renewcommand{\lstlistlistingname}{List of Code}   
+\definecolor{mygreen}{rgb}{0,0.6,0} 
+\definecolor{myblue}{rgb}{0,0,128}
 
-% https://www.youtube.com/watch?v=qxkQgG1Y0bY 
-\lstdefinestyle{codeImport}{%
-     backgroundcolor=\color{gray!12},
-     basicstyle=\ttfamily\small,
-     commentstyle=\color{green!60!black},
-     keywordstyle=\color{magenta},
-     stringstyle=\color{blue!50!red},
-     showstringspaces=false,
-     %captionpos=b,
-     numbers=left,
-     numberstyle=\footnotesize\color{gray},
-     numbersep=10pt,
-     %stepnumber=2,
-     tabsize=2,
-     frame=L,
-     framerule=1pt,
-     rulecolor=\color{red},
-     breaklines=true,
-     inputpath=codes
- }
-
+% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+\lstset{ 
+    backgroundcolor=\color{gray!12},
+    basicstyle=\ttfamily\small,
+    commentstyle=\color{green!60!black},
+    keywordstyle=\color{magenta},
+    showstringspaces=false, 
+    numbers=left,
+    numberstyle=\footnotesize\color{gray},
+    numbersep=10pt,
+    frame=L,
+    framerule=1pt,
+    keywordstyle=\color{myblue},
+    rulecolor=\color{red},
+    keepspaces=true,
+    breaklines=true,
+    captionpos=b,
+    inputpath=codes
+    }
