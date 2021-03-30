@@ -49,12 +49,13 @@
 \def\Counterclockwise#1{\tikz[baseline=(A.base)]
                         \draw[-stealth,line width=.035em]  
                         (0,0) node[circle, inner sep=0cm](A){$#1$}
-                        let \p1=(A.center),\p2=(A.east), \n1={\x1-\x2} in
-                        (-90:\n1) arc(-90:190:\n1);}
+                        let \p1=(A.center),\p2=(A.west), \n1={\x1-\x2} in
+                        (-90:\n1) arc(-90:150:\n1);}
 % Clockwise 
 \def\Clockwise#1{\tikz[baseline=(A.base)]
                  \draw[-stealth,line width=.035em]  
                  (0,0) node[circle, inner sep=0cm](A){$#1$}
                  let \p1=(A.center),\p2=(A.east), \n1={\x1-\x2} in
-                 (-90:\n1) arc(-90:190:\n1);}
+                 (90:\n1) arc(90:-150:\n1);}
+
 
