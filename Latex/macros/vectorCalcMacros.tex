@@ -34,6 +34,14 @@
 \newcommand{\laplaceSpherical}[1] %laplaceSpherical{f} 
 { \frac{1}{r^2}\PartialFrac{}{r}\Parenthesis{r^2\PartialFrac{#1}{r}} + \frac{1}{r^2\sin\Parenthesis{\theta}}\PartialFrac{}{\theta}\Parenthesis{\sin\Parenthesis{\theta}\PartialFrac{#1}{\theta}} + \frac{1}{r^2\sin\Parenthesis{\theta}}\PartialFracN{#1}{\phi}{2} }
 
+% Levi-Civita Symbol 
+\newcommand{\leviCivita}[1]
+{ \Sub{\varepsilon}{#1} }
+
+% Kronecker delta Symbol 
+\newcommand{\kroneckerDelta}[1]
+{ \Sub{\delta}{#1} }
+
 % Dot Product - Einstein's notation 
 \newcommand{\dotEins}[4] %\dotEins{A}{i}{B}{j} 
 { \Sub{#1}{#2}\Sub{#3}{#4}\Sub{\delta}{#2#4} }
@@ -62,6 +70,3 @@
 \newcommand{\leibnizIntegral} 
 { \frac{d}{dx}\int^{b}_{a}\Function{f}{x,t}dt = \SqBracket{ \Function{f}{x,b}\PartialFrac{b}{x} - \Function{f}{x,a}\PartialFrac{a}{x} } + \int^{b}_{a}\PartialFrac{ }{x} \Function{f}{x,t}dt }  
 
-% Taylor Series 
-\newcommand{\taylorSeries} 
-{ \sum_{n=1}^{\infty}\frac{f^{(n)}(a)}{n!}\B(x-a\E)^n }
