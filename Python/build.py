@@ -18,6 +18,7 @@
    Author             Date           Revision  
    --------------------------------------------------
    Martin E. Liza     10/20/2019     Initial Version  
+   Martin E. Liza     05/06/2021     Updated compiler versions 
 """ 
 
 import argparse 
@@ -27,10 +28,10 @@ import subprocess
 #NOTE: Requires, g++-9, pdflatex, gcc-9 and gfortran-9  
 
 #Available compilers  
-cppCopiler = 'g++-9 -std=c++17' 
+cppCopiler = 'g++-10 -std=c++17' 
 texCopiler = 'pdflatex' 
-cCopiler = 'gcc-9' 
-fCopiler = 'gfortran-9' 
+cCopiler = 'gcc-10' 
+fCopiler = 'gfortran' 
 
 #Make parser object
 parser = argparse.ArgumentParser() 
