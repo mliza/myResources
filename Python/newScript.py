@@ -16,12 +16,14 @@ import IPython
     -sh     = bash files 
     -m      = matlab files 
 
-    ex: ./newScript.py -flag 'authorName' 'fileName'
+    ex: ./newScript.py -flag 'fileName' 'authorName' 
 
 
     Author             Date           Revision  
-    --------------------------------------------------
-    Martin E. Liza     03/16/2019     Initial Version  
+    ------------------------------------------------------------
+    Martin E. Liza     03/16/2021     Initial version.  
+    Martin E. Liza     07/09/2021     Switch the arg.parser order
+                                      and fixed the long string. 
 """ 
 # Available options 
 def argOptions(): 
@@ -45,7 +47,7 @@ def argOptions():
 
 # Define and write the preamble string 
 def fileOptions(args):
-    authorName = args.flags[0] 
+    authorName = args.flags[1] 
     date = datetime.datetime.now().strftime("%m/%d/%Y")
 
     # Add the file extension 
@@ -59,18 +61,25 @@ def fileOptions(args):
         extension  = '.m'
 
     # Add the file extension and tab before printing the information  
-    fileName   = args.flags[1] + extension
+    fileName   = args.flags[0] + extension
     tab        = '    '
         
     # Write file preamble     
-    filePreamble = f'{tab}Date:   {date}\n{tab}Author: {authorName}\n{tab}File:   {fileName}\n{tab}Def:               \n\n{tab}Author         Date        Revision\n{tab}------------------------------------------ \n{tab}{authorName}   {date}      Initial Version'       
-                    
-    return filePreamble 
+    preamble1    = (f'{tab}Date:   {date}\n' 
+                    f'{tab}Author: {authorName}\n' 
+                    f'{tab}File:   {fileName}\n' 
+                    f'{tab}Def:')
+    preamble2    = f'{tab}Author\t\tDate\t\tRevision' 
+    preamble3    = f'{tab}----------------------------------------------------' 
+    preamble4    = f'{tab}{authorName}\t{date}\tInitial version.' 
+    filePreamble = f'{preamble1}\n\n{preamble2}\n{preamble3}\n{preamble4}' 
+
+    return filePreamble, fileName 
 
 
 
 # Define the type of file, create and write the preamble string using the proper quotes 
-def writeUp(args, filePreamble): 
+def writeUp(args, filePreamble, fileName): 
     if args.cpp: 
         preamble   = f'/*\n{filePreamble}\n*/' 
         extension  = '.cpp'
@@ -89,13 +98,13 @@ def writeUp(args, filePreamble):
         preamble   = f'%{{\n{filePreamble}\n%}}' 
         extension  = '.m'
    
-    f = open( args.flags[1]+extension, 'w') 
+    f = open(fileName, 'w') 
     f.write(preamble) 
     f.close() 
 
 # Call the functions 
 if __name__=='__main__':
     args = argOptions() 
-    filePreamble = fileOptions(args) 
-    writeUp(args, filePreamble) 
+    filePreamble, fileName = fileOptions(args) 
+    writeUp(args, filePreamble, fileName) 
     
