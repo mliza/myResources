@@ -20,7 +20,6 @@
    Martin E. Liza     10/20/2019     Initial Version  
    Martin E. Liza     05/06/2021     Updated compiler versions 
 """ 
-
 import argparse 
 import subprocess 
 
@@ -30,13 +29,13 @@ import subprocess
 #Available compilers  
 cppCopiler = 'g++-10 -std=c++17' 
 texCopiler = 'pdflatex' 
-cCopiler = 'gcc-10' 
-fCopiler = 'gfortran' 
+cCopiler   = 'gcc-10' 
+fCopiler   = 'gfortran' 
 
 #Make parser object
 parser = argparse.ArgumentParser() 
 
-#Compiler selection flags 
+#Compiler selection flags (helper)  
 parser.add_argument('-cpp', action='store_true', 
                              help='C++ compiler')
 
@@ -52,7 +51,7 @@ parser.add_argument('-f', action='store_true',
 parser.add_argument('flags', nargs='*' )
 
 #Needed for if statements and for building shell command   
-args = parser.parse_args()
+args  = parser.parse_args()
 flags = (','.join(args.flags))  
 flags = flags.replace(',', ' ') 
 
