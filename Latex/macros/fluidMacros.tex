@@ -82,17 +82,24 @@
 {\SqBracket{St}\frac{D\vec{V}^*}{Dt^*} = -\SqBracket{Eu}\nabla^*P^*  +\SqBracket{\frac{1}{Re}}\nabla^{*^{2}}V^* + \SqBracket{\frac{1}{Fr^2}}g^* }
 
 % Tensors %
-% Material Derivative 
-\newcommand{\materialDerivative}[1] 
-{ \frac{D \Parenthesis{#1}}{Dt} = \PartialFrac{ }{t} \Parenthesis{#1} + \vec{V}\cdot\nabla\Parenthesis{#1} }
+% Material Derivative -Einstein's notation 
+\newcommand{\materialDerivative}
+{ \frac{D\Parenthesis{\rho \Sub{u}{i}}}{Dt} = \PartialFrac{}{t}\Parenthesis{\rho \Sub{u}{i} } + \Sub{u}{k} \PartialFrac{}{\Sub{x}{k}} \Parenthesis{\rho \Sub{u}{i} } } 
 
-% Shear Strain Tensor 
-\newcommand{\shearStrainTensor}
-{ \Sub{\varepsilon}{ij} = \frac{1}{2}\Parenthesis{ \PartialFrac{\Sub{u}{i}}{\Sub{x}{j}} + \PartialFrac{\Sub{u}{j}}{\Sub{x}{i}} } }
+% Strain Rate Tensor 
+%\newcommand{\shearStrainTensor}
+\newcommand{\strainRateTensor}
+{ \Sub{S}{ij} = \frac{1}{2}\Parenthesis{ \PartialFrac{\Sub{u}{i}}{\Sub{x}{j}} + \PartialFrac{\Sub{u}{j}}{\Sub{x}{i}} } }
 
-% Shear Stress Tensor, Stokes Hypothesis is assumed  
-\newcommand{\shearStressTensor} 
-{ \Sub{\tau}{ij} = 2\mu\Parenthesis{ \Sub{\varepsilon}{ij} -\frac{1}{3} \PartialFrac{\Sub{u}{i}}{\Sub{x}{j}}\Sub{\delta}{ij} }} 
+% Rotation Rate Tensor 
+%\newcommand{\shearStrainTensor}
+\newcommand{\rotationRateTensor}
+{ \Sub{\Omega}{ij} = \frac{1}{2}\Parenthesis{ \PartialFrac{\Sub{u}{i}}{\Sub{x}{j}} - \PartialFrac{\Sub{u}{j}}{\Sub{x}{i}} } }
+
+% Deviatoric Stress Tensor 
+%\newcommand{\shearStressTensor} 
+\newcommand{\deviatoricStressTensor}
+{ \Sub{\tau}{ij} = 2\mu\Parenthesis{ \Sub{S}{ij} -\frac{1}{3} \Sub{S}{kk} \Sub{\delta}{ij} }} 
 
 % Cauchy Momentum Stress Tensor 
 \newcommand{\cauchyMomentumTensor} %totalStressTensor 
@@ -104,8 +111,7 @@
 
 % Navier Stokes Eq. - Einstein's notation  
 \newcommand{\navierStokesEins} %\incompressibleNavierStokesEins
-%{ \rho\frac{D\Sub{u}{i}}{Dt} = -\PartialFrac{p}{\Sub{x}{i}} + \PartialFrac{\Sub{\tau}{ij}}{\Sub{x}{j}} + \Sub{f}{i} } 
-{ \rho\frac{D\Sub{u}{i}}{Dt} = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{j}} + \Sub{f}{i} } 
+{ \frac{D\Parenthesis{\rho\Sub{u}{j}}}{Dt} = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{i}} + \Sub{f}{j} } 
 
 % Compressible 
 % Isentropic relations for ideal gas 
