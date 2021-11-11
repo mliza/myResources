@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3.9
+#!/opt/homebrew/bin/python3.9
 """
     Date:    06/23/2020 
     Author:  Martin E. Liza 
@@ -51,7 +51,7 @@ def argOptions():
 # Get latex's paths and return them   
 def getPaths(): 
     scriptsPath = os.path.abspath(os.path.join(__file__,"../../"))
-    latexPath = os.path.join(scriptsPath, 'Latex')               
+    latexPath   = os.path.join(scriptsPath, 'Latex')               
     paths = {} 
     for keyName in ['templates', 'macros', 'images']:
         paths[keyName] = os.path.join(latexPath, keyName)
