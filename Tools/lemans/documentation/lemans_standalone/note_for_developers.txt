@@ -1,0 +1,13 @@
+The NGM number contains the ghost cells of all types of boundary:
+physical boundary (numbered 0-5) and the multi-processor domain boundary (6+NPROC). Of the later cell boundaries, the corresponding face (and other connectivity information) is not kept calculated and store. That means that if you run the relation cells_c[i].f[0] will give random results if i is a cell on a processor boundary.
+
+The directory "sources_formatted" contains the same files as the directory "sources". However, these have been formatted using the program Astyle for easy reading/following. The files were formatted as follows:
+1) remove all blank lines: ./astyle --delete-empty-lines *.c *.h
+2) formate white space: ./astyle --options=astyle_options *.c *.h
+The files in "sources" were not formatted in order to not trigger a new SVN update based only on white space formatting. 
+
+EDF on 1/26/2015:
+I am currently updating both sources/ and sources_formatted/ with bug fixes and code modifications.  
+Clearly this is not efficient, but I do not want force any developers still using the sources/ code to switch 
+to sources_formatted/ in the middle of their work.  
+Recommend that any new users of lemans start with sources_formatted/, that way we can phase out sources/ in the future.
