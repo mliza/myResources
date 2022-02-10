@@ -84,7 +84,7 @@
 % Tensors %
 % Material Derivative -Einstein's notation 
 \newcommand{\materialDerivative}
-{ \frac{D\Parenthesis{\rho \Sub{u}{i}}}{Dt} = \PartialFrac{}{t}\Parenthesis{\rho \Sub{u}{i} } + \Sub{u}{k} \PartialFrac{}{\Sub{x}{k}} \Parenthesis{\rho \Sub{u}{i} } } 
+{ \frac{D\Parenthesis{\rho \Sub{u}{i}}}{Dt} = \PartialFrac{}{t}\Parenthesis{\rho \Sub{u}{i} } + \Sub{u}{j} \PartialFrac{}{\Sub{x}{j}} \Parenthesis{\rho \Sub{u}{i} } } 
 
 % Strain Rate Tensor 
 %\newcommand{\shearStrainTensor}
@@ -111,7 +111,15 @@
 
 % Navier Stokes Eq. - Einstein's notation  
 \newcommand{\navierStokesEins} %\incompressibleNavierStokesEins
-{ \frac{D\Parenthesis{\rho\Sub{u}{j}}}{Dt} = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{i}} + \Sub{f}{j} } 
+{ \rho\frac{D\Sub{u}{i}}{Dt} = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{j}} + \Sub{f}{i} } 
+
+% Energy Eq. - Einstein's notation
+\newcommand{\energyEins}
+{ \frac{D E}{Dt} = -\frac{1}{\rho}\PartialFrac{\Parenthesis{\Sub{u}{i} p}}{\Sub{x}{i}} + \nu\PartialFrac{\Sub{u}{i}}{\Sub{x}{j}}   \PartialFrac{\Sub{u}{j}}{\Sub{x}{i}} + \nu\frac{\partial^2E} {\partial\Sub{x}{j}\partial\Sub{x}{j}} -\Phi }
+
+% Kinematic Dissipation Rate
+\newcommand{\kinematicDissipationRate}
+{ \Phi = 2\nu \Sub{S}{ij}\Sub{S}{ij} } 
 
 % Compressible 
 % Isentropic relations for ideal gas 
@@ -121,3 +129,13 @@
 % Stagnation Relations 
 \newcommand{\stagnationRelations}
 {\frac{T_0}{T} = \Parenthesis{\frac{p_0}{p}}^{\frac{\gamma-1}{\gamma}} = \Parenthesis{\frac{\rho_0}{\rho}}^{\gamma-1} =\Parenthesis{\frac{a_0}{a}}^2 = 1 + \Parenthesis{\frac{\gamma-1}{2}}M^2} 
+
+%% Turbulence %% 
+% Reynolds Decomposition 
+% Mean Variable 
+\newcommand{\meanVar}[1] 
+{ \Avg{ #1 }  }
+
+% Fluctuation Variable 
+\newcommand{\fluctuationVar}[1] 
+{  #1^{\prime} }
