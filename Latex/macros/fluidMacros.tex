@@ -111,7 +111,7 @@
 
 % Navier Stokes Eq. - Einstein's notation  
 \newcommand{\navierStokesEins} %\incompressibleNavierStokesEins
-{ \rho\frac{D\Sub{u}{i}}{Dt} = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{j}} + \Sub{f}{i} } 
+{ \frac{D\Parenthesis{\rho\Sub{u}{i}}}{Dt} = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{j}} + \Sub{f}{i} } 
 
 % Energy Eq. - Einstein's notation
 \newcommand{\energyEins}
@@ -129,13 +129,3 @@
 % Stagnation Relations 
 \newcommand{\stagnationRelations}
 {\frac{T_0}{T} = \Parenthesis{\frac{p_0}{p}}^{\frac{\gamma-1}{\gamma}} = \Parenthesis{\frac{\rho_0}{\rho}}^{\gamma-1} =\Parenthesis{\frac{a_0}{a}}^2 = 1 + \Parenthesis{\frac{\gamma-1}{2}}M^2} 
-
-%% Turbulence %% 
-% Reynolds Decomposition 
-% Mean Variable 
-\newcommand{\meanVar}[1] 
-{ \Avg{ #1 }  }
-
-% Fluctuation Variable 
-\newcommand{\fluctuationVar}[1] 
-{  #1^{\prime} }

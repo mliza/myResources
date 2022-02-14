@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3.7
+#!/usr/local/bin/python3
 import numpy as np
 import math 
 import cmath 

@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/python3.9
+#!/opt/homebrew/bin/python3
 """
     Date:    06/23/2020 
     Author:  Martin E. Liza 

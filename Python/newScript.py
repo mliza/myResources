@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/python3.9
+#!/opt/homebrew/bin/python3
 import argparse 
 import subprocess 
 import datetime 

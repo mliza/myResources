@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3.9 
+#!/usr/local/bin/python3
 """
    Date:    02/15/2021 
    Author:  Martin E. Liza 
