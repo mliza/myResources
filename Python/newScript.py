@@ -85,7 +85,7 @@ def writeUp(args, filePreamble, fileName):
         extension  = '.cpp'
 
     if args.py: 
-        program    = subprocess.check_output(["which", "python3.9"]).decode("utf-8") 
+        program    = subprocess.check_output(["which", "python3"]).decode("utf-8") 
         preamble   = f'#!{program}\'\'\'\n{filePreamble}\n\'\'\'' 
         extension  = '.py'
     
