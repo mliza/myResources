@@ -105,17 +105,17 @@
 \newcommand{\cauchyMomentumTensor} %totalStressTensor 
 { \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\tau}{ij} }
 
-% Continuity Eq. - Einstein's notation 
+% Continuity Eq. - Einstein's notation (From Turbulence Modeling-Wilcox pg 231) 
 \newcommand{\continuityEins}
-{ \PartialFrac{\rho}{t} + \PartialFrac{\Parenthesis{\rho \Sub{u}{j}}}{\Sub{x}{j}} }  
+{ \PartialFrac{\rho}{t} + \PartialFrac{\Parenthesis{\rho \Sub{u}{j}}}{\Sub{x}{j}} = 0 }  
 
-% Navier Stokes Eq. - Einstein's notation  
+% Navier Stokes Eq. - Einstein's notation (From Turbulence Modeling-Wilcox pg 231) 
 \newcommand{\navierStokesEins} %\incompressibleNavierStokesEins
-{ \frac{D\Parenthesis{\rho\Sub{u}{i}}}{Dt} = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{j}} + \Sub{f}{i} } 
+{ \PartialFrac{\Parenthesis{\rho\Sub{u}{i}}}{t} + \PartialFrac{\Parenthesis{\rho\Sub{u}{i}\Sub{u}{j}}}{\Sub{x}{j}} = -\PartialFrac{p}{\Sub{x}{i}}  +\PartialFrac{\Sub{\tau}{ij}}{\Sub{x}{j}} + \Sub{f}{i} } 
 
-% Energy Eq. - Einstein's notation
+% Energy Eq. - Einstein's notation (From Turbulence Modeling-Wilcox pg 231)
 \newcommand{\energyEins}
-{ \frac{D E}{Dt} = -\frac{1}{\rho}\PartialFrac{\Parenthesis{\Sub{u}{i} p}}{\Sub{x}{i}} + \nu\PartialFrac{\Sub{u}{i}}{\Sub{x}{j}}   \PartialFrac{\Sub{u}{j}}{\Sub{x}{i}} + \nu\frac{\partial^2E} {\partial\Sub{x}{j}\partial\Sub{x}{j}} -\Phi }
+{  \PartialFrac{}{t}\SqBracket{ \rho\Parenthesis{e + \frac{1}{2}\Sub{u}{i}\Sub{u}{i}}  } + \PartialFrac{}{\Sub{x}{j}}\SqBracket{\rho\Sub{u}{j}\Parenthesis{h + \frac{1}{2}\Sub{u}{i}\Sub{u}{i}}} = \PartialFrac{\Parenthesis{\Sub{u}{i}\Sub{\tau}{ij}}}{\Sub{x}{j}}  - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j}}  }
 
 % Kinematic Dissipation Rate
 \newcommand{\kinematicDissipationRate}
