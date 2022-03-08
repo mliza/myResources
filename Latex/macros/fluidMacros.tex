@@ -115,7 +115,8 @@
 
 % Energy Eq. - Einstein's notation (From Turbulence Modeling-Wilcox pg 231)
 \newcommand{\energyEins}
-{  \PartialFrac{}{t}\SqBracket{ \rho\Parenthesis{e + \frac{1}{2}\Sub{u}{i}\Sub{u}{i}}  } + \PartialFrac{}{\Sub{x}{j}}\SqBracket{\rho\Sub{u}{j}\Parenthesis{h + \frac{1}{2}\Sub{u}{i}\Sub{u}{i}}} = \PartialFrac{\Parenthesis{\Sub{u}{i}\Sub{\tau}{ij}}}{\Sub{x}{j}}  - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j}}  }
+%{  \PartialFrac{}{t}\SqBracket{ \rho\Parenthesis{e + \frac{1}{2}\Sub{u}{i}\Sub{u}{i}}  } + \PartialFrac{}{\Sub{x}{j}}\SqBracket{\rho\Sub{u}{j}\Parenthesis{h + \frac{1}{2}\Sub{u}{i}\Sub{u}{i}}} = \PartialFrac{\Parenthesis{\Sub{u}{i}\Sub{\tau}{ij}}}{\Sub{x}{j}}  - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j}}  }
+{ \PartialFrac{E}{t} + \PartialFrac{}{\Sub{x}{j}}\Parenthesis{E\Sub{u}{j} - \kappa\PartialFrac{T}{\Sub{x}{j}}} &= -p\PartialFrac{\Sub{u}{i}}{\Sub{x}{i}} +                              \Sub{\tau}{ij}\PartialFrac{\Sub{u}{i}}{\Sub{x}{j}}}
 
 % Kinematic Dissipation Rate
 \newcommand{\kinematicDissipationRate}
