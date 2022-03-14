@@ -27,9 +27,9 @@ import subprocess
 #NOTE: Requires, g++-9, pdflatex, gcc-9 and gfortran-9  
 
 #Available compilers  
-cppCopiler = 'g++-10 -std=c++17' 
+cppCopiler = 'g++-11 -std=c++17' 
 texCopiler = 'pdflatex' 
-cCopiler   = 'gcc-10' 
+cCopiler   = 'gcc-11' 
 fCopiler   = 'gfortran' 
 
 #Make parser object
