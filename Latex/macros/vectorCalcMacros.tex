@@ -56,11 +56,11 @@
 
 % Stokes Theorem 
 \newcommand{\stokesTheorem}[1] %\stokesTheorem{F} 
-{ \oint\limits_{C}{#1}\cdot d\vec{l} = \iint\limits_{S}\Parenthesis{\nabla\times {#1} }\cdot\,d\vec{S} }
+{\iint\limits_{S}\Parenthesis{\nabla\times {#1} }\cdot\,\hat{n}\,ds  = \oint\limits_{C}{#1}\cdot \hat{n}\,dl}
 
 % Divergence Theorem 
 \newcommand{\divergenceTheorem}[1] %\divergenceTheorem{F}
-{ \iiint\limits_{\forall}\Parenthesis{\nabla\cdot {#1}}d\forall = \oiint\limits_{S}\Parenthesis{{#1}\cdot\hat{n}}dS } 
+{ \iiint\limits_{\forall}\Parenthesis{\nabla\cdot {#1}}d\forall = \oiint\limits_{S}{#1}\cdot\hat{n}\,ds } 
 
 % Greens Theorem 
 \newcommand{\greensTheorem}[2] %\greensTheorem{M}{N}
