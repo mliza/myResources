@@ -84,7 +84,7 @@
 % Tensors %
 % Material Derivative -Einstein's notation 
 \newcommand{\materialDerivative}
-{ \frac{D\Parenthesis{\;}   }{Dt} &= \PartialFrac{}{t}\Parenthesis{\; } + \Sub{u}{j} \PartialFrac{}{\Sub{x}{j}} \Parenthesis{\;} } 
+{ \frac{D\Parenthesis{\;}   }{Dt} = \PartialFrac{}{t}\Parenthesis{\; } + \Sub{u}{j} \PartialFrac{\;}{\Sub{x}{j}} \Parenthesis{\;} } 
 
 % Strain Rate Tensor 
 %\newcommand{\shearStrainTensor}
@@ -97,25 +97,25 @@
 
 % Deviatoric Stress Tensor 
 %\newcommand{\shearStressTensor} 
-\newcommand{\deviatoricStressTensor}
-{ \Sub{\tau}{ij} = 2\mu\Parenthesis{ \Sub{S}{ij} -\frac{1}{3} \Sub{S}{kk} \Sub{\delta}{ij} }} 
+%\newcommand{\deviatoricStressTensor}
+\newcommand{\cauchyStressTensor}
+{ \Sub{\sigma}{ij} = 2\mu\Parenthesis{ \Sub{S}{ij} -\frac{1}{3} \Sub{S}{kk} \Sub{\delta}{ij} }} 
 
 % Cauchy Momentum Stress Tensor 
-\newcommand{\cauchyMomentumTensor} %totalStressTensor 
-{ \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\tau}{ij} }
+%\newcommand{\cauchyMomentumTensor} %totalStressTensor 
+%{ \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\tau}{ij} }
 
-% Continuity Eq. - Einstein's notation (From Turbulence Modeling-Wilcox pg 231) 
+% Continuity Eq. - Einstein's notation (Large Eddy Simulation for Compressible Flows_Garnier 2.1)
 \newcommand{\continuityEins}
 { \PartialFrac{\rho}{t} + \PartialFrac{\Parenthesis{\rho \Sub{u}{j}}}{\Sub{x}{j}} = 0 }  
 
-% Navier Stokes Eq. - Einstein's notation (From Turbulence Modeling-Wilcox pg 231) 
+% Navier Stokes Eq. - Einstein's notation (Large Eddy Simulation for Compressible Flows_Garnier 2.2) 
 \newcommand{\navierStokesEins} %\incompressibleNavierStokesEins
-{ \PartialFrac{\Parenthesis{\rho\Sub{u}{i}}}{t} + \PartialFrac{\Parenthesis{\rho\Sub{u}{i}\Sub{u}{j}}}{\Sub{x}{j}} = -\PartialFrac{p}{\Sub{x}{i}}  +\PartialFrac{\Sub{\tau}{ij}}{\Sub{x}{j}} + \Sub{f}{i} } 
+{ \PartialFrac{\Parenthesis{\rho\Sub{u}{i}}}{t} + \PartialFrac{\Parenthesis{\rho\Sub{u}{i}\Sub{u}{j}}}{\Sub{x}{j}}  + \PartialFrac{p}{\Sub{x}{i}}  = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{j}}} 
 
-% Energy Eq. - Einstein's notation (From Turbulence Modeling-Wilcox pg 231)
-\newcommand{\energyEins}
-%{  \PartialFrac{}{t}\SqBracket{ \rho\Parenthesis{e + \frac{1}{2}\Sub{u}{i}\Sub{u}{i}}  } + \PartialFrac{}{\Sub{x}{j}}\SqBracket{\rho\Sub{u}{j}\Parenthesis{h + \frac{1}{2}\Sub{u}{i}\Sub{u}{i}}} = \PartialFrac{\Parenthesis{\Sub{u}{i}\Sub{\tau}{ij}}}{\Sub{x}{j}}  - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j}}  }
-{ \PartialFrac{E}{t} + \PartialFrac{}{\Sub{x}{j}}\Parenthesis{E\Sub{u}{j} - \kappa\PartialFrac{T}{\Sub{x}{j}}} = -p\PartialFrac{\Sub{u}{i}}{\Sub{x}{i}} +                              \Sub{\tau}{ij}\PartialFrac{\Sub{u}{i}}{\Sub{x}{j}}}
+% Energy Eq. - Einstein's notation (Large Eddy Simulation for Compressible Flows_Garnier 2.3)
+\newcommand{\energyEins} 
+{ \PartialFrac{\Parenthesis{\rho E}}{t} + \PartialFrac{\Parenthesis{\rho E + p}\Sub{u}{j} }{\Sub{x}{j}}  = \PartialFrac{\Parenthesis{\Sub{\sigma}{ij}\Sub{u}{i}} }{\Sub{x}{j}} - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j} } } 
 
 % Kinematic Dissipation Rate
 \newcommand{\kinematicDissipationRate}
