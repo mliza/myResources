@@ -68,5 +68,5 @@
 
 % Leibniz Integral Rule
 \newcommand{\leibnizIntegral} 
-{\frac{d}{dt}\iint\limits_{\Sigma_{(t)} } \vec{F}_{(\vec{r},t)} \cdot d\vec{a} = \iint\limits_{\Sigma_{(t)}} \Parenthesis{ \PartialFrac{\vec{F}_{(\vec{r},t)}}{t} + \SqBracket{ \nabla\cdot\vec{F}_{(\vec{r},t)}}\vec{V}}\cdot d\vec{a}  - \oint\limits_{\partial\Sigma_{(t)}} \SqBracket{\vec{V}\times\vec{F}_{(\vec{r,t})}}\cdot d\vec{s} } 
+{\frac{d}{dt}\iint\limits_{\Sigma_{(t)} } \vec{F} \cdot d\vec{a} = \iint\limits_{\Sigma_{(t)}} \Parenthesis{ \PartialFrac{\vec{F}}{t} +  \Parenthesis{\vec{F}\cdot\nabla}\vec{V} + \Parenthesis{ \nabla\cdot\vec{F} }\vec{V} - \Parenthesis{\nabla\cdot\vec{V}}\vec{F}}\cdot d\vec{a}  - \oint\limits_{\partial\Sigma_{(t)}} \Parenthesis{\vec{V}\times\vec{F}}\cdot d\vec{s} } 
 
