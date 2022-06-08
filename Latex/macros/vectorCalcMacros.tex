@@ -68,5 +68,5 @@
 
 % Leibniz Integral Rule
 \newcommand{\leibnizIntegral} 
-{ \frac{d}{dx}\int^{b}_{a}\Function{f}{x,t}dt = \SqBracket{ \Function{f}{x,b}\PartialFrac{b}{x} - \Function{f}{x,a}\PartialFrac{a}{x} } + \int^{b}_{a}\PartialFrac{ }{x} \Function{f}{x,t}dt }  
+{\frac{d}{dt}\iint\limits_{\Sigma_{(t)} } \vec{F}_{(\vec{r},t)} \cdot d\vec{a} = \iint\limits_{\Sigma_{(t)}} \Parenthesis{ \PartialFrac{\vec{F}_{(\vec{r},t)}}{t} + \SqBracket{ \nabla\cdot\vec{F}_{(\vec{r},t)}}\vec{V}}\cdot d\vec{a}  - \oint\limits_{\partial\Sigma_{(t)}} \SqBracket{\vec{V}\times\vec{F}_{(\vec{r,t})}}\cdot d\vec{s} } 
 
