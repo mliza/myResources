@@ -96,9 +96,8 @@
 { \Sub{\Omega}{ij} = \frac{1}{2}\Parenthesis{ \PartialFrac{\Sub{u}{i}}{\Sub{x}{j}} - \PartialFrac{\Sub{u}{j}}{\Sub{x}{i}} } }
 
 % Deviatoric Stress Tensor 
-%\newcommand{\shearStressTensor} 
 %\newcommand{\deviatoricStressTensor}
-\newcommand{\cauchyStressTensor}
+\newcommand{\shearStressTensor} 
 { \Sub{\sigma}{ij} = 2\mu\Parenthesis{ \Sub{S}{ij} -\frac{1}{3} \Sub{S}{kk} \Sub{\delta}{ij} }} 
 
 % Cauchy Momentum Stress Tensor 
@@ -116,6 +115,10 @@
 % Energy Eq. - Einstein's notation (Large Eddy Simulation for Compressible Flows_Garnier 2.3)
 \newcommand{\energyEins} 
 { \PartialFrac{\Parenthesis{\rho E}}{t} + \PartialFrac{\Parenthesis{\rho E + p}\Sub{u}{j} }{\Sub{x}{j}}  = \PartialFrac{\Parenthesis{\Sub{\sigma}{ij}\Sub{u}{i}} }{\Sub{x}{j}} - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j} } } 
+
+% Vorticity Eq. - Einstein's notation (https://en.wikipedia.org/wiki/Vorticity_equation)
+\newcommand{\vorticityEins}
+{ \PartialFrac{\Sub{\omega}{i}}{t} + \Sub{u}{j}\PartialFrac{\Sub{\omega}{i}}{\Sub{x}{j}} =  \Sub{\omega}{j}\PartialFrac{\Sub{u}{i}}{\Sub{x}{j}}  - \Sub{\omega}{i}\PartialFrac{\Sub{u}{j}}{\Sub{x}{j}} + \Sub{\varepsilon}{ijk}\frac{1}{\rho^2}\PartialFrac{\rho}{\Sub{x}{j}}\PartialFrac{p}{\Sub{x}{k}}+\Sub{\varepsilon}{ijk}\PartialFrac{}{\Sub{x}{j}}\Parenthesis{\frac{1}{\rho}\PartialFrac{\Sub{\sigma}{km}}{\Sub{x}{m}} } }  
 
 % Kinematic Dissipation Rate
 \newcommand{\kinematicDissipationRate}
