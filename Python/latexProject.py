@@ -1,6 +1,6 @@
 #!/opt/homebrew/bin/python3
 """
-    Date:    06/23/2020 
+    Date:    07/11/2022 
     Author:  Martin E. Liza 
     File:    latexProject.py 
     Def:     creates a latex project using 
@@ -23,6 +23,8 @@
     Martin E. Liza     06/23/2020     Modified beamer write up, added \TitlePage 
     Martin E. Liza     01/20/2020     Make a folder 'codes' in the project directory  
                                       added codeMacros to the preamble  
+    Martin E. Liza     07/11/2022     Added draft watermark and bibliography as comments
+                                      to homework flag.
 """ 
 import os
 import subprocess 
@@ -76,9 +78,9 @@ def preambleStr(args, paths):
         body = '\n\n\\begin{document}\n\t\\maketitle\n\t\\tableofcontents\n\n\t% Classes\n\t\\input{lectures/class1}\n\end{document}'  
 
     if args.homework: 
-        header = '\Header{\\today}{Document Name}{My Name}'   
+        header = '\Header{\\today}{Document Name}{My Name}\n%\\usepackage[backend=biber, sorting=none]{biblatex}\n%\\addbibresource{bibliography.bib}\n%\\usepackage[text=Draft, colorspec=0.92, fontsize=7cm]{draftwatermark}'   
         preamble = f'\input{{{templates["homeworkTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["pictureMacros"]}}}\n\input{{{macros["codeMacros"]}}}\n{header}'
-        body = '\n\n\\begin{document}\n\n\end{document}' 
+        body = '\n\n\\begin{document}\n%\printbibliography[heading=none]\n\end{document}' 
 
     if args.beamer: 
         header = '\\usetheme{UoA}\n\TitlePage{title}{author}{\\today}'   
