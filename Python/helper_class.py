@@ -45,11 +45,11 @@ class Helper:
             pickle_out.close() 
 
 # Opens pickle dictionary, adds a variable and saves it
-    def pickle_dict_add(self, var_in, var_in_str, pickle_path, 
+    def pickle_dict_add(self, var_in_data, var_in_str, pickle_path, 
                         pickle_dict_in, pickle_dict_out):
         # Open pickle dictionary 
         dict_in = self.pickle_manager(pickle_dict_in, pickle_path) 
-        dict_in[var_in_str] = var_in
+        dict_in[var_in_str] = var_in_data
         self.pickle_manager(pickle_dict_out, pickle_path, dict_in)
 
 
