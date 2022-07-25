@@ -48,10 +48,12 @@ class Aero:
 
 # Turbulent Mach number
     def turbulent_mach_number(self, kinetic_energy, speed_of_sound): 
-        kinetic_energy_fluctuation = np.sqrt( (kinetic_energy - 
-                                      np.mean(kinetic_energy))**2 )   # [m^2 / s^2]
+        kinetic_energy_fluctuation = (kinetic_energy - 
+                                      np.mean(kinetic_energy))   # [m^2 / s^2]
+        # If kinetic_energy_fluctuation < 0 then mach_t = 0
+        kinetic_energy_fluctuation[kinetic_energy_fluctuation < 0] = 0
         turbulent_mach_number = (np.sqrt(2 * kinetic_energy_fluctuation) / 
-                                 np.mean(speed_of_sound)) # [ ]
+                                 np.mean(speed_of_sound))       # [ ]
         return turbulent_mach_number
 
 
