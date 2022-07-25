@@ -51,6 +51,3 @@ class Helper:
         dict_in = self.pickle_manager(pickle_dict_in, pickle_path) 
         dict_in[var_in_str] = var_in_data
         self.pickle_manager(pickle_dict_out, pickle_path, dict_in)
-
-
-
