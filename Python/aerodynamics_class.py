@@ -1,13 +1,16 @@
 #!/opt/homebrew/bin/python3
 '''
-    Date:   07/18/2022
+    Date:   08/04/2022
     Author: Martin E. Liza
     File:   aerodynamics_class.py
     Def:    Contains aerodynamics helper functions. 
 
     Author		    Date		Revision
-    ----------------------------------------------------
+    --------------------------------------------------------
     Martin E. Liza	07/25/2022	Initial version.
+    Martin E. Liza	08/04/2022	Added normal shock 
+                                relations function. 
+
 '''
 import os 
 import molmass
@@ -56,6 +59,22 @@ class Aero:
                                  np.mean(speed_of_sound))       # [ ]
         return turbulent_mach_number
 
-
-
-
+# Normal shock relations  
+    def normal_shock_relations(self, mach_1):
+        # https://www.grc.nasa.gov/www/k-12/airplane/normal.html
+        # Note ratio = var_1 / var_2
+        gamma   = 1.4                                        # [ ] 
+        mach_2  = np.sqrt( ((gamma - 1) * mach_1**2 + 2) / 
+                           (2 * gamma * mach_1**2 - (gamma - 1)) )
+        P_ratio = ( (2 * gamma / (gamma + 1)) * mach_1**2 - 
+                    (gamma - 1) / (gamma + 1) ) 
+        T_ratio = ( ((2 * gamma * mach_1**2 - (gamma - 1)) * 
+                ((gamma - 1) * mach_1**2 + 2)) / ((gamma + 1)**2 * mach_1**2) )
+        R_ratio = ( ((gamma + 1) * mach_1**2) / 
+                    ((gamma - 1) * mach_1**2 + 2) )
+        # Return Dictionary 
+        shock_relations_dict = { 'mach_2'    : mach_2,
+                                 'P_ratio'   : P_ratio, 
+                                 'T_ratio'   : T_ratio,
+                                 'Rho_ratio' : R_ratio }
+        return shock_relations_dict
