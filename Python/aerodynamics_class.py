@@ -109,3 +109,18 @@ class Aero:
                                'T_ratio'   : T_ratio,
                                'Rho_ratio' : R_ratio }
         return oblique_shock_dict
+
+# Van-Driest transformation     
+    def van_driest_transformation(self, u_vec, y_vec, mu, rho):
+        # u_vec [m/s] 
+        # y_vec [m] 
+        # mu    [kg/(ms)]
+        # rho   [kg/m3]
+        u_tau  = np.sqrt(tau_wall / rho)
+        y_plus = y_vec * u_tau * rho / mu 
+        u_plus = u_vec / u_tau 
+        # Dict to return 
+        dict_out = { 'y_plus' : y_plus, 
+                     'u_plus' : u_plus } 
+        return dict_out 
+        
