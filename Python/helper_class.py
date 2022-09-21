@@ -7,9 +7,10 @@
             for data processing and manipulation.  
 
     Author		    Date		Revision
-    ----------------------------------------------------
+    -----------------------------------------------------
     Martin E. Liza	05/23/2022	Initial version.
     Martin E. Liza	07/18/2022	Added pickle_dict_add.
+    Martin E. Liza  09/21/2022  Added smoothing_function.
 '''
 import os 
 import pickle 
@@ -51,3 +52,9 @@ class Helper:
         dict_in = self.pickle_manager(pickle_dict_in, pickle_path) 
         dict_in[var_in_str] = var_in_data
         self.pickle_manager(pickle_dict_out, pickle_path, dict_in)
+
+# Smoothing function 
+    def smoothing_function(self, data_in, box_pts):
+        box         = np.ones(box_pts) / box_pts
+        data_smooth = np.convolve(data_in, box, mode='same')
+        return data_smooth 
