@@ -103,16 +103,12 @@
 
 % Deviatoric Stress Tensor 
 %\newcommand{\deviatoricStressTensor}
-\newcommand{\shearStressTensor} 
+\newcommand{\cauchyStressTensor} 
 { \Sub{\sigma}{ij} = 2\mu\Parenthesis{ \Sub{S}{ij} -\frac{1}{3} \Sub{S}{kk} \Sub{\delta}{ij} }} 
-
-% Cauchy Momentum Stress Tensor 
-%\newcommand{\cauchyMomentumTensor} %totalStressTensor 
-%{ \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\tau}{ij} }
 
 % Continuity Eq. - Einstein's notation (Large Eddy Simulation for Compressible Flows_Garnier 2.1)
 \newcommand{\continuityEins}
-{ \PartialFrac{\rho}{t} + \PartialFrac{\Parenthesis{\rho \Sub{u}{j}}}{\Sub{x}{j}} = 0 }  
+{ \PartialFrac{\rho}{t} + \rho\Parenthesis{\PartialFrac{\Sub{u}{i}}{\Sub{x}{i}}} + \Parenthesis{\PartialFrac{\rho}{\Sub{x}{i}}}\Sub{u}{i} =  0 }  
 
 % Navier Stokes Eq. - Einstein's notation (Large Eddy Simulation for Compressible Flows_Garnier 2.2) 
 \newcommand{\navierStokesEins} %\incompressibleNavierStokesEins
