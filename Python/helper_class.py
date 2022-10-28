@@ -11,12 +11,13 @@
     Martin E. Liza	05/23/2022	Initial version.
     Martin E. Liza	07/18/2022	Added pickle_dict_add.
     Martin E. Liza  09/21/2022  Added smoothing_function.
+    Martin E. Liza  10/28/2022  Added matlab flag to pickle manager.
 '''
 import os 
 import pickle 
 import numpy as np 
 import IPython 
-from scipy.io import FortranFile  
+import scipy.io 
 from dataclasses import dataclass
 
 @dataclass 
@@ -26,13 +27,14 @@ class Helper:
 # Loading unformatted fortran data  
     def fortran_data_loader(self, variable_in, abs_path_in, d_type=float): 
         data_in = os.path.join(abs_path_in, f'{variable_in}')
-        f_in    = FortranFile(data_in, 'r')
+        f_in    = scipy.io.FortranFile(data_in, 'r')
         data    = f_in.read_reals(dtype=d_type)
         f_in.close() 
         return data
 
 # Save data as pickle and loads data as a pickle 
-    def pickle_manager(self, pickle_name_file, pickle_path, data_to_save=None):
+    def pickle_manager(self, pickle_name_file, pickle_path, data_to_save=None,
+                       matlab_flag=None):
         # Loads pickle file if data_to_save is empty  
         if data_to_save is None:  
             file_in   = os.path.join(f'{pickle_path}',f'{pickle_name_file}.pickle') 
@@ -40,10 +42,13 @@ class Helper:
             return pickle.load(pickle_in)
         # Creates pickle file if data_in has a path and saves it in that path  
         else:
-            file_out   = os.path.join(f'{pickle_path}',f'{pickle_name_file}.pickle') 
-            pickle_out = open(file_out, 'wb') 
-            pickle.dump(data_to_save, pickle_out)
-            pickle_out.close() 
+            file_out   = os.path.join(f'{pickle_path}',f'{pickle_name_file}')
+            if matlab_flag is None:
+                pickle_out = open(f'{file_out}.pickle', 'wb') 
+                pickle.dump(data_to_save, pickle_out)
+                pickle_out.close() 
+            else:
+                scipy.io.savemat(f'{file_out}.mat', mdict=data_to_save) 
 
 # Opens pickle dictionary, adds a variable and saves it
     def pickle_dict_add(self, var_in_data, var_in_str, pickle_path, 
