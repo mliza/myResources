@@ -33,18 +33,28 @@ class Aero:
                         (T_ref + S_const) / (temperature_field_K + S_const) ) )
         return mu #[kg/m*s] 
 
-# Speed of sound 
-    def speed_of_sound(self, temperature_field_K):
-        gas_const = s_consts.R                  # [J/mol*K]
-        gamma     = 1.4                         # [ ] 
+# Air molecular mass
+    def air_molecular_mass(self):
         N2        = molmass.Formula('N2').mass  # [g/mol] 
         O2        = molmass.Formula('O2').mass  # [g/mol]
         Ar        = molmass.Formula('Ar').mass  # [g/mol]
         CO2       = molmass.Formula('CO2').mass # [g/mol]
-        dry_air_m = (0.7803 * N2 + 
-                     0.2099 * O2 + 
-                     0.0094 * Ar + 
-                     0.0003 * CO2) * 1E-3       # [kg/mol]
+        air_dict  = { }
+        air_mol_mass_dict = {'N2'  : N2,
+                             'O2'  : O2,
+                             'Ar'  : Ar,
+                             'CO2' : CO2}
+        return air_mol_mass_dict 
+
+# Speed of sound 
+    def speed_of_sound(self, temperature_field_K):
+        gas_const = s_consts.R                  # [J/mol*K]
+        gamma     = 1.4                         # [ ] 
+        amu_air   = self.air_molecular_mass()   # [g/mol] 
+        dry_air_m = (0.7803 * amu_air['N2'] + 
+                     0.2099 * amu_air['O2'] + 
+                     0.0094 * amu_air['Ar'] + 
+                     0.0003 * amu_air['CO2']) * 1E-3       # [kg/mol]
         spd_of_sound = np.sqrt(gamma * temperature_field_K * 
                                gas_const / dry_air_m) # [m/s]
         return spd_of_sound #[m/s]
