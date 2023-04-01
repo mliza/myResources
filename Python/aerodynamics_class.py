@@ -6,11 +6,12 @@
     Def:    Contains aerodynamics helper functions. 
 
     Author		    Date		Revision
-    -------------------------------------______-------------------
+    -----------------------------------------------------------------
     Martin E. Liza	07/25/2022	Initial version.
     Martin E. Liza	08/04/2022	Added normal and oblique 
                                 shock relation functions. 
     Martin E. Liza  03/25/2023  Added air molecular mass function. 
+    Martin E. Liza  03/31/2023  Removed non useful functions.  
 
 '''
 import os 
@@ -56,22 +57,12 @@ class Aero:
                      0.0094 * amu_air['Ar'] + 
                      0.0003 * amu_air['CO2']) * 1E-3       # [kg/mol]
         spd_of_sound = np.sqrt(gamma * temperature_field_K * 
-                               gas_const / dry_air_m) # [m/s]
+                               gas_const / dry_air_m)      # [m/s]
         return spd_of_sound #[m/s]
-
-# Turbulent mach number
-    def turbulent_mach_number(self, kinetic_energy, speed_of_sound): 
-        kinetic_energy_fluctuation = (kinetic_energy - 
-                                      np.mean(kinetic_energy))   # [m^2 / s^2]
-        # If kinetic_energy_fluctuation < 0 then mach_t = 0
-        kinetic_energy_fluctuation[kinetic_energy_fluctuation < 0] = 0
-        turbulent_mach_number = (np.sqrt(2 * kinetic_energy_fluctuation) / 
-                                 np.mean(speed_of_sound))       # [ ]
-        return turbulent_mach_number
 
 # Normal shock relations  
     def normal_shock_relations(self, mach_1):
-        # https://www.grc.nasa.gov/www/k-12/airplane/normal.html
+        # REF: https://www.grc.nasa.gov/www/k-12/airplane/normal.html
         # Note ratio = var_1 / var_2
         gamma   = 1.4                                      
         mach_2  = np.sqrt( ((gamma - 1) * mach_1**2 + 2) / 
@@ -95,7 +86,7 @@ class Aero:
     # NOTE: Equations only work for weak shocks 
     # Note ratio = var_1 / var_2
         gamma       = 1.4                                        
-        shock_angle = np.radians(shock_angle_deg)
+        shock_angle = np.radians(shock_angle_deg)  
         sin2_shock  = np.sin(shock_angle)**2
         mach_n1     = mach_1 * np.sin(shock_angle) #normal mach number 
         # Calculates Deflection angle 
@@ -119,18 +110,3 @@ class Aero:
                                'T_ratio'   : T_ratio,
                                'Rho_ratio' : R_ratio }
         return oblique_shock_dict
-
-# Van-Driest transformation     
-    def van_driest_transformation(self, u_vec, y_vec, mu, rho):
-        # u_vec [m/s] 
-        # y_vec [m] 
-        # mu    [kg/(ms)]
-        # rho   [kg/m3]
-        u_tau  = np.sqrt(tau_wall / rho)
-        y_plus = y_vec * u_tau * rho / mu 
-        u_plus = u_vec / u_tau 
-        # Dict to return 
-        dict_out = { 'y_plus' : y_plus, 
-                     'u_plus' : u_plus } 
-        return dict_out 
-        
