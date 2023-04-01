@@ -1,15 +1,16 @@
 #!/opt/homebrew/bin/python3
 '''
-    Date:   08/04/2022
+    Date:   03/31/2023 
     Author: Martin E. Liza
     File:   aerodynamics_class.py
     Def:    Contains aerodynamics helper functions. 
 
     Author		    Date		Revision
-    --------------------------------------------------------
+    -------------------------------------______-------------------
     Martin E. Liza	07/25/2022	Initial version.
     Martin E. Liza	08/04/2022	Added normal and oblique 
                                 shock relation functions. 
+    Martin E. Liza  03/25/2023  Added air molecular mass function. 
 
 '''
 import os 
@@ -17,7 +18,6 @@ import molmass
 import numpy as np 
 import scipy.constants as s_consts
 from dataclasses import dataclass
-import IPython 
 
 @dataclass 
 class Aero:  
@@ -29,8 +29,8 @@ class Aero:
         mu_ref  = 1.716e-5 # [kg/m*s] 
         T_ref   = 273      # [K]
         S_const = 111      # [K] 
-        mu = mu_ref * ( (temperature_field_K / T_ref)**(3/2) * ( 
-                        (T_ref + S_const) / (temperature_field_K + S_const) ) )
+        mu      = mu_ref * ( (temperature_field_K / T_ref)**(3/2) * ( 
+                  (T_ref + S_const) / (temperature_field_K + S_const) ) )
         return mu #[kg/m*s] 
 
 # Air molecular mass
