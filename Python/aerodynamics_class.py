@@ -36,15 +36,17 @@ class Aero:
 
 # Air molecular mass
     def air_molecular_mass(self):
-        N2        = molmass.Formula('N2').mass  # [g/mol] 
-        O2        = molmass.Formula('O2').mass  # [g/mol]
-        Ar        = molmass.Formula('Ar').mass  # [g/mol]
-        CO2       = molmass.Formula('CO2').mass # [g/mol]
+        N2        = molmass.Formula('N2').mass # [g/mol] 
+        O2        = molmass.Formula('O2').mass # [g/mol]
+        N         = molmass.Formula('N').mass  # [g/mol]
+        O         = molmass.Formula('O').mass  # [g/mol]
+        NO        = molmass.Formula('NO').mass # [g/mol]
         air_dict  = { }
-        air_mol_mass_dict = {'N2'  : N2,
-                             'O2'  : O2,
-                             'Ar'  : Ar,
-                             'CO2' : CO2}
+        air_mol_mass_dict = {'N2' : N2,
+                             'O2' : O2,
+                             'N'  : N,
+                             'O'  : O,
+                             'NO' : NO}
         return air_mol_mass_dict 
 
 # Speed of sound 
