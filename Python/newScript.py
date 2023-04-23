@@ -2,7 +2,6 @@
 import argparse 
 import subprocess 
 import datetime 
-import IPython 
 
 """
     Date:    03/16/2021 
