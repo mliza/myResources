@@ -101,7 +101,7 @@
 \newcommand{\rotationRateTensor}
 { \Sub{\Omega}{ij} = \frac{1}{2}\Parenthesis{ \PartialFrac{\Sub{u}{i}}{\Sub{x}{j}} - \PartialFrac{\Sub{u}{j}}{\Sub{x}{i}} } }
 
-% Deviatoric Stress Tensor 
+% Viscous Stress Tensor 
 %\newcommand{\deviatoricStressTensor}{gauchiStressTensor} 
 \newcommand{\viscousStressTensor} 
 { \Sub{\sigma}{ij} = 2\mu\Parenthesis{ \Sub{S}{ij} -\frac{1}{3} \Sub{S}{kk} \Sub{\delta}{ij} }} 
@@ -125,6 +125,13 @@
 % Kinematic Dissipation Rate
 \newcommand{\kinematicDissipationRate}
 { \Phi = 2\nu \Sub{S}{ij}\Sub{S}{ij} } 
+
+% Total Energy Density 
+\newcommand{\totalEnergyDensity}
+{ e = \frac{p}{\gamma-1} + \frac{\rho}\Sub{u}{i}\Sub{u}{i} }
+
+% Heat Flux
+{ \Sub{q}{j} = -\kappa\PartialFrac{T}{\Sub{x}{j}} } 
 
 % Compressible 
 % Isentropic relations for ideal gas 
