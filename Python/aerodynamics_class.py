@@ -41,7 +41,7 @@ class Aero:
         N         = molmass.Formula('N').mass  # [g/mol]
         O         = molmass.Formula('O').mass  # [g/mol]
         NO        = molmass.Formula('NO').mass # [g/mol]
-        air_dict  = { }
+
         air_mol_mass_dict = {'N2' : N2,
                              'O2' : O2,
                              'N'  : N,
@@ -65,7 +65,7 @@ class Aero:
 # Normal shock relations  
     def normal_shock_relations(self, mach_1):
         # REF: https://www.grc.nasa.gov/www/k-12/airplane/normal.html
-        # Note ratio = var_1 / var_2
+        # NOTE: ratio = var_1 / var_2
         gamma   = 1.4                                      
         mach_2  = np.sqrt( ((gamma - 1) * mach_1**2 + 2) / 
                            (2 * gamma * mach_1**2 - (gamma - 1)) )
