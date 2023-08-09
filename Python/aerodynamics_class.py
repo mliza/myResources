@@ -35,7 +35,7 @@ class Aero:
         return mu #[kg/m*s] 
 
 # Air molecular mass
-    def air_molecular_mass(self):
+    def air_atomic_mass(self):
         N2        = molmass.Formula('N2').mass # [g/mol] 
         O2        = molmass.Formula('O2').mass # [g/mol]
         N         = molmass.Formula('N').mass  # [g/mol]
@@ -50,17 +50,15 @@ class Aero:
         return air_mol_mass_dict 
 
 # Speed of sound 
-    def speed_of_sound(self, temperature_field_K):
-        gas_const = s_consts.R                  # [J/mol*K]
-        gamma     = 1.4                         # [ ] 
-        amu_air   = self.air_molecular_mass()   # [g/mol] 
-        dry_air_m = (0.7803 * amu_air['N2'] + 
-                     0.2099 * amu_air['O2'] + 
-                     0.0094 * amu_air['Ar'] + 
-                     0.0003 * amu_air['CO2']) * 1E-3       # [kg/mol]
-        spd_of_sound = np.sqrt(gamma * temperature_field_K * 
-                               gas_const / dry_air_m)      # [m/s]
-        return spd_of_sound #[m/s]
+    def speed_of_sound(self, temperature_K, specific_heat = 1.4):
+        gas_const          = s_consts.R                  # [J/mol*K]
+        air_atomic_mass    = self.air_atomic_mass()      # [g/mol] 
+        air_molecular_mass = (0.7803 * air_atomic_mass['N2'] + 
+                            0.2099 * air_atomic_mass['O2'] + 
+                            0.0003 * air_atomic_mass['CO2']) * 1E-3 # [kg/mol]
+        spd_of_sound       = np.sqrt(specific_heat * temperature_K * 
+                                     gas_const / air_molecular_mass)  
+        return spd_of_sound # [m/s]
 
 # Normal shock relations  
     def normal_shock_relations(self, mach_1):
