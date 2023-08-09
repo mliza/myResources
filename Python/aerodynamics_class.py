@@ -27,7 +27,7 @@ class Aero:
 # Sutherland law
     def sutherland_law(self, temperature_K): 
         # https://doc.comsol.com/5.5/doc/com.comsol.help.cfd/cfd_ug_fluidflow_high_mach.08.27.html
-        viscosity_ref     = 1.716e-5   # [kg/m*s] 
+        viscosity_ref     = 1.716E-5   # [kg/m*s] 
         temperature_ref   = 273.0      # [K]
         sutherland_const  = 111.0      # [K] 
         dynamic_viscosity = ( viscosity_ref * 
