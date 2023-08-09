@@ -25,16 +25,19 @@ class Aero:
     pass 
 
 # Sutherland law
-    def sutherland_law(self, temperature_field_K): 
+    def sutherland_law(self, temperature_K): 
         # https://doc.comsol.com/5.5/doc/com.comsol.help.cfd/cfd_ug_fluidflow_high_mach.08.27.html
-        mu_ref  = 1.716e-5 # [kg/m*s] 
-        T_ref   = 273      # [K]
-        S_const = 111      # [K] 
-        mu      = mu_ref * ( (temperature_field_K / T_ref)**(3/2) * ( 
-                  (T_ref + S_const) / (temperature_field_K + S_const) ) )
-        return mu #[kg/m*s] 
+        viscosity_ref     = 1.716e-5   # [kg/m*s] 
+        temperature_ref   = 273.0      # [K]
+        sutherland_const  = 111.0      # [K] 
+        dynamic_viscosity = ( viscosity_ref * 
+                             (temperature_k / temperature_ref) ** (3/2)  *
+                             (temperature_ref + sutherland_const) / 
+                             (temperature_K + sutherland_const) ) 
 
-# Air molecular mass
+        return dynamic_viscosity # [kg/m*s] 
+
+# Air atomic mass
     def air_atomic_mass(self):
         N2        = molmass.Formula('N2').mass # [g/mol] 
         O2        = molmass.Formula('O2').mass # [g/mol]
@@ -42,12 +45,12 @@ class Aero:
         O         = molmass.Formula('O').mass  # [g/mol]
         NO        = molmass.Formula('NO').mass # [g/mol]
 
-        air_mol_mass_dict = {'N2' : N2,
-                             'O2' : O2,
-                             'N'  : N,
-                             'O'  : O,
-                             'NO' : NO}
-        return air_mol_mass_dict 
+        air_atomic_mass = {'N2' : N2,
+                           'O2' : O2,
+                           'N'  : N,
+                           'O'  : O,
+                           'NO' : NO}
+        return air_atomic_mass # [g/mol] 
 
 # Speed of sound 
     def speed_of_sound(self, temperature_K, specific_heat = 1.4):
