@@ -53,18 +53,18 @@ class Aero:
         return air_atomic_mass # [g/mol] 
 
 # Speed of sound 
-    def speed_of_sound(self, temperature_K, specific_heat = 1.4):
+    def speed_of_sound(self, temperature_K, adiabatic_indx = 1.4):
         gas_const          = s_consts.R                  # [J/mol*K]
         air_atomic_mass    = self.air_atomic_mass()      # [g/mol] 
-        air_molecular_mass = (0.7803 * air_atomic_mass['N2'] + 
-                            0.2099 * air_atomic_mass['O2'] + 
-                            0.0003 * air_atomic_mass['CO2']) * 1E-3 # [kg/mol]
-        spd_of_sound       = np.sqrt(specific_heat * temperature_K * 
-                                     gas_const / air_molecular_mass)  
+        air_molecular_mass = (0.7803 * air_atomic_mass['N2'] + # [kg/mol] 
+                              0.2099 * air_atomic_mass['O2'] + 
+                              0.0003 * air_atomic_mass['CO2']) * 1E-3 
+        spd_of_sound       = np.sqrt( adiabatic_indx * temperature_K * 
+                                      gas_const / air_molecular_mass )  
         return spd_of_sound # [m/s]
 
 # Normal shock relations  
-    def normal_shock_relations(self, mach_1):
+    def normal_shock_relations(self, mach_1, adiabatic_indx=1.4):
         # REF: https://www.grc.nasa.gov/www/k-12/airplane/normal.html
         # NOTE: ratio = var_1 / var_2
         gamma   = 1.4                                      
