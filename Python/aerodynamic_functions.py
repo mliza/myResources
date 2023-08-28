@@ -2,7 +2,7 @@
 '''
     Date:   08/27/2023 
     Author: Martin E. Liza
-    File:   aerodynamics_class.py
+    File:   aerodynamics_functions.py
     Def:    Contains aerodynamics helper functions. 
 
     Author		    Date		Revision
