@@ -263,8 +263,3 @@ def spherical2Cartesian(inpVector):
     cartesianVec[1] = inpVector[0] * np.sin(np.radians(inpVector[1])) * np.sin(np.radians(inpVector[2])) #y-direction
     cartesianVec[2] = inpVector[0] * np.cos(np.radians(inpVector[2]))                                    #z-direction
     return cartesianVec #End spherical2Cartesian
-
-
-if __name__="__main__":
-    inpVector = [2.0, 6.0, 94.]
-    spherical2Cartesian(inpVector)
