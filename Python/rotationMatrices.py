@@ -268,5 +268,3 @@ def spherical2Cartesian(inpVector):
 if __name__="__main__":
     inpVector = [2.0, 6.0, 94.]
     spherical2Cartesian(inpVector)
-
-
