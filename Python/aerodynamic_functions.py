@@ -100,11 +100,12 @@ def oblique_shock_relations(self, mach_1, shock_angle_deg, adiabatic_indx=1.4):
     # Calculates properties downstream the shock  
     density_r     = ( ((adiabatic_indx + 1) * mach_n1**2) / 
                      ((adiabatic_indx - 1) * mach_n1**2 + 2) )
-    pressure_r    = 1 + 2 * adiabatic_indx * (mach_n1**2 - 1) / (adiabatic_indx + 1) 
+    pressure_r    = (1 + 2 * adiabatic_indx * (mach_n1**2 - 1) / 
+                     (adiabatic_indx + 1) )
     temperature_r = pressure_r * 1 / density_r 
     # Calculates mach 2 
     mach_n2 = np.sqrt( (mach_n1**2 + (2 / (adiabatic_indx - 1))) / 
-                ((2 * adiabatic_indx / (adiabatic_indx - 1)) * mach_n1**2 - 1) )
+            ((2 * adiabatic_indx / (adiabatic_indx - 1)) * mach_n1**2 - 1) )
     mach_2  = mach_n2 / np.sin(np.radians(shock_angle_deg - 
                               deflection_angle_deg)) 
     # Dictionary 
@@ -114,3 +115,5 @@ def oblique_shock_relations(self, mach_1, shock_angle_deg, adiabatic_indx=1.4):
                            'density_r'             : density_r, 
                            'deflection_angle_degs' : deflection_angle_deg } 
     return oblique_shock_dict
+
+
