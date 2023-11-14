@@ -1,0 +1,286 @@
+# -------
+# Working
+# -------
+buildSu2W() { rm -rf build subprojects; mkdir build; export CC=$(which gcc); export CXX=$(which g++); export PATH=$PWD:$PATH; ./meson.py build --buildtype=debug --prefix=$SU2_HOME/build -Denable-mpp=true; ./ninja -C build; }
+
+buildSu2() { rm -rf build subprojects; ./meson.py build --buildtype=debug --prefix=$PWD/build -Denable-mpp=true; ./ninja -C build; }
+
+
+alias runD='CleanSU2; lldb -s lldb_bk -- SU2_CFD *.cfg'
+alias sourceW='source /Users/martin/Desktop/SU2/wally/exports.sh'
+alias sourceM='source /Users/martin/Desktop/SU2/mliza/exports.sh'
+alias sourceL='source /Users/martin/Desktop/SU2/LES/exports.sh'
+
+
+# ---------
+# Shortcuts
+# ---------
+alias vimrc='vimR ~/.vimrc;'   	                  	 #Access to bashrc
+alias bashrc='vimR ~/.bashrc;'                     	 #Access to vimrc
+alias gitrc='vimR ~/.gitconfig;'                     #Access to gitconfig
+alias rerun='source ~/.profile && clc'               #Resource bash
+alias privateIP='ipconfig getifaddr en0'             #Local IP
+alias publicIP='curl ipecho.net/plain;echo'          #Public IP
+alias EMPTY='sudo rm -rf *'                          #Empty the Folder
+alias superuser='sudo EDITOR=vim visudo' 		     #Access sudo commands
+alias stress='yes >/dev/null &'				         #Stress test killall yes
+alias MAC='system_profiler SPHardwareDataType'       #Display System's information
+alias rsize='resize -s 5 70 >/dev/null && clc'       #Resize og window's size
+alias wsize='resize -s 22 90 >/dev/null && clc'      #Resize windows size    
+alias fsize='resize -s 0 0 >/dev/null && clc'        #Resize full screen    
+alias pipUpdate='pip-review -a'                      #Update python packages
+alias macUpdate='sudo softwareupdate -ir --restart'	 #Update MACsoftware 
+alias updateAll='macUpdate; pipUpdate; brewUpdate; mas upgrade' #Update all
+alias sp2com="sed -i 's/[[:space:]]\+/,/g'"              	    #Space file to comma file 
+alias cleanSU2='rm -rf *.vtu *.err *.dat *.csv *.szplt'                 #Clean SU2
+alias cleanLEMANS='rm -r *.e* *.o* restart* residuals.dat *.plt monitors.dat' #Clean Lemans 
+alias brewUpdate='brew update; brew upgrade; brew cleanup; brew doctor'		  #Update,cleanup homebrew
+alias gccOpenMP='/opt/homebrew/Cellar/gcc/13.1.0/bin/gcc-13 -fopenmp' #Compile gcc with openMP
+alias removeASCII="sed 's/\x1b\[[0-9;]*[mGKHF]//g"
+
+#Backup directories 
+alias .='cd ../; ls'                    #back 1 directory 
+alias ..='cd ../../; ls'                #back 2 directories 
+alias ...='cd ../../../; ls'            #back 3 directories 
+alias ....='cd ../../../../; ls'        #back 4 directories
+
+
+# ------------ 
+# Applications 
+# ------------
+alias vpn='open -a /Applications/Cisco/Cisco\ Secure\ Client.app/ ' #Launch Cisco
+alias tecPlot='open -a /Applications/Tecplot\ 360\ EX\ 2021\ R2/Tecplot\ 360\ EX\ 2021\ R2.app/' #Launch tecPlot
+alias windows='op /Applications/Parallels\ Desktop.app/' #Launch windows
+alias slack='open -a  /Applications/Slack.app'           #Launch Slack 
+alias eden='open -a Safari https://theeden.activebuilding.com/portal/resident-dashboard' #Eden Website 
+alias rosetta='open /Applications/Rosetta.app/'
+
+
+# --------
+# Commands
+# --------
+alias grep='ggrep --color=always'  #GNU grep
+alias sed='gsed'				   #GNU sed 
+alias tar='gtar'				   #GNU tar
+alias which='gwhich'			   #GNU which
+alias top='htop'				   #better than top
+alias loc='curl ipinfo.io'		   #Ip,gps,etc
+alias manex='tldr'				   #tldr
+alias cat='ccat --color=auto' 	   #ccat
+alias ls='exa'                     #exa
+alias ll='exa -alh'                #exa long
+alias tree='exa --tree'            #exa tree 
+alias op='open'                    #open
+alias opa='open -a'                #open -a
+alias clc='clear'                  #clear
+alias pip='pip3.11'                #pip3
+#alias ssh='/usr/bin/ssh'           #ssh 
+#alias scp='/usr/bin/scp'           #scp 
+
+
+# -------
+# Folders
+# -------
+alias books='cd ~/Documents/Books'             #Path to Books
+alias app='cd ~/Documents/"Application Files"' #Path to Application Docs
+alias schools='cd ~/Documents/Schools'		   #Path to Schools
+alias classes='schools; cd UoA/Courses'        #Path to UoA coursers 
+alias chanl='cd /Volumes/Research-1/CHANL'     #Path to chanl
+alias optics='cd /Users/martin/Documents/Research/UoA/Projects/aeroOptics' #Path to aeroOptics
+alias proposal='cd $HOME/Documents/Schools/UoA/Proposal' #Path to Comprehensive
+alias thesis='cd $HOME/Documents/Schools/UoA/Dissertation' #Path to Dissertation 
+alias cats='op ~/Documents/Personal/Cats.xlsx' #Cats spread sheet
+alias research='cd ~/Documents/Research/UoA/Projects' #Path to Research
+alias presentation='cd ~/Documents/Research/UoA/Presentations' #presentations
+alias resources='cd /Users/martin/Documents/Schools/resources' #Resources  
+alias presentations='cd /Users/martin/Document/Research/UoA/Presentations' #Presentations
+alias lemansInput='op ~/Documents/Research/UoA/helper/lemansInputCalculator.xlsx' #Lemans input calculator
+
+
+# --------
+# Websites
+# --------
+alias homebridge='open -a Safari http://192.168.0.170:8581' #Open homebridge
+alias facebook='op https://www.facebook.com'            #Open Facebook
+alias UAccess='op https://uaccess.arizona.edu'          #Open UAcces
+alias d2l='op https://d2l.arizona.edu/d2l/loginh/'      #Open D2L
+alias quora='op https://www.quora.com'                  #Open quora 
+alias netflix='op https://netflix.com'                  #Open Netflix 
+alias hulu='op https://hulu.com'                        #Open Hulu
+alias pythonDoc='op https://docs.python.org'			#Python documentation 
+alias pipDoc='op https://pypi.org'			  		    #Python packages
+alias numpyDoc='op https://docs.scipy.org/doc/'         #numpy documentation
+alias cppDoc='op http://www.cplusplus.com/reference/ >/dev/null'         #C++ reference 
+alias dodPortal='open -a Safari https://centers.hpc.mil/portal/'         #DoD portal  
+alias stache='op https://stache.arizona.edu/?_gl=1*7ltffd*_ga*OTMxMDk3NzAuMTY2MTcwODU2OQ..*_ga_7PV3540XS3*MTY2NDM5ODI0Mi4xNy4wLjE2NjQzOTgyNDIuNjAuMC4w' #Open stache
+alias asana='op https://app.asana.com/0/1188164084277145/list' #open Asana
+alias gitSU2='op https://github.com/su2code/SU2' 
+alias brow='/usr/local/bin/brew' #x86 brew
+alias pythonX86='/usr/local/bin/python3'
+
+
+# ---------
+# Functions
+# ---------
+#Opens vim in 1/4 of screen and resizes terminal back after exiting vim
+vimR() {
+    local prevSize=($LINES $COLUMNS)
+    resize -s 0 0 >/dev/null
+    a=$(expr $LINES / 2) 
+    b=$(expr $COLUMNS / 2) #split screen on 4
+    resize -s $a $b >/dev/null
+    vim "$@"
+    resize -s ${prevSize[0]} ${prevSize[1]} >/dev/null
+}
+
+#Find and opens a file
+findV() {
+    find * -name $1 | xargs -o vim
+}
+
+#Opens vim and terminal 
+vTerm() { 
+    local prevSize=($LINES $COLUMNS) 
+    resize -s 0 0 >/dev/null
+    a=$(expr $LINES) 
+    b=$(expr $COLUMNS / 2) #split screen on 4
+    resize -s $a $b >/dev/null
+    vim $1 -c 'term' -c 'wincmd k' -c 'resize 45'
+    resize -s ${prevSize[0]} ${prevSize[1]} >/dev/null
+}
+
+#Open 4 files in vim
+v4W() { #$1 Top Left, $2 Top Right, $3 Bottom Left, $4 Bottom Right
+    local prevSize=($LINES $COLUMNS)
+    resize -s 0 0 >/dev/null
+    vim $2 -c "vsplit $1" -c "split $3" -c 'wincmd l' -c "split $4" -c 'wincmd h' -c 'wincmd k' 
+    resize -s ${prevSize[0]} ${prevSize[1]} >/dev/null
+}
+
+#Dictionary 
+dict() { open dict://$1; }
+
+#Convert png to gif
+pngToGif() { convert -delay "$1" -loop 0 *.png -trim +repage "$2".gif; }
+
+#Trim white space in a folder keep their name
+trimImages() { for f in *.png; do echo "Converting $f"; convert "$f" -trim +repage "${f%.*}.png"; done }
+
+#Open man pages in preview
+preman() { man -t $@ | open -f -a "Preview"; } 
+
+#Convert .wmv to .mp4 
+wmv2mp4() { ffmpeg -i $1 -c:v libx264 -crf 23 $2; } 
+
+#Google search
+goog() { open -a Safari http://www.google.com/search?q=$1; }
+
+#Youtube search
+youtube() { open -a Safari https://www.youtube.com/results?search_query=$1; }
+
+#Transfer files to and from the UoA-HPC 
+transferToUA() { scp -r $1 mliza@filexfer.hpc.arizona.edu:/home/u22/mliza/; }
+transferFromUA() { scp -r mliza@filexfer.hpc.arizona.edu:/home/u22/mliza/$1 .; }
+
+#Multiple copy to all directories in here  
+multipleCopy() { ls -d */ | xargs -tI {} cp -r $1 "{}" ;}
+
+#Weather
+weather() { curl http://wttr.in/~$1; }
+weather2() { diff -Naur <(curl -s http://wttr.in/~$1) <(curl -s http://wttr.in/~$2); }
+
+#Battery level 
+Battery=$(pmset -g batt | sed -e 's/;//g' -e '3d' -e '1d' | awk '{print $3}')   
+
+#GPS Location 
+#Location=$(CoreLocationCLI -format %address | sed -e '1d' -e '3d' | awk '{print $1}') 
+Location=$(CoreLocationCLI -f %locality)  
+
+#Current Temperature in Celsius using GPS location 
+#Temp=$(ansiweather -l $location -a false -u imperial | awk '{print $4 $5}')		
+Temp=$(CoreLocationCLI -f %locality | #sed -u "s/^/'/; s/$/'/" |   
+       xargs -0 ansiweather -a false -u imperial -l |
+       awk -F "-" '{print $1}' |
+       awk -F ":" '{print $2}' |
+       sed 's/ //g')
+
+#Current Git branch 
+gitBranch() {
+    #git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ {\1}/' 
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \1 ->/' 
+}
+
+#Recursive Replace in Mac
+recursiveReplace() { find . -type f -exec sed -i '' 's/$1/$2/g' {} +;} 
+
+#Creates a convergence plot using pytecplot "dataFolderIn" "absPathDataOut" "fileName"
+alias stagnationParser='$TOOLS/tecplot/pytecplot/stagnationParser.py'
+alias dataToPickle='$TOOLS/tecplot/pytecplot/dataToPickle.py' 
+alias convergencePlot='$TOOLS/tecplot/pytecplot/convergencePlot.py' 
+
+#Creates a latex project folder - latexProject "folderName" "fileName" 
+alias latexProject='$SCRIPTS/Python/latexProject.py' 
+
+#Compiles latex with bibliographies 
+alias bibTex='$SCRIPTS/Python/bibTex.py' 
+
+#Launch matlab with my configuration 
+alias runMatlab='matlab -nodesktop -nosplash'
+
+#Launch compiler function 
+alias build='$SCRIPTS/Python/build.py'
+
+#Launch newScript 'Flags" "MyName" "fileName" 
+alias newScript='$SCRIPTS/Python/newScript.py'
+
+#Launch pytecplot 
+alias pyPlot='/Applications/Tecplot\ 360\ EX\ 2021\ R2/bin/tec360-env -- ipython'
+
+# -----------------------
+# Environmental Variables 
+# -----------------------
+#export DYLD_LIBRARY_PATH='/Applications/Tecplot\ 360\ EX\ 2021\ R2/Tecplot\ 360\ EX\ 2021\ R2.app/Contents/MacOS'      #Export pytecplot 
+export PATH="/Applications/MATLAB_R2022a.app/bin/:$PATH" #Export Matlab
+export UA='mliza@hpc.arizona.edu'                   #UoA HPC
+export PI='pi@192.168.0.170'                        #Raspberry Pi
+export SCRIPTS="$HOME/Documents/Scripts"            #Scripts 
+export LATEX="$HOME/Library/texmf/tex"              #my Local latex packages
+export TOOLS="$SCRIPTS/Tools"                       #path to research tools 
+PATH=/opt/homebrew/Cellar/gcc/13.2.0/bin:$PATH
+
+#export PYTHONPATH="/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/Resources/Python"
+
+# ----------------------
+# Program Configurations 
+# ----------------------
+eval $(thefuck --alias)					#Configure the fuck command
+export HISTSIZE=10000 					#Number of commands to remember 
+export HISTFILESIZE=10000			    #Number of lines contained in the history
+export HISTCONTROL=ignoredups			#Ignore duplicates in history 
+export EDITOR="/usr/local/bin/vim"		#Vim as default editor
+export DISPLAY=:0                       #Needed for X11
+export PAGER="col -b | vim -R -c 'set ft=man nomod nolist' -" #Vim for man page 
+#set -o vi                               #allows vim binding 
+PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH" #add gnu to my path 
+#Get color in Manual Pages
+man() {
+env \
+LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+LESS_TERMCAP_md=$(printf "\e[1;31m") \
+LESS_TERMCAP_me=$(printf "\e[0m") \
+LESS_TERMCAP_se=$(printf "\e[0m") \
+LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+LESS_TERMCAP_ue=$(printf "\e[0m") \
+LESS_TERMCAP_us=$(printf "\e[1;32m") \
+man "$@"
+}
+
+# ----------------
+# Customize Prompt
+# ----------------
+#https://misc.flogisoft.com/bash/tip_colors_and_formatting
+PS1="\[\e[0;49;91m[ \d @ \A @ $Temp ]\e[m\] \[\e[0;32m|$Battery|\e[m\]\[\e[0;35m$(gitBranch) /\\W \e[m\] \n\e[1;33m\] >>\e[0;39m\] "				
+#PS1="\[\e[0;49;91m[ \d @ \A @ $Temp ]\e[m\] \[\e[0;32m|$Battery|\e[m\]\
+# \[\e[0;35m/\\W \e[m\] \n\e[1;33m\] >>\e[0;39m\] "				
+export CLICOLOR=1   					    #Ref https://geoff.greer.fm/lscolors/
+export BASH_SILENCE_DEPRECATION_WARNING=1   #Silence warnings
