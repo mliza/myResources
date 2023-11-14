@@ -7,9 +7,9 @@ buildSu2() { rm -rf build subprojects; ./meson.py build --buildtype=debug --pref
 
 
 alias runD='CleanSU2; lldb -s lldb_bk -- SU2_CFD *.cfg'
-alias sourceW='source /Users/martin/Desktop/SU2/wally/exports.sh'
-alias sourceM='source /Users/martin/Desktop/SU2/mliza/exports.sh'
-alias sourceL='source /Users/martin/Desktop/SU2/LES/exports.sh'
+alias sourceW='source ~/Desktop/SU2/wally/exports.sh'
+alias sourceM='source ~/Desktop/SU2/mliza/exports.sh'
+alias sourceL='source ~/Desktop/SU2/LES/exports.sh'
 
 
 # ---------
@@ -115,7 +115,7 @@ alias dodPortal='open -a Safari https://centers.hpc.mil/portal/'         #DoD po
 alias stache='op https://stache.arizona.edu/?_gl=1*7ltffd*_ga*OTMxMDk3NzAuMTY2MTcwODU2OQ..*_ga_7PV3540XS3*MTY2NDM5ODI0Mi4xNy4wLjE2NjQzOTgyNDIuNjAuMC4w' #Open stache
 alias asana='op https://app.asana.com/0/1188164084277145/list' #open Asana
 alias gitSU2='op https://github.com/su2code/SU2' 
-alias brow='/usr/local/bin/brew' #x86 brew
+alias brewX86='/usr/local/bin/brew' #x86 brew
 alias pythonX86='/usr/local/bin/python3'
 
 
