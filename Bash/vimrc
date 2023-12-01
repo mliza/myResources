@@ -1,5 +1,5 @@
 set nocompatible	"Need it for Vundle
-filetype off        "Need it for Vundle  
+filetype off        "Need it for Vundle 
 
 "set the runtime path to include Vundle and initialize 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -57,6 +57,7 @@ set splitbelow                  "Split screens below
 set showmode                    "Show the mode you are on the last line
 set noscrollbind                "Disable scroll binding
 set nocursorbind                "Disable cursor binding
+set ff=unix                     "Sets the editor to use unix ending line
 set gp=git\ grep\ -n            "Set source repo to see where words are repeating 
 let mapleader = " "             "Setup leader
 "set mouse=a					 "Enable mouse	
@@ -68,13 +69,16 @@ nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
 "Disable ignore search when is uppercase 
-nnoremap <CR> :nohlsearch<cr> 
+nnoremap <CR> :nohlsearch<cr>
 
 "Disable search highlight using escape
 nnoremap <esc> :nohlsearch<return><esc>
 
 "Open terminal below shortcut 
 nnoremap <leader>\t :terminal ++rows=6<CR>
+
+"Remove DOS line ending
+nnoremap <leader>\rl :e ++ff=dos<CR>
 
 "Move to the beginning and the end of the line  
 nnoremap B ^
@@ -91,6 +95,11 @@ nnoremap gV '[V']
 
 "Load and save view automatically 
 autocmd BufWinLeave * if &diff | diffoff | endif | mkview
+
+"Mark trailing spaces as errors
+if has ("match")
+    match ErrorMsg '\s\+$'
+endif
 
 "Write and compile latex on background  
 nnoremap <leader>\c :call system('pdflatex *.tex')<CR>
