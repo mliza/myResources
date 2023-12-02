@@ -34,7 +34,7 @@ alias updateAll='macUpdate; pipUpdate; brewUpdate; mas upgrade' #Update all
 alias sp2com="sed -i 's/[[:space:]]\+/,/g'"              	    #Space file to comma file 
 alias cleanSU2='rm -rf *.vtu *.err *.dat *.csv *.szplt'                 #Clean SU2
 alias cleanLEMANS='rm -r *.e* *.o* restart* residuals.dat *.plt monitors.dat' #Clean Lemans 
-alias brewUpdate='brew update; brew upgrade; brew cleanup; brew doctor'		  #Update,cleanup homebrew
+alias brewUpdate='brew update; brew upgrade --greedy; brew cleanup; brew doctor'		  #Update,cleanup homebrew
 alias gccOpenMP='/opt/homebrew/Cellar/gcc/13.1.0/bin/gcc-13 -fopenmp' #Compile gcc with openMP
 alias removeASCII="sed 's/\x1b\[[0-9;]*[mGKHF]//g"
 
