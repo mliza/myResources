@@ -1,97 +1,103 @@
-set nocompatible	"Need it for Vundle
-filetype off        "Need it for Vundle 
+set nocompatible    "Need it for Vundle
+filetype off        "Need it for Vundle
 
-"set the runtime path to include Vundle and initialize 
+"set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()			
-Plugin 'VundleVim/Vundle.vim' 	   "https://github.com/VundleVim/Vundle.vim
+Plugin 'VundleVim/Vundle.vim'      "https://github.com/VundleVim/Vundle.vim
 Plugin 'dpelle/vim-LanguageTool'   "https://github.com/dpelle/vim-LanguageTool
 Plugin 'luochen1990/rainbow'       "https://github.com/luochen1990/rainbow
 Plugin 'itchyny/lightline.vim'     "https://github.com/itchyny/lightline.vim 
 Plugin 'lifepillar/vim-solarized8' "https://vimawesome.com/plugin/solarized-8 
 call vundle#end()
 
-filetype plugin indent on 		"Enable filetype-specific 
-syntax on	 					"Enable syntax color
-syntax spell toplevel           "Allow spell on .txt files 
-set spelllang=en_us             "Allows spell to be in English 
-set encoding=utf-8              "Enable encoding  
-set background=dark				"Enable contrast
-colorscheme solarized8			"Enable colorscheme
-set number 						"Show line numbers 
+filetype plugin indent on       "Enable filetype-specific
+syntax on                       "Enable syntax color
+syntax spell toplevel           "Allow spell on .txt files
+set spelllang=en_us             "Allows spell to be in English
+set encoding=utf-8              "Enable encoding
+set background=dark             "Enable contrast
+colorscheme solarized8          "Enable colorscheme
+set number                      "Show line numbers
 set nolist                      "Hide end of line characters
 set relativenumber              "Show relative line numbers
-set expandtab					"Use space instead of tab 
-set tabstop=4					"Width of tab character
-set softtabstop=4				"Fine tunes the amount of white space
-set shiftwidth=4				"White space to add in normal mode
+set expandtab                   "Use space instead of tab
+set tabstop=4                   "Width of tab character
+set softtabstop=4               "Fine tunes the amount of white space
+set shiftwidth=4                "White space to add in normal mode
 set textwidth=79                "Text wrap width
 set wrap                        "Allow text to wrap
 set expandtab                   "When on use space instead of tab
 set autoindent                  "Autoindent in new line
-set linebreak					"Avoid wrapping a line in the middle of a word
-set nobackup 					"Doesn't create backup files
-set noswapfile 					"Doesn't create noswapfile files
-set smartindent 				"Indent text
-set title 						"Reflects file currently being working
-set backspace=indent,eol,start 	"Allow backspacing over indentation
-set hlsearch				 	"Enable search highlight
-set history=1000				"Increase the undo limit
-set ignorecase					"Ignore capital letters during search
-set showmatch					"Show matching parenthesis
-set smartcase					"Allows uppercase in search
-set incsearch					"Allows to start search before finishing word
-set colorcolumn=80				"Add a colored column at 90
-set ruler				       	"Insert numbers 	
-set showcmd						"Show (partial) command in bottom-right
-set cursorline 					"Highlight current line
+set linebreak                   "Avoid wrapping a line in the middle of a word
+set nobackup                    "Doesn't create backup files
+set noswapfile                  "Doesn't create noswapfile files
+set smartindent                 "Indent text
+set title                       "Reflects file currently being working
+set backspace=indent,eol,start  "Allow backspacing over indentation
+set hlsearch                    "Enable search highlight
+set history=1000                "Increase the undo limit
+set ignorecase                  "Ignore capital letters during search
+set showmatch                   "Show matching parenthesis
+set smartcase                   "Allows uppercase in search
+set incsearch                   "Allows to start search before finishing word
+set colorcolumn=80              "Add a colored column at 90
+set ruler                       "Insert numbers
+set showcmd                     "Show (partial) command in bottom-right
+set cursorline                  "Highlight current line
 set cursorcolumn                "Highlight current column
-set wildmenu 					"Visual autocomplete for command menu
-set spell						"Enable spell  
+set wildmenu                    "Visual autocomplete for command menu
+set spell                       "Enable spell
 set foldenable                  "Enable folding
 set foldmethod=manual           "Enable folding base on indentation 
 set laststatus=2                "Status Bar modified
-set belloff=all                 "Kill error bell sound 
-set visualbell                  "Use visualbell instead of error bell sound 
-set splitbelow                  "Split screens below 
+set belloff=all                 "Kill error bell sound
+set visualbell                  "Use visualbell instead of error bell sound
+set splitbelow                  "Split screens below
 set showmode                    "Show the mode you are on the last line
 set noscrollbind                "Disable scroll binding
 set nocursorbind                "Disable cursor binding
+set clipboard=unnamed           "Defaults clipboard to system clipboard (for linux use unnamedplus)
 set ff=unix                     "Sets the editor to use unix ending line
-set gp=git\ grep\ -n            "Set source repo to see where words are repeating 
+set gp=git\ grep\ -n            "Set source repo to see where words are repeating
+set list                        "Set trailing white space
 let mapleader = " "             "Setup leader
-"set mouse=a					 "Enable mouse	
+"set mouse=a                     "Enable mouse
 
 "Moving between different windows
-nnoremap <leader>h :wincmd h<CR> 
+nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-"Disable ignore search when is uppercase 
+"Disable ignore search when is uppercase
 nnoremap <CR> :nohlsearch<cr>
 
 "Disable search highlight using escape
 nnoremap <esc> :nohlsearch<return><esc>
 
-"Open terminal below shortcut 
+"Open terminal below shortcut
 nnoremap <leader>\t :terminal ++rows=6<CR>
 
 "Remove DOS line ending
 nnoremap <leader>\rl :e ++ff=dos<CR>
 
-"Move to the beginning and the end of the line  
+"Move to the beginning and the end of the line
 nnoremap B ^
 nnoremap E $
 nnoremap <leader>B g^
 nnoremap <leader>E g$
 
-"Copy and past files to clipboard 
-noremap <leader>c "*y
-noremap <leader>v "*p
+"Disables automatic commenting on newline
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"Highlight the last inserted text 
-nnoremap gV '[V'] 
+"Copy and past files to clipboard
+noremap <C-c> "+y
+noremap <C-d> "+d
+noremap <C-v> "+p
+
+"Highlight the last inserted text
+nnoremap gV '[V']
 
 "Load and save view automatically 
 autocmd BufWinLeave * if &diff | diffoff | endif | mkview
@@ -101,21 +107,21 @@ if has ("match")
     match ErrorMsg '\s\+$'
 endif
 
-"Write and compile latex on background  
+"Write and compile latex on background 
 nnoremap <leader>\c :call system('pdflatex *.tex')<CR>
 nnoremap <leader>\wc :w <bar> :call system('pdflatex *.tex')<CR>
 
-"Change colors on vimdiff  
-"cterm-sets the style, ctermfg-sets the txt color, ctermbg-set the highlight 
-"DiffAdd-added line, DiffDelete-removed line, DiffChange-part of changed line 
+"Change colors on vimdiff 
+"cterm-sets the style, ctermfg-sets the txt color, ctermbg-set the highlight
+"DiffAdd-added line, DiffDelete-removed line, DiffChange-part of changed line
 "DiffText-exact part of the text that was deleted 
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
-highlight CursorLineNR ctermbg=Red 
+highlight CursorLineNR ctermbg=Red
 
-"Configure lightline 
+"Configure lightline
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
@@ -125,7 +131,7 @@ let g:vimtex_view_method='Preview'
 
 "Configure rainbow 
 let g:rainbow_active = 1
-let g:tex_flavor = 'latex' 
+let g:tex_flavor = 'latex'
 let g:rainbow_load_separately = [
     \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
     \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
@@ -134,4 +140,4 @@ let g:rainbow_load_separately = [
     \ ]
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
-"End configure rainbow 
+"End configure rainbow
