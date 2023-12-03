@@ -1,0 +1,9 @@
+set logging on
+set breakpoint pending on
+
+break CNEMONSSolver.cpp:130
+
+command 1
+    p eddy_visc
+    continue
+end

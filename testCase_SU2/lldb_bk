@@ -1,0 +1,11 @@
+b ChemNonEqTTvStateModel.cpp:284 
+b CNEMONSSolver.cpp:139 
+b CNEMOEulerVariable.cpp:276
+b CNEMONSVariable.cpp:120
+# br mod -c 'nonPhys == true'
+
+br dis 1
+br dis 2
+br dis 3
+
+run
