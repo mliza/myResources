@@ -5,32 +5,31 @@ buildSu2W() { rm -rf build subprojects; mkdir build; export CC=$(which gcc); exp
 
 buildSu2() { rm -rf build subprojects; ./meson.py build --buildtype=debug --prefix=$PWD/build -Denable-mpp=true; ./ninja -C build; }
 
-
 alias runD='CleanSU2; lldb -s lldb_bk -- SU2_CFD *.cfg'
 alias sourceW='source ~/Desktop/SU2/wally/exports.sh'
 alias sourceM='source ~/Desktop/SU2/mliza/exports.sh'
 alias sourceL='source ~/Desktop/SU2/LES/exports.sh'
 
-
 # ---------
 # Shortcuts
 # ---------
-alias vimrc='vimR ~/.vimrc;'                         #Access to bashrc
-alias bashrc='vimR ~/.bashrc;'                       #Access to vimrc
-alias gitrc='vimR ~/.gitconfig;'                     #Access to gitconfig
-alias rerun='source ~/.profile && clc'               #Resource bash
-alias privateIP='ipconfig getifaddr en0'             #Local IP
-alias publicIP='curl ipecho.net/plain;echo'          #Public IP
-alias EMPTY='sudo rm -rf *'                          #Empty the Folder
-alias superuser='sudo EDITOR=vim visudo'             #Access sudo commands
-alias stress='yes >/dev/null &'                      #Stress test killall yes
-alias MAC='system_profiler SPHardwareDataType'       #Display System's information
-alias rsize='resize -s 5 70 >/dev/null && clc'       #Resize og window's size
-alias wsize='resize -s 22 90 >/dev/null && clc'      #Resize windows size
-alias fsize='resize -s 0 0 >/dev/null && clc'        #Resize full screen
-alias pipUpdate='pip-review -a'                      #Update python packages
-alias macUpdate='sudo softwareupdate -ir --restart'  #Update MACsoftware
-alias sp2com="sed -i 's/[[:space:]]\+/,/g'"          #Space file to comma file 
+alias vimrc='vim ~/.vim/vimrc/main.vim;'            #Access to bashrc
+alias vimrcP='vim ~/.vim/vimrc/plugins.vim;'        #Access to bashrc
+alias bashrc='vim ~/.bashrc;'                       #Access to vimrc
+alias gitrc='vim ~/.gitconfig;'                     #Access to gitconfig
+alias rerun='source ~/.profile && clc'              #Resource bash
+alias privateIP='ipconfig getifaddr en0'            #Local IP
+alias publicIP='curl ipecho.net/plain;echo'         #Public IP
+alias EMPTY='sudo rm -rf *'                         #Empty the Folder
+alias superuser='sudo EDITOR=vim visudo'            #Access sudo commands
+alias stress='yes >/dev/null &'                     #Stress test killall yes
+alias MAC='system_profiler SPHardwareDataType'      #Display System's information
+alias rsize='resize -s 5 70 >/dev/null && clc'      #Resize og window's size
+alias wsize='resize -s 22 90 >/dev/null && clc'     #Resize windows size
+alias fsize='resize -s 0 0 >/dev/null && clc'       #Resize full screen
+alias pipUpdate='pip-review -a'                     #Update python packages
+alias macUpdate='sudo softwareupdate -ir --restart' #Update MACsoftware
+alias sp2com="sed -i 's/[[:space:]]\+/,/g'"         #Space file to comma file 
 alias updateAll='macUpdate; pipUpdate; brewUpdate; mas upgrade' #Update all
 alias cleanSU2='rm -rf *.vtu *.err *.dat *.csv *.szplt'         #Clean SU2
 alias cleanLEMANS='rm -r *.e* *.o* restart* residuals.dat *.plt monitors.dat' #Clean Lemans
