@@ -1,0 +1,6 @@
+"Source Vim Pluggins
+source ~/.vim/vimrc/plugins.vim
+
+"Source Main Vimrc
+source ~/.vim/vimrc/main.vim
+
