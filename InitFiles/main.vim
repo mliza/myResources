@@ -78,9 +78,9 @@ nnoremap <leader>E g$
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "Copy and past files to clipboard
-noremap <C-c> "+y
-noremap <C-d> "+d
-noremap <C-v> "+p
+noremap <C-y> "+y
+noremap <C-x> "+d
+noremap <C-p> "+p
 
 "Highlight the last inserted text
 nnoremap gV '[V']

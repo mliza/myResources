@@ -269,6 +269,7 @@ man "$@"
 # Customize Prompt
 # ----------------
 #https://misc.flogisoft.com/bash/tip_colors_and_formatting
-PS1="\[\e[0;49;91m[ \d @ \A @ $Temp ]\e[m\] \[\e[0;32m|$Battery|\e[m\]\[\e[0;35m$(gitBranch) /\\W \e[m\] \n\e[1;33m\] >>\e[0;39m\] "
+#PS1="\[\e[0;49;91m[ \d @ \A @ $Temp ]\e[m\] \[\e[0;32m|$Battery|\e[m\]\[\e[0;35m$(gitBranch) /\\W \e[m\] \n\e[1;33m\] >>\e[0;39m\] "
+PS1="\[\e[0;49;91m\][ \d @ \A @ $Temp ] \[\e[0;32m\]|$Battery|\[\e[0;35m\]$(gitBranch) /\\W \n\[\e[1;33m\] >>\[\e[0;39m\] "
 export CLICOLOR=1                           #Ref https://geoff.greer.fm/lscolors/
 export BASH_SILENCE_DEPRECATION_WARNING=1   #Silence warnings
