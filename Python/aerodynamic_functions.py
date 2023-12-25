@@ -21,7 +21,7 @@ import numpy as np
 import scipy.constants as s_consts
 
 # Sutherland law
-def sutherland_law(self, temperature_K): 
+def sutherland_law(temperature_K): 
     # https://doc.comsol.com/5.5/doc/com.comsol.help.cfd/cfd_ug_fluidflow_high_mach.08.27.html
     viscosity_ref     = 1.716E-5   # [kg/m*s] 
     temperature_ref   = 273.0      # [K]
@@ -35,7 +35,7 @@ def sutherland_law(self, temperature_K):
 
 
 # Air atomic mass
-def air_atomic_mass(self):
+def air_atomic_mass():
     N2        = molmass.Formula('N2').mass # [g/mol] 
     O2        = molmass.Formula('O2').mass # [g/mol]
     N         = molmass.Formula('N').mass  # [g/mol]
@@ -51,10 +51,10 @@ def air_atomic_mass(self):
 
 
 # Speed of sound 
-def speed_of_sound(self, temperature_K, adiabatic_indx = 1.4):
-    gas_const          = s_consts.R                        # [J/mol*K]
-    air_atomic_mass    = self.air_atomic_mass()            # [g/mol] 
-    air_molecular_mass = (0.7803 * air_atomic_mass['N2'] + # [kg/mol] 
+def speed_of_sound(temperature_K, adiabatic_indx = 1.4):
+    gas_const          = s_consts.R                         # [J/mol*K]
+    air_atomic_mass    = air_atomic_mass()                  # [g/mol]
+    air_molecular_mass = (0.7803 * air_atomic_mass['N2'] +  # [kg/mol]
                           0.2099 * air_atomic_mass['O2'] + 
                           0.0003 * air_atomic_mass['CO2']) * 1E-3 
     spd_of_sound       = np.sqrt( adiabatic_indx * temperature_K * 
@@ -63,7 +63,7 @@ def speed_of_sound(self, temperature_K, adiabatic_indx = 1.4):
 
 
 # Normal shock relations  
-def normal_shock_relations(self, mach_1, adiabatic_indx=1.4):
+def normal_shock_relations(mach_1, adiabatic_indx=1.4):
     # REF: https://www.grc.nasa.gov/www/k-12/airplane/normal.html
     # NOTE: var_r = var_1 / var_2 = var_preshock / var_postshock = [ ] 
     gamma_minus   = adiabatic_indx - 1
@@ -84,7 +84,7 @@ def normal_shock_relations(self, mach_1, adiabatic_indx=1.4):
     return normal_shock_dict # [ ]
 
 # Oblique shock relations
-def oblique_shock_relations(self, mach_1, shock_angle_deg, adiabatic_indx=1.4):
+def oblique_shock_relations(mach_1, shock_angle_deg, adiabatic_indx=1.4):
 # REF : Modern Compressible Flows With Historical Ref., eq 4.7 - 4.11 
 # NOTE: Equations only work for weak shocks 
 # Note ratio = var_1 / var_2
