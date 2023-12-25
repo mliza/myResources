@@ -1,14 +1,14 @@
 #!/opt/homebrew/bin/python3
 '''
-    Date:   08/27/2023 
+    Date:   08/27/2023
     Author: Martin E. Liza
     File:   aerodynamics_functions.py
     Def:    Contains aerodynamics helper functions. 
 
-    Author		    Date		Revision
+    Author          Date        Revision
     -----------------------------------------------------------------
-    Martin E. Liza	07/25/2022	Initial version.
-    Martin E. Liza	08/04/2022	Added normal and oblique 
+    Martin E. Liza  07/25/2022  Initial version.
+    Martin E. Liza  08/04/2022  Added normal and oblique 
                                 shock relation functions. 
     Martin E. Liza  03/25/2023  Added air molecular mass function. 
     Martin E. Liza  03/31/2023  Removed non useful functions.  
