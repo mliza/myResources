@@ -64,13 +64,13 @@ def fileOptions(args):
     tab        = '    '
         
     # Write file preamble     
-    preamble1    = (f'{tab}Date:   {date}\n' 
-                    f'{tab}Author: {authorName}\n' 
-                    f'{tab}File:   {fileName}\n' 
+    preamble1    = (f'{tab}Date:   {date}\n'
+                    f'{tab}Author: {authorName}\n'
+                    f'{tab}File:   {fileName}\n'
                     f'{tab}Def:')
-    preamble2    = f'{tab}Author\t\tDate\t\tRevision' 
+    preamble2    = f'{tab}Author\t\tDate\t\tRevision'
     preamble3    = f'{tab}----------------------------------------------------' 
-    preamble4    = f'{tab}{authorName}\t{date}\tInitial version.' 
+    preamble4    = f'{tab}{authorName}\t\t{date}\t\tInitial version.' 
     filePreamble = f'{preamble1}\n\n{preamble2}\n{preamble3}\n{preamble4}' 
 
     return filePreamble, fileName 
