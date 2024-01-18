@@ -53,6 +53,7 @@ alias windows='op /Applications/Parallels\ Desktop.app/' #Launch windows
 alias slack='open -a  /Applications/Slack.app'           #Launch Slack 
 alias eden='open -a Safari https://theeden.activebuilding.com/portal/resident-dashboard' #Eden Website 
 alias rosetta='open /Applications/Rosetta.app/'
+alias loan='open -a Safari https://www.mrcooper.com/servicing/overview'
 
 
 # --------

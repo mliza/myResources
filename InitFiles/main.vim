@@ -68,11 +68,12 @@ nnoremap <leader>\t :terminal ++rows=6<CR>
 "Remove DOS line ending
 nnoremap <leader>\rl :e ++ff=dos<CR>
 
-"Move to the beginning and the end of the line
+"Move to the beginning, the end of the line and delete up to cursor
 nnoremap B ^
 nnoremap E $
 nnoremap <leader>B g^
 nnoremap <leader>E g$
+nnoremap <leader>d d^
 
 "Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
