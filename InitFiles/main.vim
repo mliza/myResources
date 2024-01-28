@@ -46,7 +46,7 @@ set nocursorbind                "Disable cursor binding
 set clipboard=unnamed           "Defaults clipboard to system clipboard (for linux use unnamedplus)
 set ff=unix                     "Sets the editor to use unix ending line
 set gp=git\ grep\ -n            "Set source repo to see where words are repeating
-set list                        "Set trailing white space
+"set list                        "Set trailing white space
 let mapleader = " "             "Setup leader
 "set mouse=a                     "Enable mouse
 

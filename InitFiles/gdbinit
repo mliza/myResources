@@ -77,13 +77,14 @@ set $64BITS = 0
 # macOS version works better with this setting off
 set startup-with-shell off
 
+set print pretty
 set confirm off
 set verbose off
 set history filename ~/.gdb_history
 set history save
 
-set output-radix 0x10
-set input-radix 0x10
+#set output-radix 0x10
+#set input-radix 0x10
 
 # These make gdb never pause in its output
 set height 0
@@ -2183,7 +2184,7 @@ end
 
 
 # _______________process control______________
-define n
+define nI
     if $argc == 0
         nexti
     end
@@ -2194,8 +2195,8 @@ define n
         help n
     end
 end
-document n
-Syntax: n <NUM>
+document nI
+Syntax: nI <NUM>
 | Step one instruction, but proceed through subroutine calls.
 | If NUM is given, then repeat it NUM times or till program stops.
 | This is alias for nexti.
