@@ -2,7 +2,7 @@
 #include <iomanip>
 
 /*
-   y = y0 = (x - x0) * (y1 - y) / (x1 - x0)
+   y = y0 + (x - x0) * (y1 - y0) / (x1 - x0)
 */
 
 // Explicit
