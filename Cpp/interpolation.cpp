@@ -9,7 +9,7 @@
 double linear_interp1(double x0, double x1, double y0, double y1, double x)
 {
     double dx = (x - x0) / (x1 - x0);
-    return dx * y1 + y0 * (1 - dx); 
+    return y0 * (1 - dx) + y1 * dx;
 }
 
 // Implicit
