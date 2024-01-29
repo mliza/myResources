@@ -111,6 +111,7 @@ alias cppDoc='op http://www.cplusplus.com/reference/ >/dev/null'    #C++ referen
 alias gitSU2='op https://github.com/su2code/SU2'            #Su2 github
 alias brewX86='/usr/local/bin/brew'                         #x86 brew
 alias pythonX86='/usr/local/bin/python3'                    #pythonX86
+alias ctags='/opt/homebrew/bin/ctags'                       #needed to run ctags
 
 
 # ---------
@@ -234,6 +235,7 @@ alias pyPlot='/Applications/Tecplot\ 360\ EX\ 2021\ R2/bin/tec360-env -- ipython
 export PATH="/Applications/MATLAB_R2022a.app/bin/:$PATH"    #Export Matlab
 export UA='mliza@hpc.arizona.edu'                           #UoA HPC
 export PI='pi@192.168.0.170'                                #Raspberry Pi
+export UBUNTU='martin@192.168.1.169'                        #Ubuntu 
 export SCRIPTS="$HOME/Documents/Scripts"                    #Scripts
 export LATEX="$HOME/Library/texmf/tex"                      #my Local latex packages
 export TOOLS="$SCRIPTS/Tools"                               #path to research tools
