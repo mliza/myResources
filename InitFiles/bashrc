@@ -232,7 +232,7 @@ alias pyPlot='/Applications/Tecplot\ 360\ EX\ 2021\ R2/bin/tec360-env -- ipython
 # Environmental Variables
 # -----------------------
 #export DYLD_LIBRARY_PATH='/Applications/Tecplot\ 360\ EX\ 2021\ R2/Tecplot\ 360\ EX\ 2021\ R2.app/Contents/MacOS'      #Export pytecplot 
-export PATH="/Applications/MATLAB_R2022a.app/bin/:$PATH"    #Export Matlab
+export PATH="/Applications/MATLAB_R2023b.app/bin/:$PATH"    #Export Matlab
 export UA='mliza@hpc.arizona.edu'                           #UoA HPC
 export PI='pi@192.168.0.170'                                #Raspberry Pi
 export UBUNTU='martin@192.168.1.169'                        #Ubuntu 

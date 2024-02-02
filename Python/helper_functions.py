@@ -16,6 +16,7 @@
 '''
 import os 
 import pickle 
+import pandas as pd
 import numpy as np 
 import IPython 
 import scipy.io 
@@ -27,6 +28,44 @@ def fortran_data_loader(variable_in, abs_path_in, d_type=float):
     data    = f_in.read_reals(dtype=d_type)
     f_in.close() 
     return data
+
+# Loading solution_flow.csv from tecplot
+def flow_loader(flow_file_in : str, flow_file_path : str) -> dict:
+    abs_path_to_file = os.path.join(flow_file_path, flow_file_in)
+    df_in = pd.read_csv(abs_path_to_file, index_col=False)
+    dict_out = {i:df_in[i].to_numpy() for i in df_in.keys()}
+    return dict_out
+
+# Saves solution_flow.csv from dict 
+def flow_save(dict_out : dict, flow_file_out : str, flow_file_path : str):
+    df_out = pd.DataFrame.from_dict(dict_out)
+    df_out.to_csv(os.path.join(flow_file_path, flow_file_out), index=False)
+
+
+# Add noise to flow fields
+def add_noise(dict_in : dict) -> dict: 
+    gamma = 1.40
+    vel_x = dict_in['Momentum_x'] / dict_in['Density']
+    vel_y = dict_in['Momentum_y'] / dict_in['Density']
+    vel_z = dict_in['Momentum_z'] / dict_in['Density']
+    
+    # Lambda-function to create a normal distribution to the field
+    normal_noise = lambda field_in : np.random.normal(np.mean(field_in),
+                            np.std(field_in), dict_in['PointID'][-1] + 1)
+
+    # Perturbed velocity fields
+    vel_x += normal_noise(vel_x)
+    vel_y += normal_noise(vel_y)
+    vel_z += normal_noise(vel_z)
+    dict_in['Energy'] += normal_noise(dict_in['Energy'])
+
+    # Make momentum perturbed momentum fields 
+    dict_in['Momentum_x'] = vel_x * dict_in['Density']
+    dict_in['Momentum_y'] = vel_y * dict_in['Density']
+    dict_in['Momentum_z'] = vel_z * dict_in['Density']
+
+    return dict_in
+
 
 # Save data as pickle and loads data as a pickle 
 def pickle_manager(pickle_name_file, pickle_path, data_to_save=None,
@@ -59,3 +98,11 @@ def smoothing_function(data_in, box_pts):
     box         = np.ones(box_pts) / box_pts
     data_smooth = np.convolve(data_in, box, mode='same')
     return data_smooth 
+
+if __name__ == "__main__":
+    flow_file = 'solution_flow.csv'
+    abs_path = '/Users/martin/Desktop/LES/converged_RANS'
+    flow_out = 'perturbated_solution_flow.csv'
+    dict_ = flow_loader(flow_file, abs_path) 
+    dict_out = add_noise(dict_)
+    flow_save(dict_out, flow_out, abs_path) 
