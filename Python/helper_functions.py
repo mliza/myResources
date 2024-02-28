@@ -18,6 +18,7 @@ import os
 import pickle 
 import pandas as pd
 import numpy as np 
+import matplotlib.pyplot as plt
 import IPython 
 import scipy.io 
 
@@ -41,10 +42,42 @@ def flow_save(dict_out : dict, flow_file_out : str, flow_file_path : str):
     df_out = pd.DataFrame.from_dict(dict_out)
     df_out.to_csv(os.path.join(flow_file_path, flow_file_out), index=False)
 
+# Plots the raw input and noise data for each modified field
+def plot_flow_noise(flow_in : dict, flow_noise : dict):
+    fig, axs = plt.subplots(4,1) 
+    # Plot Momentum_x
+    axs[0].plot(flow_noise['PointID'], flow_noise['Momentum_x'],
+                label='Perturbed')
+    axs[0].plot(flow_in['PointID'], flow_in['Momentum_x'], label='Steady')
+    axs[0].set_ylabel('Momentum_x')
+    axs[0].legend()
+
+    # Plot Momentum_y
+    axs[1].plot(flow_noise['PointID'], flow_noise['Momentum_y'],
+               label='Perturbed')
+    axs[1].plot(flow_in['PointID'], flow_in['Momentum_y'], label='Steady')
+    axs[1].set_ylabel('Momentum_y')
+    axs[1].legend()
+
+    # Plot Momentum_z
+    axs[2].plot(flow_noise['PointID'], flow_noise['Momentum_z'],
+               label='Perturbed')
+    axs[2].plot(flow_in['PointID'], flow_in['Momentum_z'], label='Steady')
+    axs[2].set_ylabel('Momentum_z')
+    axs[2].legend()
+
+    # Energy
+    axs[3].plot(flow_noise['PointID'], flow_noise['Energy'],
+               label='Perturbed')
+    axs[3].plot(flow_in['PointID'], flow_in['Energy'], label='Steady')
+    axs[3].set_ylabel('Energy')
+    axs[3].legend()
+
+    plt.xlabel('Iterations')
+    IPython.embed(colors = 'Linux')
 
 # Add noise to flow fields
 def add_noise(dict_in : dict) -> dict: 
-    gamma = 1.40
     vel_x = dict_in['Momentum_x'] / dict_in['Density']
     vel_y = dict_in['Momentum_y'] / dict_in['Density']
     vel_z = dict_in['Momentum_z'] / dict_in['Density']
@@ -54,10 +87,11 @@ def add_noise(dict_in : dict) -> dict:
                             np.std(field_in), dict_in['PointID'][-1] + 1)
 
     # Perturbed velocity fields
-    vel_x += normal_noise(vel_x)
-    vel_y += normal_noise(vel_y)
-    vel_z += normal_noise(vel_z)
-    dict_in['Energy'] += normal_noise(dict_in['Energy'])
+    vel_x += normal_noise(vel_x/np.max(vel_x))
+    vel_y += normal_noise(vel_y/np.max(vel_y))
+    vel_z += normal_noise(vel_z/np.max(vel_z))
+    dict_in['Energy'] +=
+    normal_noise(dict_in['Energy']/np.max(dict_in['Energy'])
 
     # Make momentum perturbed momentum fields 
     dict_in['Momentum_x'] = vel_x * dict_in['Density']

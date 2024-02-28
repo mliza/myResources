@@ -98,7 +98,6 @@ endif
 "Write and compile latex on background 
 nnoremap <leader>\c :call system('pdflatex *.tex')<CR>
 nnoremap <leader>\wc :w <bar> :call system('pdflatex *.tex')<CR>
-
 "Change colors on vimdiff 
 "cterm-sets the style, ctermfg-sets the txt color, ctermbg-set the highlight
 "DiffAdd-added line, DiffDelete-removed line, DiffChange-part of changed line

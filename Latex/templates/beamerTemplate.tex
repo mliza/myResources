@@ -6,11 +6,13 @@
 \usepackage{booktabs} 		  % Tables
 \usepackage{tabularx}
 \usepackage{tikz}      		  % Diagrams
+\usepackage{color}            %load colors 
+\usepackage{graphics}
 \usepackage{amsmath, amssymb}
 \usepackage{url}       		  % \url
-\usepackage{mcode}            % matlab input code, this package has been downloaded manually  
 \usepackage{listings}  		  % Code listings
 \usepackage{bm}               %bold everything also Greek letter
+\usepackage[most]{tcolorbox}      %color box
 \usetikzlibrary{calc, shapes, backgrounds}
 \graphicspath{{figures/}}     % Allows graphic path 
 \frenchspacing
@@ -23,3 +25,16 @@
     \author{#3}
     \date{#4}
 }
+
+
+\makeatletter
+  \def\beamer@calltheme#1#2#3{%
+    \def\beamer@themelist{#2}
+    \@for\beamer@themename:=\beamer@themelist\do
+    {\usepackage[{#1}]{\beamer@themelocation/#3\beamer@themename}}}
+
+  \def\usefolder#1{
+    \def\beamer@themelocation{#1}
+  }
+  \def\beamer@themelocation{}
+
