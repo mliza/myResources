@@ -10,18 +10,10 @@
 */
 #include "navigation.hpp"
 
-void Navigation::ECE2LLLA(std::vector<double> vectorPosECEF, 
-                          std::vector<double> &vecPosLLA);
+void Navigation::ECEF2LLA(std::vector<double> vectorPosECEF, 
+                          std::vector<double> &vecPosLLA)
 {
     double eccentricity = sqrt( 1 - 
                     pow(mMinorEarthRadius / mMajorEarthRadius, 2) );
 }
 
-main()
-{
-    std::vector<double> posECEF = {5344444, 2112, 122}; 
-    std::vector<double> posLLA{ }; 
-    ECE2LLLA(posECEF, &posLLA);
-
-    return 0;
-};

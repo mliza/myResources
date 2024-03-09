@@ -90,8 +90,7 @@ def add_noise(dict_in : dict) -> dict:
     vel_x += normal_noise(vel_x/np.max(vel_x))
     vel_y += normal_noise(vel_y/np.max(vel_y))
     vel_z += normal_noise(vel_z/np.max(vel_z))
-    dict_in['Energy'] +=
-    normal_noise(dict_in['Energy']/np.max(dict_in['Energy'])
+    dict_in['Energy'] += normal_noise(dict_in['Energy'])
 
     # Make momentum perturbed momentum fields 
     dict_in['Momentum_x'] = vel_x * dict_in['Density']
