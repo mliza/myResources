@@ -6,8 +6,7 @@
 \newcommand{\Acronym}[2]{\B( #1_{_{#2}}\E)}
 \newcommand{\Avg}[1]{\langle#1\rangle}
 \newcommand{\AvgBig}[1]{\B\langle#1\E\rangle}
-\newcommand{\Parenthesis}[1]{\B(#1\E)}
-\newcommand{\SqBracket}[1]{\B[#1\E]}
+\newcommand{\Parenthesis}[1]{\B(#1\E)} \newcommand{\SqBracket}[1]{\B[#1\E]}
 \newcommand{\CurlyBracket}[1]{\B\{#1\E\}}
 \newcommand{\Sub}[2]{#1_{_{#2}}} 
 \newcommand{\Up}[2]{#1^{^{#2}}} 
@@ -43,6 +42,10 @@
 \newcommand{\TanFrac}[2]{\tan\Parenthesis{ \frac{#1}{#2} }}
 \newcommand{\Ln}[1]{\ln\B|#1\E|}
 \newcommand{\LnFrac}[2]{\ln\B|\frac{#1}{#2}\E|}
+
+% Scale math
+\newcommand{\ScaleMath}[2]{\scalebox{#1}{\mbox{\ensuremath{ \displaystyle
+{#2}}}}}
 
 % Symblos 
 % Countercloskwise            
