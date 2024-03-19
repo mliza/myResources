@@ -1,0 +1,3 @@
+/Users/martin/Documents/Scripts/Cpp/hello/build/CMakeFiles/navigation.dir
+/Users/martin/Documents/Scripts/Cpp/hello/build/CMakeFiles/edit_cache.dir
+/Users/martin/Documents/Scripts/Cpp/hello/build/CMakeFiles/rebuild_cache.dir

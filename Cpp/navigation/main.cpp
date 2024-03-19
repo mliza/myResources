@@ -9,14 +9,14 @@
     Martin E. Liza	10/26/2023	Initial version.
 */
 
-#include "navigation.hpp"
+#include "tools.hpp"
 
 int main()
 {
-    Navigation nav;
-    std::vector<double> posECEF = {5344444.0, 2112.0, 122.0}; 
-    std::vector<double> posLLA= {0.0, 0.0, 0.0}; 
-    nav.ECEF2LLA(posECEF, posLLA);
+    Tools t;
+    t.set_n(50);
+    t.print_x();
 
     return 0;
+
 };

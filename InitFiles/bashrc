@@ -74,6 +74,7 @@ alias op='open'                     #open
 alias opa='open -a'                 #open -a
 alias clc='clear'                   #clear
 alias pip='pip3.11'                 #pip3
+alias g++='g++ -std=c++11 -g'
 
 # -------
 # Folders
@@ -112,6 +113,7 @@ alias gitSU2='op https://github.com/su2code/SU2'            #Su2 github
 alias brewX86='/usr/local/bin/brew'                         #x86 brew
 alias pythonX86='/usr/local/bin/python3'                    #pythonX86
 alias ctags='/opt/homebrew/bin/ctags'                       #needed to run ctags
+alias python='python3.9'
 
 
 # ---------

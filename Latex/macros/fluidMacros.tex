@@ -134,6 +134,63 @@
 \newcommand{\heatFlux} 
 { \Sub{q}{j} = -\kappa\PartialFrac{T}{\Sub{x}{j}} } 
 
+
+% Nonequilibrium
+% Conservative form of the governing equation A
+\newcommand{\nonequilibriumGoverningEqConservativeA}
+{ \mathcal{R}\Parenthesis{\mathcal{U}, \nabla\mathcal{U}} =
+\PartialFrac{\mathcal{U}}{t} +
+\nabla\cdot\mathcal{F}^{c}\Parenthesis{\mathcal{U}} -
+\nabla\cdot\mathcal{F}^v\Parenthesis{\mathcal{U},\nabla\mathcal{U}} -
+\mathcal{Q}\Parenthesis{\mathcal{U}} = 0 }
+
+\newcommand{\nonequilibriumGoverningEqConservativeB}
+{    \mathcal{U} = 
+    \begin{Bmatrix}
+        \Sub{\rho}{1} \\
+        .             \\
+        .             \\
+        .             \\
+        \Sub{\rho}{s}\\
+        \rho\bm{u} \\
+        \rho e \\
+        \rho e^{ve}
+    \end{Bmatrix}, \quad
+    \mathcal{F}^c =
+    \begin{Bmatrix}
+        \rho_1\bm{u}^T \\
+        .             \\
+        .             \\
+        .             \\
+        \Sub{\rho}{s}\bm{u}^T \\
+        \rho\bm{u}\bm{u}^T + P\hat{I} \\
+        \rho h\bm{u}^T \\
+        \rho e^{ve}\bm u^T
+    \end{Bmatrix}, \quad
+    \mathcal{F}^v =
+    \begin{Bmatrix}
+        -\bm{J}_1\\
+        .             \\
+        .             \\
+        .             \\
+        -\Sub{\bm{J}}{s}\\
+        \bm{\sigma} \\
+        \bm{u}^T\bm{\sigma}- \sum_k\bm{q}^k - \sum_s\Sub{\bm{J}}{s}\Sub{h}{s} \\
+        -\bm{q}^{ve} - \sum_s\Sub{\bm{J}}{s}\Sub{e^{ve}}{s}
+    \end{Bmatrix}, \quad
+    \mathcal{Q} = 
+    \begin{Bmatrix}
+        \Sub{\dot{\omega}}{1} \\
+        .             \\
+        .             \\
+        .             \\
+        \Sub{\dot{\omega}}{s} \\
+        0 \\
+        0 \\
+        \dot{\Theta}^{tr:ve} +
+        \sum_s\Sub{\dot{\omega}}{s}\Sub{e^{ve}}{s}
+    \end{Bmatrix} }
+
 % Compressible 
 % Isentropic relations for ideal gas 
 \newcommand{\isentropicRelationsIdealGas} 
