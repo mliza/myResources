@@ -98,7 +98,7 @@ alias lemansInput='op ~/Documents/Research/UoA/helper/lemansInputCalculator.xlsx
 # --------
 # Websites
 # --------
-alias homebridge='open -a Safari http://192.168.0.170:8581' #Open homebridge
+alias homebridge='open -a Safari http://192.168.1.176:8581' #Open homebridge
 alias facebook='op https://www.facebook.com'                #Open Facebook
 alias UAccess='op https://uaccess.arizona.edu'              #Open UAcces
 alias d2l='op https://d2l.arizona.edu/d2l/loginh/'          #Open D2L
@@ -110,6 +110,7 @@ alias pipDoc='op https://pypi.org'                          #Python packages
 alias numpyDoc='op https://docs.scipy.org/doc/'             #numpy documentation
 alias cppDoc='op http://www.cplusplus.com/reference/ >/dev/null'    #C++ reference
 alias gitSU2='op https://github.com/su2code/SU2'            #Su2 github
+alias gitFoam='op https://github.com/OpenFOAM'              #openFoam github
 alias brewX86='/usr/local/bin/brew'                         #x86 brew
 alias pythonX86='/usr/local/bin/python3'                    #pythonX86
 alias ctags='/opt/homebrew/bin/ctags'                       #needed to run ctags
@@ -119,6 +120,15 @@ alias python='python3.9'
 # ---------
 # Functions
 # ---------
+# Compile pdf with nomenclature and beamer
+compileLatex() {
+    pdflatex $1.tex;
+    makeindex $1.nlo -s nomencl.ist -o $1.nls;
+    biber $1;
+    pdflatex $1.tex;
+}
+
+
 #Opens vim in 1/4 of screen and resizes terminal back after exiting vim
 vimR() {
     local prevSize=($LINES $COLUMNS)
@@ -236,7 +246,7 @@ alias pyPlot='/Applications/Tecplot\ 360\ EX\ 2021\ R2/bin/tec360-env -- ipython
 #export DYLD_LIBRARY_PATH='/Applications/Tecplot\ 360\ EX\ 2021\ R2/Tecplot\ 360\ EX\ 2021\ R2.app/Contents/MacOS'      #Export pytecplot 
 export PATH="/Applications/MATLAB_R2023b.app/bin/:$PATH"    #Export Matlab
 export UA='mliza@hpc.arizona.edu'                           #UoA HPC
-export PI='pi@192.168.0.170'                                #Raspberry Pi
+export PI='pi@192.168.1.176'                                #Raspberry Pi
 export UBUNTU='martin@192.168.1.169'                        #Ubuntu 
 export SCRIPTS="$HOME/Documents/Scripts"                    #Scripts
 export LATEX="$HOME/Library/texmf/tex"                      #my Local latex packages
