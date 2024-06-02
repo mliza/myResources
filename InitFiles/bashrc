@@ -48,10 +48,9 @@ alias ....='cd ../../../../; ls'        #back 4 directories
 # Applications
 # ------------
 alias vpn='open -a /Applications/Cisco/Cisco\ Secure\ Client.app/ ' #Launch Cisco
-alias tecPlot='open -a /Applications/Tecplot\ 360\ EX\ 2021\ R2/Tecplot\ 360\ EX\ 2021\ R2.app/' #Launch tecPlot
+alias tecPlot='open -a /Applications/Tecplot\ 360\ EX\ 2023\ R2/Tecplot\ 360\ EX\ 2023\ R2.app/' #Launch tecPlot
 alias windows='op /Applications/Parallels\ Desktop.app/' #Launch windows
 alias slack='open -a  /Applications/Slack.app'           #Launch Slack 
-alias eden='open -a Safari https://theeden.activebuilding.com/portal/resident-dashboard' #Eden Website 
 alias rosetta='open /Applications/Rosetta.app/'
 alias loan='open -a Safari https://www.mrcooper.com/servicing/overview'
 
