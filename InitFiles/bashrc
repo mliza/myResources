@@ -1,9 +1,9 @@
 # -------
 # Working
 # -------
-buildSu2W() { rm -rf build subprojects; mkdir build; export CC=$(which gcc); export CXX=$(which g++); export PATH=$PWD:$PATH; ./meson.py build --buildtype=debug --prefix=$SU2_HOME/build -Denable-mpp=true; ./ninja -C build; }
+buildSu2W() { rm -rf build; mkdir build; export CC=$(which gcc); export CXX=$(which g++); export PATH=$PWD:$PATH; ./meson.py build --buildtype=debug --prefix=$SU2_HOME/build -Denable-mpp=true; ./ninja -C build; }
 
-buildSu2() { rm -rf build subprojects; ./meson.py build --buildtype=debug --prefix=$PWD/build -Denable-mpp=true; ./ninja -C build; }
+buildSu2() { rm -rf build; ./meson.py build --buildtype=debug --prefix=$PWD/build -Denable-mpp=true; ./ninja -C build; }
 
 alias runD='CleanSU2; lldb -s lldb_bk -- SU2_CFD *.cfg'
 alias sourceW='source ~/Desktop/SU2/wally/exports.sh'
