@@ -81,7 +81,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "Allow single line always 
 noremap j gj
-noremap k kj
+noremap k gk
 
 "Copy and past files to clipboard
 noremap <C-y> "+y
