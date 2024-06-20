@@ -78,6 +78,7 @@ alias g++='g++ -std=c++11 -g'
 # -------
 # Folders
 # -------
+alias temp='resources; cd Development/summer2024/'  #path to temp
 alias books='cd ~/Documents/Books'              #Path to Books
 alias app='cd ~/Documents/"Application Files"'  #Path to Application Docs
 alias schools='cd ~/Documents/Schools'          #Path to Schools

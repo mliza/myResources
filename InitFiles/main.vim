@@ -79,6 +79,10 @@ nnoremap <leader>d d^
 "Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+"Allow single line always 
+noremap j gj
+noremap k kj
+
 "Copy and past files to clipboard
 noremap <C-y> "+y
 noremap <C-x> "+d
