@@ -26,9 +26,7 @@ def initial_conditions(velocity, characteristic_length,
 
 if __name__ == "__main__":
     #initial_condition = initial_conditions(velocity=140, characteristic_length=0.032)
-    initial_condition = initial_conditions(velocity=140,
-                                           characteristic_length=0.15)
+    initial_condition = initial_conditions(velocity=1198.12,
+                                           altitude=10000,
+                                           characteristic_length=0.3)
     IPython.embed(colors = 'Linux')
-
-
-
