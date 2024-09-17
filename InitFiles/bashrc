@@ -30,7 +30,7 @@ alias fsize='resize -s 0 0 >/dev/null && clc'       #Resize full screen
 alias pipUpdate='pip-review -a'                     #Update python packages
 alias macUpdate='sudo softwareupdate -ir --restart' #Update MACsoftware
 alias sp2com="sed -i 's/[[:space:]]\+/,/g'"         #Space file to comma file
-alias updateAll='macUpdate; pipUpdate; brewUpdate; mas upgrade' #Update all
+alias updateAll='macUpdate; brewUpdate; mas upgrade' #Update all
 alias cleanSU2='rm -rf *.vtu *.err *.dat *.csv *.szplt'         #Clean SU2
 alias cleanLEMANS='rm -r *.e* *.o* restart* residuals.dat *.plt monitors.dat' #Clean Lemans
 alias brewUpdate='brew update; brew upgrade --greedy; brew cleanup; brew doctor'    #Update,cleanup homebrew
@@ -126,7 +126,7 @@ compileLatex() {
     makeindex $1.nlo -s nomencl.ist -o $1.nls;
     biber $1;
     pdflatex $1.tex; 
-    rm $1.aux $1.bbl $1.bcf $1.blg $1.glo* $1.gls* $1.ist $1.log $1.out $1.run.xml $1.slg $1.slo $1.sls $1.tdo $1.toc $1.glg* $1.lot $1.lof;
+    rm $1.aux $1.bbl $1.bcf $1.blg $1.glo* $1.gls* $1.ist $1.log $1.out $1.run.xml $1.slg $1.slo $1.sls $1.tdo $1.toc $1.glg* $1.lot $1.lof $1.dvi;
 }
 
 
