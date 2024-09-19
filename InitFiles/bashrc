@@ -9,6 +9,7 @@ alias runD='CleanSU2; lldb -s lldb_bk -- SU2_CFD *.cfg'
 alias sourceW='source ~/Desktop/SU2/wally/exports.sh'
 alias sourceM='source ~/Desktop/SU2/mliza/exports.sh'
 alias sourceL='source ~/Desktop/SU2/LES/exports.sh'
+#alias inkscape--export-pdf=out.png input.eps
 
 # ---------
 # Shortcuts
