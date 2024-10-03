@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.28">
-<info created="D:20240815210516" modified="D:20240815215630"/>
+<info created="D:20240815210516" modified="D:20241002204428"/>
 <bitmap id="1" width="2774" height="1114" BitsPerComponent="8" ColorSpace="DeviceRGB" Filter="FlateDecode" length="1114281" encoding="base64">
 eNrs3fd3G+mVJ/z/afc9u++c2Zm12/bZGdtzbI9zJ3dQd9vdit1qBVKZYpIoiWISc85JzDnn
 HEGCAIhE5JyBig+2qgCCICV1mPH7jmf3+zm3qx8UCpVQ1C/Pxb3RKAAAAAAAAAAAAAAAAAAA
@@ -20954,7 +20954,7 @@ h
 <layer name="labels"/>
 <view layers="airfoil layers labels" active="labels"/>
 <image layer="image" matrix="1 0 0 1 4.38465 164.436" rect="0 301.528 595 540.472" bitmap="1"/>
-<path layer="airfoil" matrix="1 0 0 1 2.05709 36.3443" stroke="black" fill="lightblue">
+<path layer="airfoil" matrix="1 0 0 1 18.5512 35.6799" stroke="black" fill="lightblue">
 28.64 546.32 m
 29.2847 548.488
 32.6191 551.497
@@ -21106,68 +21106,68 @@ h
 28.7585 544.353
 28.64 546.32 c
 </path>
-<path layer="layers" stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path layer="layers" matrix="1 0 0 1 16.4941 -0.66441" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 6.05912 584.075 m
 25.2379 584.075 l
 </path>
-<path stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 16.4941 -0.66441" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 25.2379 584.075 m
 37.4889 595.506
 59.7912 598.815
 71.5214 598.426
 91.4053 595.182 c
 </path>
-<path stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 16.4941 -0.66441" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 91.4053 595.182 m
 132.834 585.157
 136.175 584.199 c
 </path>
-<path stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 16.4941 -0.66441" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 25.2379 584.075 m
 32.2396 572.54
 44.0043 571.822
 68.3636 573.09
 74.9853 573.675 c
 </path>
-<path stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 16.4941 -0.66441" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 74.9853 573.675 m
 115.653 576.388 l
 </path>
-<path stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 16.4941 -0.66441" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 115.653 576.388 m
 136.381 579.777 l
 </path>
-<path matrix="1 0 0 1 -0.380252 8.09699" stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 16.1834 7.50851" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 6.05912 584.075 m
 25.2379 584.075 l
 </path>
-<path matrix="1 0 0 1 -0.792272 -6.55085" stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 15.7019 -7.21526" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 6.05912 584.075 m
 25.2379 584.075 l
 </path>
-<path matrix="1 0 0 1 -0.600946 8.09522" stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 15.8932 7.43081" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 25.2379 584.075 m
 37.4889 595.506
 59.7912 598.815
 71.5214 598.426
 91.4053 595.182 c
 </path>
-<path matrix="1 0 0 1 -0.761488 -3.54913" stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 14.9567 -4.09193" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 91.9613 606.803 m
 127.633 597.937
 142.834 588.116 c
 </path>
-<path stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 16.4941 -0.66441" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 24.4456 577.524 m
 37.0457 568.123
 48.8263 567.915 c
 </path>
-<path stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 16.4941 -0.66441" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 48.8263 567.915 m
 81.2209 568.287
 95.3019 568.118 c
 </path>
-<path stroke="darkmagenta" pen="heavier" arrow="normal/small">
+<path matrix="1 0 0 1 16.4941 -0.66441" stroke="darkmagenta" pen="heavier" arrow="normal/small">
 95.3019 568.118 m
 120.997 569.966
 139.158 575.301 c
@@ -21225,7 +21225,7 @@ h
 464.346 582.914
 464.938 580.254 c
 </path>
-<text layer="labels" matrix="1 0 0 1 -116.442 186.078" transformations="translations" pos="152.157 455.22" stroke="black" type="label" width="70.583" height="6.918" depth="0.39" valign="baseline">Subsonic $M&lt;1$</text>
+<text layer="labels" matrix="1 0 0 1 -99.9479 185.414" transformations="translations" pos="152.157 455.22" stroke="black" type="label" width="70.583" height="6.918" depth="0.39" valign="baseline">Subsonic $M&lt;1$</text>
 <text matrix="1 0 0 1 39.4196 184.773" transformations="translations" pos="152.157 455.22" stroke="black" type="label" width="74.761" height="6.808" depth="0" valign="baseline">Transonic $M\approx1$</text>
 <text matrix="1 0 0 1 191.709 185.355" transformations="translations" pos="152.157 455.22" stroke="black" type="label" width="79.189" height="6.815" depth="1.93" valign="baseline">Supersonic $M&gt;1$</text>
 <text matrix="1 0 0 1 330.812 186.707" transformations="translations" pos="152.157 455.22" stroke="black" type="label" width="88.598" height="6.815" depth="1.93" valign="baseline">Hypersonic $M&gt;&gt;5$</text>
