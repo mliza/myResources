@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.28">
-<info created="D:20240508213031" modified="D:20240508221232"/>
+<info created="D:20240508213031" modified="D:20241003193324"/>
 <bitmap id="1" width="700" height="461" BitsPerComponent="8" ColorSpace="DeviceRGB" Filter="DCTDecode" length="108755" encoding="base64">
 /9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QN/aHR0
 cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1
@@ -2378,59 +2378,59 @@ h
 <path layer="noE" stroke="black">
 16.8369 0 0 16.8369 116.05 688.74 e
 </path>
-<path matrix="0.804134 0.594448 -1.11174 0.421732 815.023 241.517" stroke="black" fill="lightgray">
+<path matrix="0.804134 0.594448 -1.11174 0.421732 799.023 241.517" stroke="black" fill="lightgray">
 41.2841 0 0 41.2841 264.948 687.129 e
 </path>
-<path stroke="black" fill="lightgray">
+<path matrix="1 0 0 1 -16 0" stroke="black" fill="lightgray">
 14.0301 0 0 14.0301 231.671 688.424 e
 </path>
-<path layer="positive" matrix="1 0 0 1 115.473 -0.534915" stroke="black" fill="brown">
+<path layer="positive" matrix="1 0 0 1 99.473 -0.534915" stroke="black" fill="brown">
 6.0405 0 0 6.0405 116.198 688.959 e
 </path>
-<path matrix="1 0 0 1 115.31 -0.836624" stroke="black" pen="heavier">
+<path matrix="1 0 0 1 99.31 -0.836624" stroke="black" pen="heavier">
 113.031 689.085 m
 119.249 688.99 l
 </path>
-<path matrix="1 0 0 1 115.473 -0.534915" stroke="black" pen="heavier">
+<path matrix="1 0 0 1 99.473 -0.534915" stroke="black" pen="heavier">
 116.052 691.273 m
 116.047 686.208 l
 </path>
-<path layer="noE" matrix="1 0 0 1 181.344 12.6561" stroke="black" fill="lightblue">
+<path layer="noE" matrix="1 0 0 1 165.344 12.6561" stroke="black" fill="lightblue">
 6.0405 0 0 6.0405 116.198 688.959 e
 </path>
-<path matrix="1 0 0 1 181.181 12.3544" stroke="black" pen="heavier">
+<path matrix="1 0 0 1 165.181 12.3544" stroke="black" pen="heavier">
 113.031 689.085 m
 119.249 688.99 l
 </path>
-<path matrix="1 0 0 1 182.296 -4.90511" stroke="black" fill="lightblue">
+<path matrix="1 0 0 1 166.296 -4.90511" stroke="black" fill="lightblue">
 6.0405 0 0 6.0405 116.198 688.959 e
 </path>
-<path matrix="1 0 0 1 182.134 -5.20681" stroke="black" pen="heavier">
+<path matrix="1 0 0 1 166.134 -5.20681" stroke="black" pen="heavier">
 113.031 689.085 m
 119.249 688.99 l
 </path>
-<path matrix="1 0 0 1 195.735 3.3292" stroke="black" fill="lightblue">
+<path matrix="1 0 0 1 179.735 3.3292" stroke="black" fill="lightblue">
 6.0405 0 0 6.0405 116.198 688.959 e
 </path>
-<path matrix="1 0 0 1 195.572 3.0275" stroke="black" pen="heavier">
+<path matrix="1 0 0 1 179.572 3.0275" stroke="black" pen="heavier">
 113.031 689.085 m
 119.249 688.99 l
 </path>
-<path matrix="1 0 0 1 169.288 2.58653" stroke="black" fill="lightblue">
+<path matrix="1 0 0 1 153.288 2.58653" stroke="black" fill="lightblue">
 6.0405 0 0 6.0405 116.198 688.959 e
 </path>
-<path matrix="1 0 0 1 169.126 2.28483" stroke="black" pen="heavier">
+<path matrix="1 0 0 1 153.126 2.28483" stroke="black" pen="heavier">
 113.031 689.085 m
 119.249 688.99 l
 </path>
-<path matrix="1 0 0 1 -4.2688 -1.20397" stroke="black" fill="lightgray" pen="heavier" arrow="normal/normal">
+<path matrix="1 0 0 1 -20.2688 -1.20397" stroke="black" fill="lightgray" pen="heavier" arrow="normal/normal">
 269.22 768.171 m
 269.052 724.477 l
 </path>
-<path matrix="1 0 0 1 -1.79475 -112.796" stroke="black" fill="lightgray" pen="heavier" arrow="normal/normal">
+<path matrix="1 0 0 1 -17.7948 -112.796" stroke="black" fill="lightgray" pen="heavier" arrow="normal/normal">
 269.22 768.171 m
 269.052 724.477 l
 </path>
-<text matrix="1 0 0 1 -50.8656 -27.3635" transformations="translations" pos="304 784" stroke="black" type="label" width="9.557" height="9.803" depth="0" valign="baseline" size="Large">E</text>
+<text matrix="1 0 0 1 -69.1031 -30.2511" transformations="translations" pos="304 784" stroke="black" type="label" width="11.239" height="13.852" depth="0" valign="baseline" size="Large" style="math">\vec{E}</text>
 </page>
 </ipe>
