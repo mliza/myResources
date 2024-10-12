@@ -117,6 +117,7 @@ alias brewX86='/usr/local/bin/brew'                         #x86 brew
 alias pythonX86='/usr/local/bin/python3'                    #pythonX86
 alias ctags='/opt/homebrew/bin/ctags'                       #needed to run ctags
 alias python='python3.11'
+alias papers='cd /Users/martin/Documents/Research/UoA/Papers/bibliography'
 
 
 # ---------
