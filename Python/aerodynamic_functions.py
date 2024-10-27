@@ -36,18 +36,12 @@ def sutherland_law(temperature_K):
 
 # Air atomic mass
 def air_atomic_mass():
-    N2        = molmass.Formula('N2').mass # [g/mol] 
-    O2        = molmass.Formula('O2').mass # [g/mol]
-    N         = molmass.Formula('N').mass  # [g/mol]
-    O         = molmass.Formula('O').mass  # [g/mol]
-    NO        = molmass.Formula('NO').mass # [g/mol]
+    molecules = ['N+', 'O+', 'NO+', 'N2+', 'O2+', 'N', 'O', 'NO', 'N2', 'O2'] 
+    air_atomic_dict = { }
+    for i in molecules:
+        air_atomic_dict[i] = molmass.Formula(i).mass
 
-    air_atomic_mass = {'N2' : N2,
-                       'O2' : O2,
-                       'N'  : N,
-                       'O'  : O,
-                       'NO' : NO}
-    return air_atomic_mass # [g/mol] 
+    return air_atomic_dict #[g/mol]
 
 
 # Speed of sound 

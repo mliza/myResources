@@ -175,7 +175,7 @@ dict() { open dict://$1; }
 pngToGif() { convert -delay "$1" -loop 0 *.png -trim +repage "$2".gif; }
 
 #Convert eps to pdf
-epsToPdf() { inskape --export-pdf="$2" "$1"; }
+epsToPdf() { inkscape --export-pdf="$2" "$1"; }
 
 #Trim white space in a folder keep their name
 trimImages() { for f in *.png; do echo "Converting $f"; convert "$f" -trim +repage "${f%.*}.png"; done }
