@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.28">
-<info created="D:20241121171926" modified="D:20241121174757"/>
+<info created="D:20241121171926" modified="D:20241121181100"/>
 <bitmap id="1" width="726" height="1170" BitsPerComponent="8" ColorSpace="DeviceGray" Filter="FlateDecode" length="39072" encoding="base64">
 eNrsnQVcU9sfwM96dHc3KIIgdjfY2N2dqM/ufD712dhiYgcqYmEHiElISnf3erv/ezdQUFHw
 6Z9t/L6fj267u/cA53539juNYQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPUD
@@ -1044,12 +1044,12 @@ h
 <layer name="Frozen"/>
 <view layers="Axis flow Equilibrium Frozen" active="Axis"/>
 <image layer="Figure" matrix="0.596543 0 0 0.627503 42.2256 160.347" rect="115.991 128.485 479.009 713.515" bitmap="1"/>
-<path layer="Axis" matrix="1 0 0 1 -98.6319 7.84719" stroke="black" pen="heavier">
+<path layer="Axis" matrix="1 0 0 1 -98.5923 23.3213" stroke="black" pen="heavier">
 144.339 480.156 m
 144.318 376.892 l
 292.599 376.518 l
 </path>
-<path matrix="1.00016 0 0 0.743141 111.987 105.232" stroke="black" pen="heavier">
+<path matrix="1.00016 0 0 0.743141 112.027 120.706" stroke="black" pen="heavier">
 144.339 480.156 m
 144.318 376.892 l
 292.599 376.518 l
@@ -1076,7 +1076,7 @@ h
 268.653 601.386
 288.489 604.105 c
 </path>
-<path matrix="1 0 0 -1 28.4964 1106.76" stroke="black" pen="heavier">
+<path matrix="1 0 0 -1 28.4964 1106.71" stroke="black" pen="heavier">
 118.042 588.304 m
 147.574 588.034
 148 587.955
@@ -1105,7 +1105,7 @@ h
 <text matrix="1 0 0 1 4.04198 -27.1048" transformations="translations" pos="261.856 574.638" stroke="navy" type="label" width="23.189" height="6.918" depth="0" valign="baseline" style="math">Flow</text>
 <text matrix="1 0 0 1 -24.6445 -79.6284" transformations="translations" pos="169.93 626.938" stroke="navy" type="label" width="58.209" height="7.473" depth="2.49" valign="baseline" style="math">T_0 = 5000 [K]</text>
 <text matrix="1 0 0 1 -46.732 -70.797" transformations="translations" pos="192.066 607.139" stroke="navy" type="label" width="53.195" height="7.473" depth="2.49" valign="baseline" style="math">p_{O} = 1 [atm]</text>
-<path layer="Equilibrium" matrix="1 0 0 1 -99.1817 7.89741" stroke="darkred" pen="heavier">
+<path layer="Equilibrium" matrix="1 0 0 1 -99.1421 23.3716" stroke="darkred" pen="heavier">
 145.142 450.159 m
 151.6 448.397
 156.856 446.901
@@ -1128,7 +1128,7 @@ h
 260.43 411.473
 288.436 411.181 c
 </path>
-<path matrix="1 0 0 1 111.732 125.754" stroke="darkred" pen="heavier">
+<path matrix="1 0 0 1 111.772 141.228" stroke="darkred" pen="heavier">
 145.009 260.373 m
 151.331 260.206
 164.851 262.706
@@ -1147,7 +1147,7 @@ h
 276.945 307.185
 284.754 307.535 c
 </path>
-<path matrix="1 0 0 1 111.172 126.297" stroke="darkred" pen="heavier">
+<path matrix="1 0 0 1 111.212 141.771" stroke="darkred" pen="heavier">
 145.351 308.035 m
 149.59 307.335
 156.174 306.434
@@ -1166,23 +1166,23 @@ h
 271.87 259.229
 282.148 259.416 c
 </path>
-<path layer="Frozen" matrix="1 0 0 1 -98.6319 7.84719" stroke="darkmagenta" dash="dashed" pen="heavier">
+<path layer="Frozen" matrix="1 0 0 1 -122.377 4.17223" stroke="darkmagenta" dash="dashed" pen="heavier">
 226.489 475.095 m
 254.859 474.95 l
 </path>
-<path layer="Equilibrium" matrix="1 0 0 1 -98.6319 7.84719" stroke="darkred" pen="heavier">
+<path layer="Equilibrium" matrix="1 0 0 1 -122.377 4.17223" stroke="darkred" pen="heavier">
 226.406 464.934 m
 254.549 464.805 l
 </path>
-<path layer="Frozen" matrix="1 0 0 1 111.924 126.4" stroke="darkmagenta" dash="dashed" pen="heavier">
+<path layer="Frozen" matrix="1 0 0 1 111.964 141.874" stroke="darkmagenta" dash="dashed" pen="heavier">
 144.599 307.932 m
 292.89 307.17 l
 </path>
-<path matrix="1 0 0 1 111.924 126.4" stroke="darkmagenta" dash="dashed" pen="heavier">
+<path matrix="1 0 0 1 111.964 141.874" stroke="darkmagenta" dash="dashed" pen="heavier">
 144.817 259.727 m
 289.899 259.107 l
 </path>
-<path matrix="1 0 0 1 -98.6319 7.84719" stroke="darkmagenta" dash="dashed" pen="heavier">
+<path matrix="1 0 0 1 -98.5923 23.3213" stroke="darkmagenta" dash="dashed" pen="heavier">
 144.966 449.509 m
 148.763 447.886
 150.858 446.495
@@ -1209,17 +1209,27 @@ h
 274.252 392.825
 288.636 392.968 c
 </path>
-<text matrix="1 0 0 1 -292.699 67.2853" transformations="translations" pos="453.589 412.07" stroke="darkmagenta" type="label" width="33.081" height="6.808" depth="0" valign="baseline" style="math">Frozen</text>
-<text matrix="1 0 0 1 -62.0274 68.975" transformations="translations" pos="456.704 370.852" stroke="darkred" type="label" width="44.449" height="6.926" depth="1.93" valign="baseline" style="math">c_0, frozen</text>
-<text matrix="1 0 0 1 -63.9466 18.1285" transformations="translations" pos="456.704 370.852" stroke="darkmagenta" type="label" width="48.337" height="6.919" depth="2.49" valign="baseline" style="math">c_{0_2}, frozen</text>
-<text layer="Equilibrium" matrix="1 0 0 1 -219.163 -23.3979" transformations="translations" pos="379.984 492.537" stroke="darkred" type="label" width="55.4" height="6.926" depth="1.93" valign="baseline" style="math">Equilibrium</text>
-<text matrix="1 0 0 1 -97.6455 145.527" transformations="translations" pos="383.474 274.795" stroke="darkred" type="label" width="8.781" height="4.294" depth="1.49" valign="baseline" style="math">c_0</text>
-<text matrix="1 0 0 1 -17.6646 145.316" transformations="translations" pos="383.474 274.795" stroke="darkred" type="label" width="12.669" height="4.29" depth="2.49" valign="baseline" style="math">c_{0_2}</text>
-<text layer="Axis" matrix="1 0 0 1 -431.505 26.1498" transformations="translations" pos="453.344 453.963" stroke="black" type="label" width="21.914" height="7.473" depth="2.49" valign="baseline" style="math">T [K]</text>
-<text matrix="1 0 0 1 -429.554 0.763502" transformations="translations" pos="453.344 453.963" stroke="black" type="label" width="19.925" height="6.42" depth="0" valign="baseline" style="math">5000</text>
-<text matrix="1 0 0 1 -113.252 4.38199" transformations="translations" pos="214.331 369.9" stroke="black" type="label" width="40.421" height="6.808" depth="0" valign="baseline" style="math">Distance</text>
-<text matrix="1 0 0 1 95.8964 4.54053" transformations="translations" pos="214.331 369.9" stroke="black" type="label" width="40.421" height="6.808" depth="0" valign="baseline" style="math">Distance</text>
-<text matrix="1 0 0 1 128.616 120.082" transformations="translations" pos="114.369 310.67" stroke="black" type="label" width="12.73" height="6.42" depth="0" valign="baseline" style="math">1.0</text>
-<text matrix="1 0 0 1 133.548 145.878" transformations="translations" pos="114.369 310.67" stroke="black" type="label" width="7.628" height="4.294" depth="1.49" valign="baseline" style="math">c_i</text>
+<text matrix="1 0 0 1 -316.444 63.6103" transformations="translations" pos="453.589 412.07" stroke="darkmagenta" type="label" width="33.081" height="6.808" depth="0" valign="baseline" style="math">Frozen</text>
+<text matrix="1 0 0 1 -60.8449 81.3604" transformations="translations" pos="456.704 370.852" stroke="darkmagenta" type="label" width="8.781" height="4.294" depth="1.49" valign="baseline" style="math">c_0</text>
+<text matrix="1 0 0 1 -67.7754 33.9848" transformations="translations" pos="456.704 370.852" stroke="darkmagenta" type="label" width="12.669" height="4.29" depth="2.49" valign="baseline" style="math">c_{0_2}</text>
+<text layer="Equilibrium" matrix="1 0 0 1 -242.908 -27.0729" transformations="translations" pos="379.984 492.537" stroke="darkred" type="label" width="55.4" height="6.926" depth="1.93" valign="baseline" style="math">Equilibrium</text>
+<text matrix="1 0 0 1 -97.6059 161.001" transformations="translations" pos="383.474 274.795" stroke="darkred" type="label" width="8.781" height="4.294" depth="1.49" valign="baseline" style="math">c_0</text>
+<text matrix="1 0 0 1 -17.625 160.79" transformations="translations" pos="383.474 274.795" stroke="darkred" type="label" width="12.669" height="4.29" depth="2.49" valign="baseline" style="math">c_{0_2}</text>
+<text layer="Axis" matrix="1 0 0 1 -431.465 41.6239" transformations="translations" pos="453.344 453.963" stroke="black" type="label" width="21.914" height="7.473" depth="2.49" valign="baseline" style="math">T [K]</text>
+<text matrix="1 0 0 1 -429.514 16.2376" transformations="translations" pos="453.344 453.963" stroke="black" type="label" width="19.925" height="6.42" depth="0" valign="baseline" style="math">5000</text>
+<text matrix="1 0 0 1 -113.212 19.8561" transformations="translations" pos="214.331 369.9" stroke="black" type="label" width="40.421" height="6.808" depth="0" valign="baseline" style="math">Distance</text>
+<text matrix="1 0 0 1 95.936 20.0147" transformations="translations" pos="214.331 369.9" stroke="black" type="label" width="40.421" height="6.808" depth="0" valign="baseline" style="math">Distance</text>
+<text matrix="1 0 0 1 128.656 135.556" transformations="translations" pos="114.369 310.67" stroke="black" type="label" width="12.73" height="6.42" depth="0" valign="baseline" style="math">1.0</text>
+<text matrix="1 0 0 1 133.588 161.352" transformations="translations" pos="114.369 310.67" stroke="black" type="label" width="7.628" height="4.294" depth="1.49" valign="baseline" style="math">c_i</text>
+<path matrix="1 0 0 1 89.6968 4.63151" stroke="darkmagenta" dash="dashed" pen="heavier">
+226.489 475.095 m
+254.859 474.95 l
+</path>
+<path matrix="1 0 0 1 89.6968 4.63151" stroke="darkred" pen="heavier">
+226.406 464.934 m
+254.549 464.805 l
+</path>
+<text matrix="1 0 0 1 -104.37 64.0696" transformations="translations" pos="453.589 412.07" stroke="darkmagenta" type="label" width="33.081" height="6.808" depth="0" valign="baseline" style="math">Frozen</text>
+<text matrix="1 0 0 1 -30.8343 -26.6136" transformations="translations" pos="379.984 492.537" stroke="darkred" type="label" width="55.4" height="6.926" depth="1.93" valign="baseline" style="math">Equilibrium</text>
 </page>
 </ipe>
