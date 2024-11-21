@@ -211,11 +211,10 @@ weather2() { diff -Naur <(curl -s http://wttr.in/~$1) <(curl -s http://wttr.in/~
 Battery=$(pmset -g batt | sed -e 's/;//g' -e '3d' -e '1d' | awk '{print $3}')
 
 #GPS Location 
-Location=$(CoreLocationCLI -f %locality)
+Location=$(curl -s ipinfo.io | jq -r '.city')
 
 #Current Temperature in Celsius using GPS location 
-Temp=$(CoreLocationCLI -f %locality |
-       xargs -0 ansiweather -a false -u imperial -l |
+Temp=$(ansiweather -a false -u imperial -l "$Location" |
        awk -F "-" '{print $1}' |
        awk -F ":" '{print $2}' |
        sed 's/ //g')
