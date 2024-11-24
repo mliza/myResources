@@ -13,7 +13,7 @@ layer_index = np.unique(layers, return_index=True)
 altitude_layers = altitude[layer_index[1]]
 
 ## Figure Config ##
-fig_width = 12
+fig_width = 14
 fig_height = 8
 line_width = 3
 dpi_size = 600
@@ -21,10 +21,10 @@ color_layers = 'darkviolet'
 color_atm = 'black'
 
 # Generating Plots
-fix, axs= plt.subplots(2,3, figsize=(fig_width, fig_height), dpi=dpi_size)
+fix, axs= plt.subplots(2,4, figsize=(fig_width, fig_height), dpi=dpi_size)
 
 # Plot properties ##
-# Plot top 3 #
+# Plot top 4 #
 axs[0,0].plot(atmosphere.pressure*1E-3, altitude*1E-3, linewidth=line_width,
               color=color_atm)
 axs[0,0].set(xlabel='Pressure $[kPa]$', ylabel='Altitude $[km]$')
@@ -37,7 +37,11 @@ axs[0,2].plot(atmosphere.kinematic_viscosity, altitude*1E-3,
               linewidth=line_width, color=color_atm)
 axs[0,2].set(xlabel='Kinematic Viscosity $[m^2/s]$', ylabel='Altitude $[km]$')
 
-# Plot bottom 3 #
+axs[0,3].plot(atmosphere.mean_free_path, altitude*1E-3,
+              linewidth=line_width, color=color_atm)
+axs[0,3].set(xlabel='Mean Free Path $[m]$', ylabel='Altitude $[km]$')
+
+# Plot bottom 4 #
 axs[1,0].plot(atmosphere.temperature, altitude*1E-3, linewidth=line_width,
               color=color_atm)
 axs[1,0].set(xlabel='Temperature $[K]$', ylabel='Altitude $[km]$')
@@ -50,8 +54,19 @@ axs[1,2].plot(atmosphere.dynamic_viscosity, altitude*1E-3,
               linewidth=line_width, color=color_atm)
 axs[1,2].set(xlabel='Dynamic Viscosity $[Pa\,s]$', ylabel='Altitude $[km]$')
 
+axs[1,3].plot(atmosphere.thermal_conductivity, altitude*1E-3,
+              linewidth=line_width, color=color_atm)
+axs[1,3].set(xlabel='Thermal Conductivity $[W/mK]$', ylabel='Altitude $[km]$')
+
+"""
+axs[0,0].set_xscale('log')
+axs[0,1].set_xscale('log')
+"""
+axs[0,2].set_xscale('log')
+axs[0,3].set_xscale('log')
+
 for i in range(2):
-    for j in range(3):
+    for j in range(4):
         for k, val in enumerate(layer_index[0]):
             axs[i,j].axhline(y=altitude[layer_index[1][k]]*1E-3,
                              linestyle='--', 
@@ -62,8 +77,12 @@ for i in range(2):
             x_pos_right = x_max - 0.05 * (x_max - x_min)  # Set text position as 5% from the left
 
 
-            if (val == layer_index[0][-1] or (i==1 and  val == layer_index[0][0]) or 
-                (i == 1 and val == layer_index[0][1])):
+            # Left
+            if ( (val == layer_index[0][-1] and (i==0 and j==0)) or 
+                 (val == layer_index[0][-1] and (i==0 and j==1)) or
+                 (val == layer_index[0][-1] and i==1) or
+                 (i==1 and val == layer_index[0][0]) or 
+                 (i==1 and val == layer_index[0][1]) ):
                 # Add the layer name at the calculated position
                 axs[i, j].text(
                     x=x_pos_left,  #[x_pos_left, x_pos_right]
@@ -75,6 +94,7 @@ for i in range(2):
                     va='bottom'  # Align text below the line
                 )
             else:
+                # Right
                 axs[i,j].text(
                     x=x_pos_right,  #[x_pos_left, x_pos_right]
                     y=altitude[layer_index[1][k]] * 1E-3,  # Altitude for the text
