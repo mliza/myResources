@@ -38,6 +38,7 @@ alias cleanLEMANS='rm -r *.e* *.o* restart* residuals.dat *.plt monitors.dat' #C
 alias brewUpdate='brew update; brew upgrade --greedy; brew cleanup; brew doctor'    #Update,cleanup homebrew
 alias gccOpenMP='/opt/homebrew/Cellar/gcc/13.1.0/bin/gcc-13 -fopenmp' #Compile gcc with openMP
 alias removeASCII="sed 's/\x1b\[[0-9;]*[mGKHF]//g"
+alias runTec="/Applications/Tecplot\ 360\ EX\ 2023\ R2/bin/tec360-env -- /usr/local/bin/python3"
 
 #Backup directories 
 alias .='cd ../; ls'                    #back 1 directory
