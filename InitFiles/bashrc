@@ -19,6 +19,7 @@ alias updateDoc='python -b build; pip install .; cd docs; make clean; make html'
 # Shortcuts
 # ---------
 alias vimrc='vim ~/.vim/vimrc/main.vim;'            #Access to bashrc
+alias tmuxrc='vim ~/.tmux.conf;'                    #Access to tmux.conf
 alias vimrcP='vim ~/.vim/vimrc/plugins.vim;'        #Access to bashrc
 alias bashrc='vim ~/.bashrc;'                       #Access to vimrc
 alias gitrc='vim ~/.gitconfig;'                     #Access to gitconfig
