@@ -10,7 +10,10 @@ alias runD='CleanSU2; lldb -s lldb_bk -- SU2_CFD *.cfg'
 alias sourceW='source ~/Desktop/SU2/wally/exports.sh'
 alias sourceM='source ~/Desktop/SU2/mliza/exports.sh'
 alias sourceL='source ~/Desktop/SU2/LES/exports.sh'
+alias haotPackage='cd /Users/martin/Documents/HAOT'
+alias publishPackage='twine upload dist/*'
 #alias inkscape --export-pdf=out.pdf input.eps
+alias updateDoc='python -b build; pip install .; cd docs; make clean; make html'
 
 # ---------
 # Shortcuts
