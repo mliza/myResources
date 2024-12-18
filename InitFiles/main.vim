@@ -84,7 +84,7 @@ noremap j gj
 noremap k gk
 
 "Copy and past files to clipboard
-noremap <C-y> "+y
+noremap <C-c> "+y
 noremap <C-x> "+d
 noremap <C-p> "+p
 
