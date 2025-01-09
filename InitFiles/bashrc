@@ -11,8 +11,9 @@ alias sourceW='source ~/Desktop/SU2/wally/exports.sh'
 alias sourceM='source ~/Desktop/SU2/mliza/exports.sh'
 alias sourceL='source ~/Desktop/SU2/LES/exports.sh'
 alias haotPackage='cd /Users/martin/Documents/HAOT'
-alias publishPackage='rm -rf docs/*; python -m build; twine upload dist/*'
+alias publishPackage='python -m build; twine upload dist/*'
 alias updateDoc='python -b build; pip install .; cd docs; make clean; make html'
+alias paraviewPython='/Applications/ParaView-5.13.1.app/Contents/bin/pvpython'
 
 # ---------
 # Shortcuts
