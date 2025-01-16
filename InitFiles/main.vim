@@ -76,6 +76,10 @@ nnoremap <leader>B g^
 nnoremap <leader>E g$
 nnoremap <leader>d d^
 
+"Move between tabs
+nnoremap <C-j> :bprev<CR>                                                                            
+nnoremap <C-k> :bnext<CR>
+
 "Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
