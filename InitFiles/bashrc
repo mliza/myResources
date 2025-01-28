@@ -181,7 +181,7 @@ v4W() { #$1 Top Left, $2 Top Right, $3 Bottom Left, $4 Bottom Right
 dict() { open dict://$1; }
 
 #Convert png to gif
-pngToGif() { convert -delay "$1" -loop 0 *.png -trim +repage "$2".gif; }
+pngToGif() { magick -delay "$1" -loop 0 "$2"*.png -trim +repage "$3".gif; }
 
 #Convert eps to pdf
 epsToPdf() { inkscape --export-pdf="$2" "$1"; }
