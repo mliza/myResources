@@ -200,3 +200,25 @@
 % Stagnation Relations 
 \newcommand{\stagnationRelations}
 {\frac{T_0}{T} = \Parenthesis{\frac{p_0}{p}}^{\frac{\gamma-1}{\gamma}} = \Parenthesis{\frac{\rho_0}{\rho}}^{\gamma-1} =\Parenthesis{\frac{a_0}{a}}^2 = 1 + \Parenthesis{\frac{\gamma-1}{2}}M^2} 
+
+
+% Rans Continuity in Einstein
+\newcommand{\ransContinuityEins}
+{\PartialFrac{\overline{\rho}}{t} + \PartialFrac{}{\Sub{x}{i}} \Parenthesis{
+    \overline{\rho} \,\Sub{\overline{u}}{i} + \overline{\rho^{\prime}
+    \Sub{u^{\prime}}{i}}} = 0} 
+
+
+\newcommand{\ransMomentumEins}
+{\PartialFrac{}{t} \Parenthesis{ \overline{\rho}\,\Sub{\overline{u}}{i} +
+\overline{\rho^{\prime} \Sub{u^{\prime}}{i}}     }   +
+\PartialFrac{}{\Sub{x}{j}}\Parenthesis{
+    \overline{\rho}\,\Sub{\overline{u}}{i}\Sub{\overline{u}}{j} +
+    \overline{\rho}\overline{\Sub{u^{\prime}}{i}\Sub{u^{\prime}}{j} } +
+    \Sub{\overline{u}}{i} \overline{\rho^{\prime}\Sub{u^{\prime}}{j}} +
+    \Sub{\overline{u}}{j}\overline{\rho^{\prime}\Sub{u^{\prime}}{i}} }  =
+-\PartialFrac{ }{\Sub{x}{i}}\overline{p}  + \PartialFrac{
+    }{\Sub{x}{j}}\Parenthesis{\Sub{\overline{\sigma}}{ij} -
+    \overline{\rho^{\prime}\Sub{u^{\prime}}{i}\Sub{u^{\prime}}{j} }}}
+
+
