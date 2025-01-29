@@ -204,11 +204,12 @@
 
 % Rans Continuity in Einstein
 \newcommand{\ransContinuityEins}
-{\PartialFrac{\overline{\rho}}{t} + \PartialFrac{}{\Sub{x}{i}} \Parenthesis{
+{ \PartialFrac{\overline{\rho}}{t} + \PartialFrac{}{\Sub{x}{i}} \Parenthesis{
     \overline{\rho} \,\Sub{\overline{u}}{i} + \overline{\rho^{\prime}
     \Sub{u^{\prime}}{i}}} = 0} 
 
 
+% Rans Momentum in Einstein
 \newcommand{\ransMomentumEins}
 {\PartialFrac{}{t} \Parenthesis{ \overline{\rho}\,\Sub{\overline{u}}{i} +
 \overline{\rho^{\prime} \Sub{u^{\prime}}{i}}     }   +
@@ -221,4 +222,13 @@
     }{\Sub{x}{j}}\Parenthesis{\Sub{\overline{\sigma}}{ij} -
     \overline{\rho^{\prime}\Sub{u^{\prime}}{i}\Sub{u^{\prime}}{j} }}}
 
+% Rans Energy in Einstein
+\newcommand{\ransEnergyEins}
+{\PartialFrac{}{t}\overline{e} +
+\PartialFrac{}{\Sub{x}{j}}\Parenthesis{\overline{e}\,\Sub{\overline{u}}{j} +
+\overline{e^{\prime}\Sub{u^{\prime}}{j}} + \overline{p}\,\Sub{\overline{u}}{j}
++ \overline{p^{\prime}\Sub{u^{\prime}}{j}}} =
+\PartialFrac{}{\Sub{x}{j}}\Parenthesis{\Sub{\overline{u}}{i}\,\Sub{\overline{\sigma}}{ij}
++ \overline{\Sub{u^{\prime}}{i}\Sub{\sigma^{\prime}}{ij}  }} -
+\PartialFrac{}{\Sub{x}{j}}\Sub{\overline{q}}{j}}
 
