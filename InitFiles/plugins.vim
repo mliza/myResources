@@ -12,6 +12,8 @@ Plugin 'lifepillar/vim-solarized8' "https://vimawesome.com/plugin/solarized-8
 call vundle#end()
 
 colorscheme solarized8          "Enable colorscheme
+set termguicolors
+
 
 "Configure lightline
 let g:lightline = {
