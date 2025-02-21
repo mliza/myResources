@@ -1,10 +1,10 @@
 # -------
 # Working
 # -------
-buildSu2W() { rm -rf build; mkdir build; export CC=$(which gcc); export CXX=$(which g++); export PATH=$PWD:$PATH; ./meson.py build --buildtype=debug --prefix=$SU2_HOME/build -Denable-mpp=true; ./ninja -C build; }
+buildSu2W() { rm -rf build; mkdir build; export CC=$(which gcc); export CXX=$(which g++); export PATH=$PWD:$PATH; ./meson.py build --buildtype=debug --prefix=$SU2_HOME/build -Denable-mpp=true; ./ninja -C build install; }
 
 # module load cmake/3.28.3
-buildSu2() { rm -rf build; mkdir build; ./meson.py build --buildtype=debug --prefix=$PWD/build -Denable-mpp=true; ./ninja -C build; }
+buildSu2() { rm -rf build; mkdir build; ./meson.py build --buildtype=debug --prefix=$PWD/build -Denable-mpp=true; ./ninja -C build install; }
 
 alias runD='CleanSU2; lldb -s lldb_bk -- SU2_CFD *.cfg'
 alias sourceW='source ~/Desktop/SU2/wally/exports.sh'
@@ -94,6 +94,7 @@ alias chanl='cd /Volumes/Research-1/CHANL'      #Path to chanl
 alias optics='cd /Users/martin/Documents/Research/UoA/Projects/aeroOptics' #Path to aeroOptics
 alias proposal='cd $HOME/Documents/Schools/UoA/Proposal'    #Path to Comprehensive
 alias thesis='cd $HOME/Documents/Schools/UoA/Dissertation'  #Path to Dissertation
+alias seminar='cd $HOME/Documents/Schools/UoA/seminar'
 alias cats='op ~/Documents/Personal/Cats.xlsx'              #Cats spread sheet
 alias research='cd ~/Documents/Research/UoA/Projects'       #Path to Research
 alias presentation='cd ~/Documents/Research/UoA/Presentations' #Presentations
