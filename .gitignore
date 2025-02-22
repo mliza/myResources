@@ -3,3 +3,4 @@
 
 # ignore ALL files in any directory named temp
 temp/
+Python/myPythonEnv/*
