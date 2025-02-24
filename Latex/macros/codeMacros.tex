@@ -29,6 +29,21 @@
 }
 
 
+% Tree
+\lstdefinestyle{tree}{
+    %literate={├}{{\ttfamily |}}1 {─}{{\ttfamily --}}1 {└}{{\ttfamily +}}1,
+    literate=
+    {├}{{\smash{\raisebox{-1ex}{\rule{1pt}{\baselineskip}}}\raisebox{0.5ex}{\rule{1ex}{1pt}}}}1
+    {─}{{\raisebox{0.5ex}{\rule{1.5ex}{1pt}}}}1
+    {└}{{\smash{\raisebox{0.5ex}{\rule{1pt}{\dimexpr\baselineskip-1.5ex}}}\raisebox{0.5ex}{\rule{1ex}{1pt}}}}1,
+    basicstyle=\footnotesize\ttfamily, % Reduced font size and monospace font
+    columns=flexible,
+    breaklines=true,
+    showstringspaces=false, % Do not show spaces as symbols
+    frame=none % No frame (box) around the listing
+}
+
+
 % Configurations of different codes 
 % \lstinputlisting[style=myPython, firstline=1, lastline=1000, caption="My script to display", label=myCode]{newScript.py}
 % https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
