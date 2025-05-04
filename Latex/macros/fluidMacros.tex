@@ -119,7 +119,13 @@
 
 % Energy Eq. - Einstein's notation (Large Eddy Simulation for Compressible Flows_Garnier 2.3)
 \newcommand{\energyEins} 
-{ \PartialFrac{e}{t} + \PartialFrac{\Parenthesis{\Parenthesis{e + p}\Sub{u}{j}} }{\Sub{x}{j}}  = \PartialFrac{\Parenthesis{\Sub{u}{i}\Sub{\sigma}{ij}} }{\Sub{x}{j}} - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j} } } 
+{ \PartialFrac{E}{t} + \PartialFrac{\Parenthesis{\Parenthesis{E + p}\Sub{u}{j}} }{\Sub{x}{j}}  = \PartialFrac{\Parenthesis{\Sub{u}{i}\Sub{\sigma}{ij}} }{\Sub{x}{j}} - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j} } } 
+
+%rhoE - Einstein's notation (Large Eddy Simulation for Compressible flow_Garnier 2.4) 
+\newcommand{\rhoeEins}
+{
+    \rho E = \frac{p}{\gamma -1 } + \frac{1}{2}\rho\Sub{u}{i}\Sub{u}{j}
+}
 
 % Vorticity Eq. - Einstein's notation (https://en.wikipedia.org/wiki/Vorticity_equation)
 \newcommand{\vorticityEins}
@@ -253,4 +259,28 @@
     \PartialFrac{}{\Sub{x}{i}}\Sub{\overline{u}}{j} -
     \frac{2}{3}\PartialFrac{}{\Sub{x}{k}}\Sub{\overline{u}}{k}\Sub{\delta}{ij}} }
 
+% Species continuity
+% From Statistical Thermodynamics John W. Daily (eq: 12.2)
+\newcommand{\noneqSpeciesContinuityEins}
+{
+    \PartialFrac{\Sub{\rho}{k}}{t} + \PartialFrac{}{\Sub{x}{i}}\Parenthesis{
+        \Sub{u}{i} + \Sub{u}{k,i}} = \Sub{w}{k}
+}
 
+% Nonequilibrium Momentum
+\newcommand{\noneqMomentumEins}
+% From Statistical Thermodynamics John W. Daily (eq: 12.3)
+{ \PartialFrac{\Parenthesis{\rho\Sub{u}{i}}}{t} +
+\PartialFrac{\Parenthesis{\rho\Sub{u}{i}\Sub{u}{j}}}{\Sub{x}{j}}  +
+\PartialFrac{p}{\Sub{x}{i}}  = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{j}} +
+\sum^N_{k=1}\Sub{\rho}{k}\Sub{\overline{F}}{ki}
+} 
+
+% nonequilibrium Energy
+\newcommand{\noneqEnergyEins} 
+{ 
+\PartialFrac{E}{t} + \PartialFrac{\Parenthesis{\Parenthesis{E + p}\Sub{u}{j}}
+}{\Sub{x}{j}}  = \PartialFrac{\Parenthesis{\Sub{u}{i}\Sub{\sigma}{ij}}
+}{\Sub{x}{j}} - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j} }  + \dot{Q} +
+\Sub{v}{i}\sum^{N}_{k=1}\Sub{\rho}{k}\Sub{\overline{F}}{ki}
+} 
