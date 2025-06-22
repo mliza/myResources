@@ -264,7 +264,7 @@
 \newcommand{\noneqSpeciesContinuityEins}
 {
     \PartialFrac{\Sub{\rho}{k}}{t} + \PartialFrac{}{\Sub{x}{i}}\Parenthesis{
-        \Sub{\rho}{k}\Sub{u}{i} + \Sub{\rho}{k}\Sub{u}{ki}} = \Sub{w}{k}
+        \Sub{\rho}{s}\Sub{u}{i} + \Sub{\rho}{k}\Sub{u}{si}} = \Sub{w}{s}
 }
 
 % Nonequilibrium Momentum
@@ -273,7 +273,7 @@
 { \PartialFrac{\Parenthesis{\rho\Sub{u}{i}}}{t} +
 \PartialFrac{\Parenthesis{\rho\Sub{u}{i}\Sub{u}{j}}}{\Sub{x}{j}}  +
 \PartialFrac{p}{\Sub{x}{i}}  = \PartialFrac{\Sub{\sigma}{ij}}{\Sub{x}{j}} +
-\sum^N_{k=1}\Sub{\rho}{k}\Sub{\overline{F}}{ki}
+\sum^N_{s=1}\Sub{\rho}{s}\Sub{\overline{F}}{si}
 } 
 
 % nonequilibrium Energy
@@ -282,5 +282,5 @@
 \PartialFrac{E}{t} + \PartialFrac{\Parenthesis{\Parenthesis{E + p}\Sub{u}{j}}
 }{\Sub{x}{j}}  = \PartialFrac{\Parenthesis{\Sub{u}{i}\Sub{\sigma}{ij}}
 }{\Sub{x}{j}} - \PartialFrac{\Sub{q}{j}}{\Sub{x}{j} }  + \dot{Q} +
-\Sub{v}{i}\sum^{N}_{k=1}\Sub{\rho}{k}\Sub{\overline{F}}{ki}
+\Sub{v}{i}\sum^{N}_{s=1}\Sub{\rho}{s}\Sub{\overline{F}}{si}
 } 
