@@ -100,6 +100,7 @@ alias research='cd ~/Documents/Research/UoA/Projects'       #Path to Research
 alias presentation='cd ~/Documents/Research/UoA/Presentations' #Presentations
 alias resources='cd /Users/martin/Documents/Schools/resources' #Resources
 alias presentations='cd /Users/martin/Document/Research/UoA/Presentations' #Presentations
+alias myPapaers='cd /Users/martin/Documents/Research/UoA/Papers/myPapers'
 alias lemansInput='op ~/Documents/Research/UoA/helper/lemansInputCalculator.xlsx' #Lemans input calculator
 
 
