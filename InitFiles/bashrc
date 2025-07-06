@@ -1,3 +1,7 @@
+export SU2_RUN=/Users/martin/Desktop/SU2/build/bin
+export SU2_HOME=/Users/martin/Desktop/SU2
+export PATH=$PATH:$SU2_RUN
+export PYTHONPATH=$PYTHONPATH:$SU2_RUN
 # -------
 # Working
 # -------
@@ -95,6 +99,7 @@ alias optics='cd /Users/martin/Documents/Research/UoA/Projects/aeroOptics' #Path
 alias proposal='cd $HOME/Documents/Schools/UoA/Proposal'    #Path to Comprehensive
 alias thesis='cd $HOME/Documents/Schools/UoA/Dissertation'  #Path to Dissertation
 alias seminar='cd $HOME/Documents/Schools/UoA/seminar'
+alias defense='cd $HOME/Documents/Schools/UoA/defense'  
 alias cats='op ~/Documents/Personal/Cats.xlsx'              #Cats spread sheet
 alias research='cd ~/Documents/Research/UoA/Projects'       #Path to Research
 alias presentation='cd ~/Documents/Research/UoA/Presentations' #Presentations
