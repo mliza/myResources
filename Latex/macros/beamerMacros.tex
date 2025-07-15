@@ -1,3 +1,70 @@
+\usepackage[export]{adjustbox}
+\usepackage[bottom]{footmisc}
+\usepackage[outdir=figures/]{epstopdf}
+\usepackage{animate}
+\newcommand\blfootnote[1]{
+\begingroup
+\renewcommand\thefootnote{}\footnote{#1}
+\addtocounter{footnote}{-1}
+\endgroup
+}
+
+\newcommand{\highlight}[1]{%
+  \colorbox{red!20}{$\displaystyle#1$}}
+
+%% Updated print bibliography at the end %%
+\AtEveryBibitem{%
+  \clearlist{publisher}%
+  \clearfield{location}%
+  \clearfield{year}%
+  \clearfield{month}%
+  \clearfield{date}%
+  \clearfield{note}%
+  \clearfield{pages}%
+  \clearfield{volume}%
+  \clearfield{number}%
+  \clearfield{eid}%
+  \clearfield{series}%
+  \clearfield{edition}%
+  \clearfield{issn}%
+  \clearfield{isbn}%
+  \clearfield{doi}%
+  \clearfield{url}%
+  \clearfield{eprint}%
+  \clearfield{eventtitle}%
+  \clearfield{booktitle}%
+  \clearfield{journal}%
+  \clearfield{journaltitle}%
+  \clearfield{institution}%
+}
+
+\DeclareBibliographyDriver{*}{%
+  \printnames{author}%
+  \setunit{\labelnamepunct}\newblock
+  \printfield[titlecase]{title}%
+  \finentry%
+}
+%% Updated print bibliography at the end %%
+
+
+
+%% Updated footfullcite %%
+\DeclareCiteCommand{\footfullcite}
+  {\usebibmacro{prenote}}%
+  {%
+    \footnote{%
+      \printnames{author}%
+      \setunit{\labelnamepunct}\newblock
+      \printfield[titlecase]{title}%
+      \addperiod
+    }%
+  }
+  {\addcomma\space}%
+  {\usebibmacro{postnote}}%
+%% Updated footfullcite %%
+
+
+
 %Beamer Macro 
 %\TextPicture{\item text}{pictureHeigh}{pictureName} 
 \newcommand{\TextPicture}[3]
