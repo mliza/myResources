@@ -13,7 +13,6 @@ set softtabstop=4               "Fine tunes the amount of white space
 set shiftwidth=4                "White space to add in normal mode
 set textwidth=79                "Text wrap width
 set wrap                        "Allow text to wrap
-set expandtab                   "When on use space instead of tab
 set autoindent                  "Autoindent in new line
 set linebreak                   "Avoid wrapping a line in the middle of a word
 set nobackup                    "Doesn't create backup files
@@ -36,7 +35,7 @@ set wildmenu                    "Visual autocomplete for command menu
 set spell                       "Enable spell
 set foldenable                  "Enable folding
 set foldmethod=manual           "Enable folding base on indentation 
-set laststatus=2                "Status Bar modified
+set laststatus=3                "Status Bar modified
 set belloff=all                 "Kill error bell sound
 set visualbell                  "Use visualbell instead of error bell sound
 set splitbelow                  "Split screens below
@@ -61,7 +60,7 @@ nnoremap <leader>l :wincmd l<CR>
 nnoremap <CR> :nohlsearch<cr>
 
 "Disable search highlight using escape
-nnoremap <esc> :nohlsearch<return><esc>
+nnoremap <esc> :nohlsearch<CR>
 
 "Open terminal below shortcut
 nnoremap <leader>\t :terminal ++rows=6<CR>
@@ -99,9 +98,7 @@ nnoremap gV '[V']
 autocmd BufWinLeave * if &diff | diffoff | endif | mkview
 
 "Mark trailing spaces as errors
-if has ("match")
-    match ErrorMsg '\s\+$'
-endif
+match ErrorMsg '\s\+$'
 
 "Write and compile latex on background 
 nnoremap <leader>\c :call system('pdflatex *.tex')<CR>
