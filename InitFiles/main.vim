@@ -34,7 +34,7 @@ set cursorcolumn                "Highlight current column
 set wildmenu                    "Visual autocomplete for command menu
 set spell                       "Enable spell
 set foldenable                  "Enable folding
-set foldmethod=manual           "Enable folding base on indentation 
+set foldmethod=manual           "Enable folding base on indentation
 set laststatus=3                "Status Bar modified
 set belloff=all                 "Kill error bell sound
 set visualbell                  "Use visualbell instead of error bell sound
@@ -46,6 +46,7 @@ set clipboard=unnamed           "Defaults clipboard to system clipboard (for lin
 set ff=unix                     "Sets the editor to use unix ending line
 set gp=git\ grep\ -n            "Set source repo to see where words are repeating
 set tags=tags                   "Set tags
+set clipboard+=unnamedplus      "Set copy, delete and yank from and to the clipboard
 let mapleader = " "             "Setup leader
 "set list                        "Set trailing white space
 "set mouse=a                     "Enable mouse
@@ -76,37 +77,32 @@ nnoremap <leader>E g$
 nnoremap <leader>d d^
 
 "Move between tabs
-nnoremap <C-j> :bprev<CR>                                                                            
+nnoremap <C-j> :bprev<CR>
 nnoremap <C-k> :bnext<CR>
 
 "Disables automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"Allow single line always 
+"Allow single line always
 noremap j gj
 noremap k gk
-
-"Copy and past files to clipboard
-noremap <C-c> "+y
-noremap <C-x> "+d
-noremap <C-p> "+p
 
 "Highlight the last inserted text
 nnoremap gV '[V']
 
-"Load and save view automatically 
+"Load and save view automatically
 autocmd BufWinLeave * if &diff | diffoff | endif | mkview
 
 "Mark trailing spaces as errors
 match ErrorMsg '\s\+$'
 
-"Write and compile latex on background 
+"Write and compile latex on background
 nnoremap <leader>\c :call system('pdflatex *.tex')<CR>
 nnoremap <leader>\wc :w <bar> :call system('pdflatex *.tex')<CR>
-"Change colors on vimdiff 
+"Change colors on vimdiff
 "cterm-sets the style, ctermfg-sets the txt color, ctermbg-set the highlight
 "DiffAdd-added line, DiffDelete-removed line, DiffChange-part of changed line
-"DiffText-exact part of the text that was deleted 
+"DiffText-exact part of the text that was deleted
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red

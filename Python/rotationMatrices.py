@@ -133,9 +133,9 @@ def pitchMatrix(pitchAngleDeg):
     pitchAngRad = np.asarray(np.radians(pitchAngleDeg)) 
     P = np.zeros((3,3))
     P[0,0] = np.cos(pitchAngRad) 
-    P[0,2] = np.sin(pitchAngRad) 
+    P[0,2] = -np.sin(pitchAngRad) 
     P[1,1] = 1 
-    P[2,0] = -np.sin(pitchAngRad) 
+    P[2,0] = np.sin(pitchAngRad) 
     P[2,2] = np.cos(pitchAngRad) 
     return P #End pitchMatrix
 
