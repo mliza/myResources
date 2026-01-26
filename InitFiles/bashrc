@@ -1,19 +1,6 @@
-export SU2_RUN=/Users/martin/Desktop/SU2/build/bin
-export SU2_HOME=/Users/martin/Desktop/SU2
-export PATH=$PATH:$SU2_RUN
-export PYTHONPATH=$PYTHONPATH:$SU2_RUN
 # -------
 # Working
 # -------
-buildSu2W() { rm -rf build; mkdir build; export CC=$(which gcc); export CXX=$(which g++); export PATH=$PWD:$PATH; ./meson.py build --buildtype=debug --prefix=$SU2_HOME/build -Denable-mpp=true; ./ninja -C build install; }
-
-# module load cmake/3.28.3
-buildSu2() { rm -rf build; mkdir build; ./meson.py build --buildtype=debug --prefix=$PWD/build -Denable-mpp=true; ./ninja -C build install; }
-
-alias runD='CleanSU2; lldb -s lldb_bk -- SU2_CFD *.cfg'
-alias sourceW='source ~/Desktop/SU2/wally/exports.sh'
-alias sourceM='source ~/Desktop/SU2/mliza/exports.sh'
-alias sourceL='source ~/Desktop/SU2/LES/exports.sh'
 alias haotPackage='cd /Users/martin/Documents/HAOT'
 alias publishPackage='python -m build; twine upload dist/*'
 alias updateDoc='python -b build; pip install .; cd docs; make clean; make html'
@@ -48,7 +35,7 @@ alias gccOpenMP='/opt/homebrew/Cellar/gcc/13.1.0/bin/gcc-13 -fopenmp' #Compile g
 alias removeASCII="sed 's/\x1b\[[0-9;]*[mGKHF]//g"
 alias runTec="/Applications/Tecplot\ 360\ EX\ 2023\ R2/bin/tec360-env -- /usr/local/bin/python3"
 
-#Backup directories 
+#Backup directories
 alias .='cd ../; ls'                    #back 1 directory
 alias ..='cd ../../; ls'                #back 2 directories
 alias ...='cd ../../../; ls'            #back 3 directories
@@ -61,7 +48,7 @@ alias ....='cd ../../../../; ls'        #back 4 directories
 alias vpn='open -a /Applications/Cisco/Cisco\ Secure\ Client.app/ ' #Launch Cisco
 alias tecPlot='open -a /Applications/Tecplot\ 360\ EX\ 2023\ R2/Tecplot\ 360\ EX\ 2023\ R2.app/' #Launch tecPlot
 alias windows='op /Applications/Parallels\ Desktop.app/' #Launch windows
-alias slack='open -a  /Applications/Slack.app'           #Launch Slack 
+alias slack='open -a  /Applications/Slack.app'           #Launch Slack
 alias rosetta='open /Applications/Rosetta.app/'
 alias loan='open -a Safari https://www.mrcooper.com/servicing/overview'
 
@@ -100,13 +87,13 @@ alias proposal='cd $HOME/Documents/Schools/UoA/Proposal'    #Path to Comprehensi
 alias thesis='cd $HOME/Documents/Schools/UoA/dissertation'  #Path to Dissertation
 alias supp='cd $HOME/Documents/Schools/UoA/supplement'  #Path to Dissertation
 alias seminar='cd $HOME/Documents/Schools/UoA/seminar'
-alias defense='cd $HOME/Documents/Schools/UoA/defense'  
+alias defense='cd $HOME/Documents/Schools/UoA/defense'
 alias cats='op ~/Documents/Personal/Cats.xlsx'              #Cats spread sheet
 alias research='cd ~/Documents/Research/UoA/Projects'       #Path to Research
 alias presentation='cd ~/Documents/Research/UoA/Presentations' #Presentations
 alias resources='cd /Users/martin/Documents/Schools/resources' #Resources
 alias presentations='cd /Users/martin/Document/Research/UoA/Presentations' #Presentations
-alias myPapaers='cd /Users/martin/Documents/Research/UoA/Papers/myPapers'
+alias myPapers='cd /Users/martin/Documents/Research/UoA/Papers/myPapers'
 alias lemansInput='op ~/Documents/Research/UoA/helper/lemansInputCalculator.xlsx' #Lemans input calculator
 
 
@@ -117,7 +104,7 @@ alias homebridge='open -a Safari http://192.168.1.176:8581' #Open homebridge
 alias facebook='op https://www.facebook.com'                #Open Facebook
 alias UAccess='op https://uaccess.arizona.edu'              #Open UAcces
 alias d2l='op https://d2l.arizona.edu/d2l/loginh/'          #Open D2L
-alias quora='op https://www.quora.com'                      #Open quora 
+alias quora='op https://www.quora.com'                      #Open quora
 alias netflix='op https://netflix.com'                      #Open Netflix
 alias hulu='op https://hulu.com'                            #Open Hulu
 alias pythonDoc='op https://docs.python.org'                #Python documentation
@@ -167,7 +154,7 @@ compileLatex() {
 vimR() {
     local prevSize=($LINES $COLUMNS)
     resize -s 0 0 >/dev/null
-    a=$(expr $LINES / 2) 
+    a=$(expr $LINES / 2)
     b=$(expr $COLUMNS / 2) #split screen on 4
     resize -s $a $b >/dev/null
     vim "$@"
@@ -179,8 +166,8 @@ findV() {
     find * -name $1 | xargs -o vim
 }
 
-#Opens vim and terminal 
-vTerm() { 
+#Opens vim and terminal
+vTerm() {
     local prevSize=($LINES $COLUMNS)
     resize -s 0 0 >/dev/null
     a=$(expr $LINES) 
@@ -198,7 +185,7 @@ v4W() { #$1 Top Left, $2 Top Right, $3 Bottom Left, $4 Bottom Right
     resize -s ${prevSize[0]} ${prevSize[1]} >/dev/null
 }
 
-#Dictionary 
+#Dictionary
 dict() { open dict://$1; }
 
 #Convert png to gif
@@ -213,7 +200,7 @@ trimImages() { for f in *.png; do echo "Converting $f"; convert "$f" -trim +repa
 #Open man pages in preview
 preman() { man -t $@ | open -f -a "Preview"; }
 
-#Convert .wmv to .mp4 
+#Convert .wmv to .mp4
 wmv2mp4() { ffmpeg -i $1 -c:v libx264 -crf 23 $2; }
 
 #Google search
@@ -222,7 +209,7 @@ goog() { open -a Safari http://www.google.com/search?q=$1; }
 #Youtube search
 youtube() { open -a Safari https://www.youtube.com/results?search_query=$1; }
 
-#Transfer files to and from the UoA-HPC 
+#Transfer files to and from the UoA-HPC
 transferToUA() { scp -r $1 mliza@filexfer.hpc.arizona.edu:/home/u22/mliza/$2; }
 transferFromUA() { scp -r mliza@filexfer.hpc.arizona.edu:/home/u22/mliza/$1 .; }
 
@@ -233,16 +220,16 @@ multipleCopy() { ls -d */ | xargs -tI {} cp -r $1 "{}" ;}
 weather() { curl http://wttr.in/~$1; }
 weather2() { diff -Naur <(curl -s http://wttr.in/~$1) <(curl -s http://wttr.in/~$2); }
 
-#Battery level 
+#Battery level
 Battery=$(pmset -g batt | sed -e 's/;//g' -e '3d' -e '1d' | awk '{print $3}')
 
-#GPS Location 
+#GPS Location
 Location=$(curl -s ipinfo.io | jq -r '.city')
 
 #Weather Location
 Temperature=$(curl -s "wttr.in/${Location}?format=%t" | sed 's/^+//')
 
-#Current Temperature in Celsius using GPS location 
+#Current Temperature in Celsius using GPS location
 #Temp=$(ansiweather -a false -u imperial -l "$Location" |
 #       awk -F "-" '{print $1}' |
 #       awk -F ":" '{print $2}' |
@@ -258,7 +245,7 @@ recursiveReplace() { find . -type f -exec sed -i '' 's/$1/$2/g' {} +;}
 
 #Creates a convergence plot using pytecplot "dataFolderIn" "absPathDataOut" "fileName"
 alias stagnationParser='$TOOLS/tecplot/pytecplot/stagnationParser.py'
-alias dataToPickle='$TOOLS/tecplot/pytecplot/dataToPickle.py' 
+alias dataToPickle='$TOOLS/tecplot/pytecplot/dataToPickle.py'
 alias convergencePlot='$TOOLS/tecplot/pytecplot/convergencePlot.py'
 
 #Creates a latex project folder - latexProject "folderName" "fileName"
@@ -282,7 +269,7 @@ alias pyPlot='/Applications/Tecplot\ 360\ EX\ 2021\ R2/bin/tec360-env -- ipython
 # -----------------------
 # Environmental Variables
 # -----------------------
-#export DYLD_LIBRARY_PATH='/Applications/Tecplot\ 360\ EX\ 2021\ R2/Tecplot\ 360\ EX\ 2021\ R2.app/Contents/MacOS'      #Export pytecplot 
+#export DYLD_LIBRARY_PATH='/Applications/Tecplot\ 360\ EX\ 2021\ R2/Tecplot\ 360\ EX\ 2021\ R2.app/Contents/MacOS'      #Export pytecplot
 export PATH="/Applications/MATLAB_R2023b.app/bin/:$PATH"    #Export Matlab
 export UA='mliza@hpc.arizona.edu'                           #UoA HPC
 export SCRIPTS="$HOME/Documents/Scripts"                    #Scripts
@@ -293,7 +280,7 @@ PATH=/opt/homebrew/Cellar/gcc/13.2.0/bin:$PATH
 #export PYTHONPATH="/Library/Developer/CommandLineTools/Library/PrivateFrameworks/LLDB.framework/Versions/A/Resources/Python"
 
 # ----------------------
-# Program Configurations 
+# Program Configurations
 # ----------------------
 eval $(thefuck --alias)                 #Configure the fuck command
 export HISTSIZE=10000                   #Number of commands to remember
