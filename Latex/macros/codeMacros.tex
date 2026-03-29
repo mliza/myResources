@@ -1,5 +1,5 @@
-% LaTeX code side by side with output 
-% https://tex.stackexchange.com/questions/194854/how-to-show-latex-commands-in-text-mode 
+% LaTeX code side by side with output
+% https://tex.stackexchange.com/questions/194854/how-to-show-latex-commands-in-text-mode
 \definecolor{midnightBlue}{RGB}{25,25,112}
 \definecolor{webblue}{rgb}{0, 0, 0.5}
 
@@ -25,7 +25,7 @@
 \newtcblisting{shellCommand}{
         colback=black,
         colupper=white,
-        colframe=yellow!75!black, 
+        colframe=yellow!75!black,
         listing only,
         listing options={style=tcblatex,language=sh},
         hbox,
@@ -48,20 +48,20 @@
 }
 
 
-% Configurations of different codes 
+% Configurations of different codes
 % \lstinputlisting[style=myPython, firstline=1, lastline=1000, caption="My script to display", label=myCode]{newScript.py}
 % https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
-\definecolor{mygreen}{rgb}{0,0.6,0} 
+\definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{myblue}{rgb}{0,0,128}
 
-% Python settings  
-\lstdefinestyle{myPython}{ 
+% Python settings
+\lstdefinestyle{myPython}{
     language=Python,
     backgroundcolor=\color{gray!12},
     basicstyle=\ttfamily\small,
     commentstyle=\color{green!60!black},
     keywordstyle=\color{magenta},
-    showstringspaces=false, 
+    showstringspaces=false,
     numbers=left,
     numberstyle=\footnotesize\color{gray},
     numbersep=10pt,
@@ -75,14 +75,14 @@
     inputpath=codes
 }
 
-% Matlab settings 
-\lstdefinestyle{myMatlab}{ 
+% Matlab settings
+\lstdefinestyle{myMatlab}{
     language=Matlab,
     backgroundcolor=\color{gray!12},
     basicstyle=\ttfamily\small,
     commentstyle=\color{green!60!black},
     keywordstyle=\color{magenta},
-    showstringspaces=false, 
+    showstringspaces=false,
     numbers=left,
     numberstyle=\footnotesize\color{gray},
     numbersep=10pt,
@@ -96,14 +96,14 @@
     inputpath=codes
 }
 
-% Bash settings 
-\lstdefinestyle{myBash}{ 
+% Bash settings
+\lstdefinestyle{myBash}{
     language=bash,
     backgroundcolor=\color{gray!12},
     basicstyle=\ttfamily\small,
     commentstyle=\color{green!60!black},
     keywordstyle=\color{magenta},
-    showstringspaces=false, 
+    showstringspaces=false,
     numbers=left,
     numberstyle=\footnotesize\color{gray},
     numbersep=10pt,
@@ -116,5 +116,3 @@
     captionpos=b,
     inputpath=codes
 }
-
-

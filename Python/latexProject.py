@@ -5,7 +5,7 @@
     File:    latexProject.py
     Def:     creates a latex project using
              pre defined flags/imports
-        
+
     Available flags:
     -notes    = class notes project
     -homework = homework project
@@ -58,37 +58,37 @@ def getPaths():
     for keyName in ['templates', 'macros', 'images']:
         paths[keyName] = os.path.join(latexPath, keyName)
 
-    return paths 
+    return paths
 
 
-# Builds preamble and body to be written on the .txt files  
-def preambleStr(args, paths): 
-    # Define dictionaries 
-    macros = {} 
-    for macroName in ['equationMacros', 'mathMacros', 'pictureMacros', 'beamerMacros', 'codeMacros']:  
-       macros[macroName] = os.path.join(paths['macros'], macroName) 
+# Builds preamble and body to be written on the .txt files
+def preambleStr(args, paths):
+    # Define dictionaries
+    macros = {}
+    for macroName in ['equationMacros', 'mathMacros', 'pictureMacros', 'beamerMacros', 'codeMacros']:
+       macros[macroName] = os.path.join(paths['macros'], macroName)
 
     templates = {}
     for tempName in ['notesTemplate', 'homeworkTemplate', 'beamerTemplate', 'cheatTemplate']:
-        templates[tempName] = os.path.join(paths['templates'], tempName) 
+        templates[tempName] = os.path.join(paths['templates'], tempName)
 
-    if args.notes: 
-        title = '\\title{Class Name Title, [AME 634A]}\n\\author{Martin E. Liza}\n\date{Spring Semester,2020}' 
+    if args.notes:
+        title = '\\title{Class Name Title, [AME 634A]}\n\\author{Martin E. Liza}\n\date{Spring Semester,2020}'
         preamble = f'\input{{{templates["notesTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["pictureMacros"]}}}\n\input{{{macros["codeMacros"]}}}\n{title}'
-        body = '\n\n\\begin{document}\n\t\\maketitle\n\t\\tableofcontents\n\n\t% Classes\n\t\\input{lectures/class1}\n\end{document}'  
+        body = '\n\n\\begin{document}\n\t\\maketitle\n\t\\tableofcontents\n\n\t% Classes\n\t\\input{lectures/class1}\n\end{document}'
 
-    if args.homework: 
-        header = '\Header{\\today}{Document Name}{My Name}\n%\\usepackage[backend=biber, sorting=none]{biblatex}\n%\\addbibresource{bibliography.bib}\n%\\usepackage[text=Draft, colorspec=0.92, fontsize=7cm]{draftwatermark}'   
+    if args.homework:
+        header = '\Header{\\today}{Document Name}{My Name}\n%\\usepackage[backend=biber, sorting=none]{biblatex}\n%\\addbibresource{bibliography.bib}\n%\\usepackage[text=Draft, colorspec=0.92, fontsize=7cm]{draftwatermark}'
         preamble = f'\input{{{templates["homeworkTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["pictureMacros"]}}}\n\input{{{macros["codeMacros"]}}}\n{header}'
-        body = '\n\n\\begin{document}\n%\printbibliography[heading=none]\n\end{document}' 
+        body = '\n\n\\begin{document}\n%\printbibliography[heading=none]\n\end{document}'
 
-    if args.beamer: 
-        header = '\\usetheme{UoA}\n\TitlePage{title}{author}{\\today}'   
+    if args.beamer:
+        header = '\\usetheme{UoA}\n\TitlePage{title}{author}{\\today}'
         preamble = f'\input{{{templates["beamerTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["beamerMacros"]}}}\n\input{{{macros["codeMacros"]}}}\n{header}'
-        body = '\n\n\\begin{document}\n\n\end{document}' 
+        body = '\n\n\\begin{document}\n\n\end{document}'
 
-    if args.cheat: 
-        header = '\\title{Class Name}'   
+    if args.cheat:
+        header = '\\title{Class Name}'
         multicol = '\t\\begin{multicols}{3}\n\t\setlength{\premulticols}{1pt}\n\t\setlength{\postmulticols}{1pt}\n\t\setlength{\multicolsep}{1pt}\n\t\setlength{\columnsep}{2pt}\n\n\n\t\end{multicols}'
         preamble = f'\input{{{templates["cheatTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n{header}'
         body1 = '\n\n\\begin{document}\n\t\\raggedright\n\t\\footnotesize\n\t\\begin{center}\n\t\t\Large{\\textbf{}}\n\t\end{center}'  

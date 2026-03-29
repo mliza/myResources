@@ -1,12 +1,12 @@
-\documentclass{beamer} 
-\usepackage[utf8]{inputenc} 
-\usepackage[T1]{fontenc} 
-\usepackage{accanthis} 		  %Title Font 
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{accanthis} 		  %Title Font
 \usepackage{ragged2e}  		  % `\justifying` text
 \usepackage{booktabs} 		  % Tables
 \usepackage{tabularx}
 \usepackage{tikz}      		  % Diagrams
-\usepackage{color}            %load colors 
+\usepackage{color}            %load colors
 \usepackage{graphics}
 \usepackage{amsmath, amssymb}
 \usepackage{url}       		  % \url
@@ -14,7 +14,7 @@
 \usepackage{bm}               %bold everything also Greek letter
 \usepackage[most]{tcolorbox}      %color box
 \usetikzlibrary{calc, shapes, backgrounds}
-\graphicspath{{figures/}}     % Allows graphic path 
+\graphicspath{{figures/}}     % Allows graphic path
 \frenchspacing
 \usepackage{graphics}
 \usepackage{import}
@@ -24,24 +24,11 @@
 \usepackage[version=4]{mhchem}
 \usepackage{subcaption}
 
-%New Commands for this file 
+%New Commands for this file
 \newcommand{\TitlePage}[4] %\TitlePage{title}{subtitle}{name}{date}
-{ 
-    \title{#1}  
+{
+    \title{#1}
     \subtitle{#2}
     \author{#3}
     \date{#4}
 }
-
-
-\makeatletter
-  \def\beamer@calltheme#1#2#3{%
-    \def\beamer@themelist{#2}
-    \@for\beamer@themename:=\beamer@themelist\do
-    {\usepackage[{#1}]{\beamer@themelocation/#3\beamer@themename}}}
-
-  \def\usefolder#1{
-    \def\beamer@themelocation{#1}
-  }
-  \def\beamer@themelocation{}
-

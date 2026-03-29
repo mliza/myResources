@@ -66,26 +66,24 @@
   {\usebibmacro{postnote}}%
 %% Updated footfullcite %%
 
-
-
-%Beamer Macro 
-%\TextPicture{\item text}{pictureHeigh}{pictureName} 
+%Beamer Macro
+%\TextPicture{\item text}{pictureHeigh}{pictureName}
 \newcommand{\TextPicture}[3]
-{ 
+{
     \vspace{-0.7cm}
-    \begin{columns}[T] 
-        %Insert Text 
+    \begin{columns}[T]
+        %Insert Text
         \begin{column}[T]{6cm}
             \begin{itemize}
-                {#1}     
+                {#1}
             \end{itemize}
         \end{column}
-    
-        %Insert Picture 
-        \begin{column}[T]{6cm} 
-            \includegraphics[scale=#2]{#3} 
-        \end{column} 
-    \end{columns} 
+
+        %Insert Picture
+        \begin{column}[T]{6cm}
+            \includegraphics[scale=#2]{#3}
+        \end{column}
+    \end{columns}
 }
 
 %\QuadChart{title1}{\item }{title2}{\item }{title3}{\item }{title4}{\item }
@@ -96,7 +94,7 @@
     % Begin first box
     \fbox{
         \begin{minipage}[c][3cm]{0.45\textwidth}
-            \textbf{#1:} 
+            \textbf{#1:}
             \begin{itemize}
                 {#2}
             \end{itemize}
@@ -106,7 +104,7 @@
     % Begin second box
     \fbox{
         \begin{minipage}[c][3cm]{0.45\textwidth}
-            \textbf{#3:} 
+            \textbf{#3:}
             \begin{itemize}
                 {#4}
             \end{itemize}
@@ -116,7 +114,7 @@
     % Begin third box
     \fbox{
         \begin{minipage}[c][3cm]{0.45\textwidth}
-            \textbf{#5:} 
+            \textbf{#5:}
             \begin{itemize}
                 {#6}
             \end{itemize}
@@ -126,7 +124,7 @@
     % End third box
     \fbox{
         \begin{minipage}[c][3cm]{0.45\textwidth}
-            \textbf{#7:} 
+            \textbf{#7:}
             \begin{itemize}
                 {#8}
             \end{itemize}
